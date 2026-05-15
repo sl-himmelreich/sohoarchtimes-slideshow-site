@@ -1,0 +1,287 @@
+/* SohoArchTimes — full-screen slideshow
+   Black stage, 16:9 letterboxed presentation frame, preserved image aspect.
+   Minimal, restrained, professional. */
+
+:root {
+  --bg: #000;
+  --fg: #f3f1ec;            /* warm off-white */
+  --fg-muted: #b8b4ab;
+  --fg-faint: #7d7a73;
+  --rule: rgba(243, 241, 236, 0.22);
+  --hud-shadow: 0 1px 2px rgba(0,0,0,0.85);
+  --transition: 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Satoshi", "General Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  cursor: default;
+}
+
+body.hide-cursor, body.hide-cursor * { cursor: none !important; }
+
+.stage {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+/* 16:9 frame that letterboxes inside the viewport — equivalent to 3840×2160 presentation logic */
+.frame {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  aspect-ratio: 16 / 9;
+  max-width: 100vw;
+  max-height: 100vh;
+  /* When viewport is wider than 16:9, height limits width; when narrower, width limits height. */
+  margin: auto;
+}
+
+/* CSS aspect-ratio with both max-width and max-height: choose the limiting one */
+@supports (aspect-ratio: 16 / 9) {
+  .frame {
+    width: min(100vw, calc(100vh * 16 / 9));
+    height: min(100vh, calc(100vw * 9 / 16));
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* The two image layers — one shown, one preloaded */
+.slide-img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;        /* preserve aspect ratio */
+  background: transparent;     /* black stage shows through margins */
+  opacity: 0;                  /* JS controls opacity */
+  transition: opacity 5000ms linear;
+  user-select: none;
+  pointer-events: none;
+  /* Crisper scaling on high-DPI displays */
+  image-rendering: -webkit-optimize-contrast;
+  will-change: opacity;
+}
+.slide-img[data-state="visible"] { opacity: 1; }
+
+/* Black fade overlay — independent of image opacity for guaranteed black transitions */
+.fade {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  transition: opacity 5000ms linear;
+  pointer-events: none;
+  z-index: 5;
+}
+.fade[data-state="black"] { opacity: 1; }
+.fade[data-instant="1"]   { transition: none !important; }
+
+/* Bottom-left metadata caption */
+.caption {
+  position: absolute;
+  left: clamp(14px, 1.6vw, 30px);
+  bottom: clamp(14px, 2.2vh, 28px);
+  z-index: 10;
+  max-width: min(62%, 900px);
+  font-family: "General Sans", "Satoshi", system-ui, sans-serif;
+  font-size: clamp(12px, 1.05vw, 15px);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: var(--fg);
+  text-shadow: var(--hud-shadow);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.caption[data-state="in"] {
+  opacity: 0.94;
+  transform: translateY(0);
+}
+
+.caption .cap-title {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.caption .cap-arch  { color: var(--fg); }
+.caption .cap-year,
+.caption .cap-loc   { color: var(--fg-muted); font-weight: 400; }
+.caption .cap-sep   {
+  display: inline-block;
+  margin: 0 0.55em;
+  color: var(--fg-faint);
+  font-weight: 300;
+}
+.caption .cap-title:empty,
+.caption .cap-arch:empty,
+.caption .cap-year:empty,
+.caption .cap-loc:empty { display: none; }
+/* Hide adjacent separators when a field is empty */
+.caption .cap-title:empty + .cap-sep,
+.caption .cap-arch:empty  + .cap-sep,
+.caption .cap-year:empty  + .cap-sep { display: none; }
+.caption .cap-sep:first-child,
+.caption .cap-sep + .cap-sep { display: none; }
+
+/* Bottom-right HUD (brand + counter) — extremely discreet */
+.hud {
+  position: absolute;
+  right: clamp(14px, 1.6vw, 30px);
+  bottom: clamp(14px, 2.2vh, 28px);
+  z-index: 10;
+  display: flex;
+  align-items: baseline;
+  gap: 0.55em;
+  font-family: "General Sans", "Satoshi", system-ui, sans-serif;
+  font-size: clamp(11px, 0.85vw, 13px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  text-shadow: var(--hud-shadow);
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+.hud[data-state="in"] { opacity: 0.7; }
+.hud-brand { color: var(--fg); letter-spacing: 0.16em; }
+.hud-sep   { color: var(--fg-faint); }
+.hud-count { font-variant-numeric: tabular-nums; color: var(--fg-muted); }
+
+/* Loader (visible only when waiting for an image) */
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+  display: none;
+  align-items: center;
+  gap: 0.7em;
+  font-family: "General Sans", system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.loader[data-state="on"] { display: inline-flex; }
+.loader-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--fg);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.25; transform: scale(0.9); }
+  50%      { opacity: 1;     transform: scale(1.15); }
+}
+
+/* Discreet controls — fade in on pointer move, fade out after idle */
+.controls {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(56px, 7vh, 96px);
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(8,8,8,0.55);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 999px;
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+.controls[data-state="show"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+.ctl {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--fg);
+  width: 34px; height: 34px;
+  font-size: 16px;
+  font-family: inherit;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-grid;
+  place-items: center;
+  transition: background 160ms ease, transform 160ms ease;
+}
+.ctl:hover  { background: rgba(255,255,255,0.08); }
+.ctl:active { transform: scale(0.94); }
+.ctl:focus-visible {
+  outline: 1px solid rgba(255,255,255,0.6);
+  outline-offset: 2px;
+}
+
+/* First-launch hint */
+.hint {
+  position: absolute;
+  left: 50%;
+  top: clamp(20px, 4vh, 40px);
+  transform: translateX(-50%);
+  z-index: 30;
+  font-family: "General Sans", system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  opacity: 0;
+  transition: opacity 500ms ease;
+  pointer-events: none;
+}
+.hint[data-state="show"] { opacity: 0.55; }
+
+/* Smaller viewports — keep caption readable, hide HUD to avoid collision */
+@media (max-width: 900px) {
+  .hud { display: none !important; }
+}
+
+@media (max-width: 640px) {
+  .caption {
+    font-size: 12px;
+    max-width: calc(100% - 24px);
+    left: 12px;
+    bottom: 10px;
+  }
+  .controls { bottom: 80px; }
+}
+
+/* Narrow portrait — keep only the caption and give it clear breathing room */
+@media (max-aspect-ratio: 1/1) and (max-width: 900px) {
+  .caption {
+    left: 12px;
+    right: 12px;
+    max-width: calc(100% - 24px);
+    bottom: 10px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .hud { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-img, .fade { transition-duration: 200ms !important; }
+}
