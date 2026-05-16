@@ -41,6 +41,11 @@
   let slides = [];
   let objectGroups = [];
   let idx = 0;             // current index into slides[]
+  // Defensive: ensure neither image layer is hidden via the HTML `hidden`
+  // attribute. If it is, the element becomes display:none and the swap
+  // mechanism would show a blank black stage after the first preload swap.
+  if (imgA) imgA.hidden = false;
+  if (imgB) imgB.hidden = false;
   let frontEl = imgA;      // currently visible <img>
   let backEl  = imgB;      // preloading <img>
   let isPaused = false;
@@ -442,9 +447,25 @@
     runCurrent();
   }
 
-  // Re-arm rendering after long backgrounding (browsers throttle setTimeout)
+  // Re-arm rendering after long backgrounding (browsers throttle setTimeout).
+  // If the tab was hidden long enough that timers stalled past the current
+  // phase budget, force-finish the cycle and start fresh on the next slide.
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible' && !isPaused && timer === null && phase === 'idle') {
+    if (document.visibilityState !== 'visible' || isPaused) return;
+    if (phase === 'idle' && timer === null) {
+      runCurrent();
+      return;
+    }
+    const elapsed = performance.now() - phaseStart;
+    if (phaseDur > 0 && elapsed > phaseDur + 1500) {
+      // Timer was throttled past its budget — restart cleanly
+      clearTimers();
+      nextPreloaded = false;
+      showImage(frontEl, false);
+      showImage(backEl, false);
+      setFadeBlack(true, true);
+      showCaption(false);
+      advance(true);
       runCurrent();
     }
   });
