@@ -1,5 +1,7 @@
 /* SohoArchTimes — Slideshow engine
-   - Loops slides forever, newest-first order
+   - Loops slides forever
+   - Objects are shuffled in random order on each full pass
+   - Images inside each object keep their original sequence
    - 60s per slide: 5s fade-in from black -> 50s hold -> 5s fade-out to black
    - Transitions through black (no crossfade)
    - Preloads next image; skips broken images automatically
@@ -37,6 +39,7 @@
 
   // ---- State ---------------------------------------------------------------
   let slides = [];
+  let objectGroups = [];
   let idx = 0;             // current index into slides[]
   let frontEl = imgA;      // currently visible <img>
   let backEl  = imgB;      // preloading <img>
@@ -71,6 +74,48 @@
   function clearTimers() {
     if (timer)        { clearTimeout(timer);        timer = null; }
     if (preloadTimer) { clearTimeout(preloadTimer); preloadTimer = null; }
+  }
+
+  function randomInt(maxExclusive) {
+    if (maxExclusive <= 0) return 0;
+    if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
+      const arr = new Uint32Array(1);
+      window.crypto.getRandomValues(arr);
+      return arr[0] % maxExclusive;
+    }
+    return Math.floor(Math.random() * maxExclusive);
+  }
+
+  function shuffleArray(arr) {
+    const copy = arr.slice();
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = randomInt(i + 1);
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function groupSlidesByObject(flatSlides) {
+    const groups = [];
+    const byMid = new Map();
+    for (const slide of flatSlides) {
+      const mid = slide.mid;
+      if (!byMid.has(mid)) {
+        const group = [];
+        byMid.set(mid, group);
+        groups.push(group);
+      }
+      byMid.get(mid).push(slide);
+    }
+    for (const group of groups) {
+      group.sort((a, b) => (a.idx || 0) - (b.idx || 0));
+    }
+    return groups;
+  }
+
+  function buildRandomizedSlides() {
+    if (!objectGroups.length) return [];
+    return shuffleArray(objectGroups).flat();
   }
 
   function setFadeBlack(black, instant = false) {
@@ -225,8 +270,17 @@
   }
 
   function advance(forward) {
-    idx = forward ? (idx + 1) % slides.length
-                  : (idx - 1 + slides.length) % slides.length;
+    if (!slides.length) return;
+    if (forward) {
+      if (idx >= slides.length - 1) {
+        slides = buildRandomizedSlides();
+        idx = 0;
+      } else {
+        idx += 1;
+      }
+    } else {
+      idx = (idx - 1 + slides.length) % slides.length;
+    }
   }
 
   // ---- Manual controls -----------------------------------------------------
@@ -335,7 +389,9 @@
 
   async function main() {
     try {
-      slides = await loadSlidesJson();
+      const flatSlides = await loadSlidesJson();
+      objectGroups = groupSlidesByObject(flatSlides);
+      slides = buildRandomizedSlides();
     } catch (err) {
       console.error('Failed to load slides.json', err);
       // Show a minimal error caption (Russian)
