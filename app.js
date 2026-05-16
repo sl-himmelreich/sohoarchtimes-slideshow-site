@@ -76,6 +76,21 @@
     setText(hudCount, `${n} / ${N}`);
   }
 
+  function updateLetterboxLayout() {
+    if (!frame) return;
+    const frameStyle = getComputedStyle(frame);
+    const bandPad = parseFloat(frameStyle.getPropertyValue('--letterbox-pad')) || 10;
+    const captionHeight = Math.ceil(caption.getBoundingClientRect().height || 0);
+    const hudVisible = getComputedStyle(hud).display !== 'none';
+    const hudHeight = hudVisible ? Math.ceil(hud.getBoundingClientRect().height || 0) : 0;
+    const requiredBand = Math.max(24, captionHeight + bandPad * 2, hudHeight ? hudHeight + bandPad * 2 : 0);
+    const captionBottom = Math.max(bandPad, Math.round((requiredBand - captionHeight) / 2));
+    const hudBottom = hudVisible ? Math.max(bandPad, Math.round((requiredBand - hudHeight) / 2)) : bandPad;
+    frame.style.setProperty('--letterbox-band', `${requiredBand}px`);
+    frame.style.setProperty('--caption-bottom', `${captionBottom}px`);
+    frame.style.setProperty('--hud-bottom', `${hudBottom}px`);
+  }
+
   function clearTimers() {
     if (timer)        { clearTimeout(timer);        timer = null; }
     if (preloadTimer) { clearTimeout(preloadTimer); preloadTimer = null; }
@@ -231,6 +246,7 @@
     // Update caption now (it fades with the image-in)
     formatCaption(s);
     updateHud();
+    updateLetterboxLayout();
 
     // Phase 1: fade-in over 5s. Image goes opaque, black overlay goes transparent.
     showImage(frontEl, true);
@@ -442,6 +458,10 @@
     showImage(imgA, false);
     showImage(imgB, false);
     updateHud();
+    updateLetterboxLayout();
+
+    // Recompute equal top/bottom black bands on viewport changes.
+    window.addEventListener('resize', updateLetterboxLayout, { passive: true });
 
     // Begin
     runCurrent();
