@@ -2,7 +2,7 @@
    - Loops slides forever
    - Objects are shuffled in random order on each full pass
    - Images inside each object keep their original sequence
-   - 60s per slide: 5s fade-in from black -> 50s hold -> 5s fade-out to black
+   - 30s hold per slide, with 3s fade-in and 3s fade-out through black
    - Transitions through black (no crossfade)
    - Preloads next image; skips broken images automatically
    - Resilient to slow loads; never leaves a blank white screen
@@ -12,10 +12,10 @@
   'use strict';
 
   // ---- Timing (ms) ---------------------------------------------------------
-  const FADE_MS  = 5000;
-  const HOLD_MS  = 50_000;
-  const CYCLE_MS = FADE_MS + HOLD_MS + FADE_MS; // 60s
-  const PRELOAD_LEAD_MS = 8000;                 // start preloading 8s before swap
+  const FADE_MS  = 3000;
+  const HOLD_MS  = 30_000;
+  const CYCLE_MS = FADE_MS + HOLD_MS + FADE_MS; // 36s total
+  const PRELOAD_LEAD_MS = 5000;                 // start preloading shortly before swap
   const LOAD_TIMEOUT_MS = 25_000;                // give a slow image this long to load
   const CONTROLS_IDLE_MS = 2500;                 // hide controls after idle
 
