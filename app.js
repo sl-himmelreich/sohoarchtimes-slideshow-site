@@ -236,7 +236,7 @@
         timer = setTimeout(() => { consecutiveSkips = 0; runCurrent(); }, 10_000);
         return;
       }
-      advance(false);
+      advance(true);
       runCurrent();
       return;
     }
@@ -437,15 +437,16 @@
     ['mousemove', 'touchstart', 'pointermove'].forEach((ev) =>
       window.addEventListener(ev, nudgeControls, { passive: true }));
 
-    // Click on stage (but not on controls) toggles fullscreen on first click
+    // Click on stage (but not on controls) enters fullscreen on first click.
+    // Do not toggle pause on subsequent clicks: that caused accidental freezes
+    // when the user simply tapped/clicked the image while browsing.
     let firstClick = true;
     stage.addEventListener('click', (e) => {
       if (controls.contains(e.target)) return;
+      nudgeControls();
       if (firstClick) {
         firstClick = false;
         enterFullscreen();
-      } else {
-        togglePause();
       }
     });
 
