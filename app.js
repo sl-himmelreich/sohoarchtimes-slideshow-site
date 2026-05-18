@@ -15,9 +15,12 @@
   const FADE_MS  = 3000;
   const HOLD_MS  = 30_000;
   const CYCLE_MS = FADE_MS + HOLD_MS + FADE_MS; // 36s total
-  const PRELOAD_LEAD_MS = 5000;                 // start preloading shortly before swap
-  const LOAD_TIMEOUT_MS = 25_000;                // give a slow image this long to load
-  const CONTROLS_IDLE_MS = 2500;                 // hide controls after idle
+  const LOAD_TIMEOUT_MS = 25_000;               // give a slow image this long to load
+  const CONTROLS_IDLE_MS = 2500;                // hide controls after idle
+  const PRELOAD_LOOKAHEAD = 3;                  // warm the next few slide images immediately
+  const IMAGE_CACHE_LIMIT = 24;                 // keep only a modest hot cache in memory
+
+  void CYCLE_MS;
 
   // ---- DOM -----------------------------------------------------------------
   const $ = (id) => document.getElementById(id);
@@ -50,13 +53,14 @@
   let backEl  = imgB;      // preloading <img>
   let isPaused = false;
   let timer = null;        // setTimeout handle for the next phase
-  let preloadTimer = null; // schedules preload of next slide
   let phase = 'idle';      // 'fadeIn' | 'hold' | 'fadeOut' | 'idle'
   let phaseStart = 0;
   let phaseDur = 0;
   let phaseRemainAtPause = 0;
   let nextPreloaded = false;
   let consecutiveSkips = 0;
+  let preloadGeneration = 0;
+  const warmCache = new Map();
   const MAX_SKIPS = 12;    // safety: avoid infinite skip loops
 
   // ---- Helpers -------------------------------------------------------------
@@ -92,8 +96,7 @@
   }
 
   function clearTimers() {
-    if (timer)        { clearTimeout(timer);        timer = null; }
-    if (preloadTimer) { clearTimeout(preloadTimer); preloadTimer = null; }
+    if (timer) { clearTimeout(timer); timer = null; }
   }
 
   function randomInt(maxExclusive) {
@@ -169,31 +172,132 @@
     hud.setAttribute('data-state',     on ? 'in' : '');
   }
 
-  // Load an image into el with timeout. Resolves true on success, false on fail.
-  function loadInto(el, url) {
-    return new Promise((resolve) => {
-      if (!url) { resolve(false); return; }
-      const probe = new Image();
-      probe.decoding = 'async';
-      // Don't set crossOrigin — we just display, not read pixels.
+  function trimWarmCache() {
+    while (warmCache.size > IMAGE_CACHE_LIMIT) {
+      const oldestKey = warmCache.keys().next().value;
+      if (oldestKey == null) break;
+      warmCache.delete(oldestKey);
+    }
+  }
+
+  function isElementReady(el, url) {
+    if (!el || !url) return false;
+    const current = el.currentSrc || el.src || '';
+    return current === url && el.complete && el.naturalWidth > 0;
+  }
+
+  function warmImage(url) {
+    if (!url) return Promise.resolve(false);
+    const existing = warmCache.get(url);
+    if (existing) {
+      warmCache.delete(url);
+      warmCache.set(url, existing);
+      if (existing.status === 'loaded') return Promise.resolve(true);
+      if (existing.status === 'error') return Promise.resolve(false);
+      return existing.promise;
+    }
+
+    const img = new Image();
+    img.decoding = 'async';
+    try { img.fetchPriority = 'high'; } catch (_) {}
+
+    const record = { status: 'loading', img, promise: null };
+    const promise = new Promise((resolve) => {
       let settled = false;
       const cleanup = () => {
-        probe.onload = probe.onerror = null;
-        clearTimeout(t);
+        img.onload = null;
+        img.onerror = null;
+        clearTimeout(timeoutId);
       };
-      const t = setTimeout(() => {
-        if (settled) return; settled = true; cleanup(); resolve(false);
-      }, LOAD_TIMEOUT_MS);
-      probe.onload = () => {
-        if (settled) return; settled = true; cleanup();
-        try { el.src = probe.src; } catch (_) {}
-        resolve(true);
+      const finish = (ok) => {
+        if (settled) return;
+        settled = true;
+        record.status = ok ? 'loaded' : 'error';
+        cleanup();
+        resolve(ok);
       };
-      probe.onerror = () => {
-        if (settled) return; settled = true; cleanup(); resolve(false);
+      const timeoutId = setTimeout(() => finish(false), LOAD_TIMEOUT_MS);
+      img.onload = async () => {
+        try {
+          if (typeof img.decode === 'function') await img.decode();
+        } catch (_) {}
+        finish(true);
       };
-      probe.src = url;
+      img.onerror = () => finish(false);
     });
+
+    record.promise = promise;
+    warmCache.set(url, record);
+    trimWarmCache();
+    img.src = url;
+    return promise;
+  }
+
+  function loadIntoElement(el, url) {
+    return new Promise((resolve) => {
+      if (!url) { resolve(false); return; }
+      if (isElementReady(el, url)) { resolve(true); return; }
+
+      let settled = false;
+      const cleanup = () => {
+        el.onload = null;
+        el.onerror = null;
+        clearTimeout(timeoutId);
+      };
+      const finish = (ok) => {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        resolve(ok && el.naturalWidth > 0);
+      };
+      const timeoutId = setTimeout(() => finish(isElementReady(el, url)), LOAD_TIMEOUT_MS);
+
+      el.onload = () => finish(true);
+      el.onerror = () => finish(false);
+      if ((el.currentSrc || el.src || '') !== url) el.src = url;
+      if (isElementReady(el, url)) finish(true);
+    });
+  }
+
+  async function ensureLayerReady(el, url) {
+    const warmed = await warmImage(url);
+    if (!warmed) return false;
+    return loadIntoElement(el, url);
+  }
+
+  function warmUpcomingSlides(startOffset = 1, count = PRELOAD_LOOKAHEAD) {
+    if (!slides.length) return;
+    const seen = new Set();
+    for (let offset = startOffset; offset < startOffset + count; offset++) {
+      const slide = slides[(idx + offset) % slides.length];
+      if (!slide || !slide.url || seen.has(slide.url)) continue;
+      seen.add(slide.url);
+      warmImage(slide.url).catch(() => {});
+    }
+  }
+
+  function beginPreloading() {
+    if (!slides.length) return;
+    const next = slides[(idx + 1) % slides.length];
+    if (!next || !next.url) {
+      nextPreloaded = false;
+      return;
+    }
+
+    const generation = ++preloadGeneration;
+    nextPreloaded = false;
+    warmUpcomingSlides(1, PRELOAD_LOOKAHEAD);
+
+    ensureLayerReady(backEl, next.url)
+      .then((ok) => {
+        if (generation !== preloadGeneration) return;
+        nextPreloaded = ok;
+        showImage(backEl, false);
+      })
+      .catch(() => {
+        if (generation !== preloadGeneration) return;
+        nextPreloaded = false;
+      });
   }
 
   function swapLayers() {
@@ -214,6 +318,8 @@
     if (!slides.length) return;
     const s = slides[idx];
 
+    preloadGeneration += 1;
+    nextPreloaded = false;
     setLoading(true);
     // Ensure stage is black and image hidden before loading
     showImage(frontEl, false);
@@ -221,11 +327,11 @@
 
     // If the front layer already has this image loaded (via preload+swap), skip re-fetch
     let ok;
-    if (frontEl.src && frontEl.src === s.url && frontEl.complete && frontEl.naturalWidth > 0) {
+    if (isElementReady(frontEl, s.url)) {
       ok = true;
     } else {
       // Try to load the image into the front layer
-      ok = await loadInto(frontEl, s.url);
+      ok = await ensureLayerReady(frontEl, s.url);
     }
     if (!ok) {
       consecutiveSkips++;
@@ -253,10 +359,12 @@
     setFadeBlack(false);
     showCaption(true);
 
+    beginPreloading();
+
     startPhase('fadeIn', FADE_MS, () => {
-      // Phase 2: hold visible for 50s. Schedule preload of next slide partway.
+      // Phase 2: hold visible for 30s while the next slides stay hot in cache.
       startPhase('hold', HOLD_MS, () => {
-        // Phase 3: fade-out over 5s. Image stays visible; we just raise the black overlay.
+        // Phase 3: fade-out over 3s. Image stays visible; we just raise the black overlay.
         showCaption(false);
         setFadeBlack(true);
         startPhase('fadeOut', FADE_MS, () => {
@@ -271,23 +379,7 @@
           runCurrent();
         });
       });
-      // Schedule preload near end of hold
-      schedulePreload(HOLD_MS - PRELOAD_LEAD_MS);
     });
-  }
-
-  function schedulePreload(delay) {
-    if (preloadTimer) clearTimeout(preloadTimer);
-    preloadTimer = setTimeout(async () => {
-      preloadTimer = null;
-      const next = slides[(idx + 1) % slides.length];
-      if (!next) return;
-      // Preload via probe Image but also assign to back layer so it's decoded
-      const ok = await loadInto(backEl, next.url);
-      nextPreloaded = ok;
-      // Keep back layer hidden (opacity 0)
-      showImage(backEl, false);
-    }, Math.max(0, delay));
   }
 
   function advance(forward) {
@@ -308,6 +400,7 @@
   function gotoSlide(delta) {
     // Hard cut: black out, swap, restart cycle
     clearTimers();
+    preloadGeneration += 1;
     nextPreloaded = false;
     showImage(frontEl, false);
     showImage(backEl, false);
@@ -337,11 +430,7 @@
             }
           : finishCycle;
         timer = setTimeout(cont, phaseRemainAtPause);
-        // Re-arm preload schedule if appropriate
-        if (phase === 'hold') {
-          const remain = phaseRemainAtPause - PRELOAD_LEAD_MS;
-          schedulePreload(remain > 0 ? remain : 0);
-        }
+        if (phase === 'hold' && !nextPreloaded) beginPreloading();
       } else {
         runCurrent();
       }
