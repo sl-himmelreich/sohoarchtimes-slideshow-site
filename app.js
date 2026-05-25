@@ -491,16 +491,37 @@
   }
 
   // ---- Bootstrap -----------------------------------------------------------
+  // Append the build version as a query param to every image URL so the
+  // browser always picks up freshly-built Telegram-faithful imagery and never
+  // serves a stale CDN copy after a rebuild.
+  function applyBuildVersion(slides, buildVersion) {
+    if (!buildVersion || !Array.isArray(slides)) return slides;
+    return slides.map((s) => {
+      if (!s || typeof s.url !== 'string' || !s.url) return s;
+      const sep = s.url.includes('?') ? '&' : '?';
+      return Object.assign({}, s, { url: `${s.url}${sep}v=${encodeURIComponent(buildVersion)}` });
+    });
+  }
+
   async function loadSlidesJson() {
-    const res = await fetch('./slides.json', { cache: 'no-store' });
+    // Cache-bust the JSON request itself so a browser cannot serve a stale slides.json.
+    const bust = Date.now().toString(36);
+    const res = await fetch(`./slides.json?cb=${bust}`, { cache: 'no-store' });
     if (!res.ok) throw new Error('slides.json HTTP ' + res.status);
-    return res.json();
+    const data = await res.json();
+    // Support both legacy flat array and versioned envelope {build_version, slides:[...]}
+    if (Array.isArray(data)) return { buildVersion: '', slides: data };
+    if (data && Array.isArray(data.slides)) {
+      return { buildVersion: data.build_version || '', slides: data.slides };
+    }
+    throw new Error('slides.json: unexpected shape');
   }
 
   async function main() {
     try {
-      const flatSlides = await loadSlidesJson();
-      objectGroups = groupSlidesByObject(flatSlides);
+      const { slides: flatSlides, buildVersion } = await loadSlidesJson();
+      const versioned = applyBuildVersion(flatSlides, buildVersion);
+      objectGroups = groupSlidesByObject(versioned);
       slides = buildRandomizedSlides();
     } catch (err) {
       console.error('Failed to load slides.json', err);
