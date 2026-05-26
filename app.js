@@ -265,6 +265,26 @@
     return loadIntoElement(el, url);
   }
 
+  // Try the slide's primary URL; if that fails, transparently retry with
+  // the Telegram preview fallback URL (only present on proven_high_res
+  // slides). This lets a transient images.adsttc.com hiccup degrade to
+  // the t.me/s preview rather than producing a black slide.
+  async function ensureSlideLoaded(el, slide) {
+    if (!slide || !slide.url) return false;
+    const ok = await ensureLayerReady(el, slide.url);
+    if (ok) return true;
+    if (typeof slide.url_fallback === 'string' && slide.url_fallback && slide.url_fallback !== slide.url) {
+      const okFb = await ensureLayerReady(el, slide.url_fallback);
+      if (okFb) {
+        // Permanently point this slide at the working fallback so subsequent
+        // re-renders (looping back around) do not pay the failure cost again.
+        slide.url = slide.url_fallback;
+        return true;
+      }
+    }
+    return false;
+  }
+
   function warmUpcomingSlides(startOffset = 1, count = PRELOAD_LOOKAHEAD) {
     if (!slides.length) return;
     const seen = new Set();
@@ -274,6 +294,11 @@
       seen.add(slide.url);
       warmImage(slide.url).catch(() => {});
     }
+  }
+
+  function decodeImageElement(el) {
+    if (!el || typeof el.decode !== 'function') return Promise.resolve();
+    return el.decode().catch(() => {});
   }
 
   function beginPreloading() {
@@ -288,7 +313,7 @@
     nextPreloaded = false;
     warmUpcomingSlides(1, PRELOAD_LOOKAHEAD);
 
-    ensureLayerReady(backEl, next.url)
+    ensureSlideLoaded(backEl, next)
       .then((ok) => {
         if (generation !== preloadGeneration) return;
         nextPreloaded = ok;
@@ -330,8 +355,8 @@
     if (isElementReady(frontEl, s.url)) {
       ok = true;
     } else {
-      // Try to load the image into the front layer
-      ok = await ensureLayerReady(frontEl, s.url);
+      // Try to load the image into the front layer (with fallback retry).
+      ok = await ensureSlideLoaded(frontEl, s);
     }
     if (!ok) {
       consecutiveSkips++;
@@ -494,12 +519,29 @@
   // Append the build version as a query param to every image URL so the
   // browser always picks up freshly-built Telegram-faithful imagery and never
   // serves a stale CDN copy after a rebuild.
+  // We DO NOT append the cache-buster to images.adsttc.com URLs because those
+  // already carry their own version query string and unrelated query params
+  // would defeat their CloudFront cache. Only Telegram CDN URLs and other
+  // hosts get the build_version suffix.
+  function appendCacheBuster(url, buildVersion) {
+    if (!url || !buildVersion || typeof url !== 'string') return url;
+    try {
+      const u = new URL(url);
+      if (u.hostname.endsWith('images.adsttc.com')) return url;
+    } catch (_) { /* relative url, fall through */ }
+    const sep = url.includes('?') ? '&' : '?';
+    return `${url}${sep}v=${encodeURIComponent(buildVersion)}`;
+  }
+
   function applyBuildVersion(slides, buildVersion) {
     if (!buildVersion || !Array.isArray(slides)) return slides;
     return slides.map((s) => {
       if (!s || typeof s.url !== 'string' || !s.url) return s;
-      const sep = s.url.includes('?') ? '&' : '?';
-      return Object.assign({}, s, { url: `${s.url}${sep}v=${encodeURIComponent(buildVersion)}` });
+      const out = Object.assign({}, s, { url: appendCacheBuster(s.url, buildVersion) });
+      if (typeof s.url_fallback === 'string' && s.url_fallback) {
+        out.url_fallback = appendCacheBuster(s.url_fallback, buildVersion);
+      }
+      return out;
     });
   }
 
