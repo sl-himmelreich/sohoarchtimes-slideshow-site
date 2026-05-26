@@ -157,6 +157,14 @@
     }
   }
 
+  /** Prevent upscaling: clamp element to its natural pixel dimensions */
+  function clampToNatural(el) {
+    if (el.naturalWidth) {
+      el.style.maxWidth  = el.naturalWidth  + 'px';
+      el.style.maxHeight = el.naturalHeight + 'px';
+    }
+  }
+
   function showImage(el, visible) {
     if (visible) el.setAttribute('data-state', 'visible');
     else         el.removeAttribute('data-state');
@@ -373,6 +381,9 @@
     }
     consecutiveSkips = 0;
     setLoading(false);
+
+    // Prevent upscaling beyond native resolution
+    clampToNatural(frontEl);
 
     // Update caption now (it fades with the image-in)
     formatCaption(s);

@@ -61,10 +61,11 @@ body.hide-cursor, body.hide-cursor * { cursor: none !important; }
 /* The two image layers — one shown, one preloaded */
 .slide-img {
   position: absolute;
-  left: 0;
-  top: var(--letterbox-band);
-  width: 100%;
-  height: calc(100% - (var(--letterbox-band) * 2));
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: calc(100% - (var(--letterbox-band) * 2));
   object-fit: contain;         /* preserve aspect ratio inside active frame */
   object-position: center;
   background: #000;            /* unused field stays black */
