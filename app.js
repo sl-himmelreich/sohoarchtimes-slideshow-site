@@ -356,6 +356,9 @@
     setLoading(true);
     // Ensure stage is black and image hidden before loading
     showImage(frontEl, false);
+    // Clear previous clamp so the new image isn't constrained by stale values
+    frontEl.style.maxWidth  = '';
+    frontEl.style.maxHeight = '';
     setFadeBlack(true, true);
 
     // If the front layer already has this image loaded (via preload+swap), skip re-fetch
