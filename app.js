@@ -2,9 +2,11 @@
    - Loops slides forever
    - ALL slides are shuffled into a fresh random order on every page load
      and reshuffled again after each full pass
-   - 30s hold per slide, with 3s fade-in and 3s fade-out through black
-   - Transitions through black (no crossfade)
-   - Preloads next image; skips broken images automatically
+   - 30s hold per slide, then a 3s CROSSFADE: the next image fades in ON TOP
+     of the current one — the current slide never disappears (and the screen
+     never goes black) until the next has fully faded in
+   - Preloads next image; skips broken images automatically while keeping
+     the current image on screen
    - Resilient to slow loads; never leaves a blank white screen
 */
 
@@ -12,15 +14,13 @@
   'use strict';
 
   // ---- Timing (ms) ---------------------------------------------------------
-  const FADE_MS  = 3000;
+  const FADE_MS  = 3000;        // crossfade duration in normal auto-play
+  const MANUAL_FADE_MS = 450;   // snappier crossfade for prev/next buttons
   const HOLD_MS  = 30_000;
-  const CYCLE_MS = FADE_MS + HOLD_MS + FADE_MS; // 36s total
   const LOAD_TIMEOUT_MS = 25_000;               // give a slow image this long to load
   const CONTROLS_IDLE_MS = 2500;                // hide controls after idle
   const PRELOAD_LOOKAHEAD = 3;                  // warm the next few slide images immediately
   const IMAGE_CACHE_LIMIT = 24;                 // keep only a modest hot cache in memory
-
-  void CYCLE_MS;
 
   // ---- DOM -----------------------------------------------------------------
   const $ = (id) => document.getElementById(id);
@@ -28,7 +28,6 @@
   const frame   = $('frame');
   const imgA    = $('imgA');
   const imgB    = $('imgB');
-  const fade    = $('fade');
   const loader  = $('loader');
   const caption = $('caption');
   const capTitle = $('capTitle');
@@ -53,13 +52,12 @@
   let backEl  = imgB;      // preloading <img>
   let isPaused = false;
   let timer = null;        // setTimeout handle for the next phase
-  let phase = 'idle';      // 'fadeIn' | 'hold' | 'fadeOut' | 'idle'
+  let phase = 'idle';      // 'hold' | 'transition' | 'idle'
   let phaseStart = 0;
   let phaseDur = 0;
   let phaseRemainAtPause = 0;
-  let nextPreloaded = false;
   let consecutiveSkips = 0;
-  let preloadGeneration = 0;
+  let transitionGeneration = 0;  // cancels stale async transitions/preloads
   const warmCache = new Map();
   const MAX_SKIPS = 12;    // safety: avoid infinite skip loops
 
@@ -74,7 +72,7 @@
   }
 
   function updateHud() {
-    if (!slides.length) { setText(hudCount, ''); return; }
+    if (!slides.length || idx < 0) { setText(hudCount, ''); return; }
     const n = String(idx + 1).padStart(3, '0');
     const N = String(slides.length).padStart(3, '0');
     setText(hudCount, `${n} / ${N}`);
@@ -122,20 +120,25 @@
     return shuffleArray(allSlides);
   }
 
-  function setFadeBlack(black, instant = false) {
-    if (instant) {
-      fade.setAttribute('data-instant', '1');
-      // force reflow so transition:none applies
-      void fade.offsetWidth;
-    } else {
-      fade.removeAttribute('data-instant');
-    }
-    if (black) fade.setAttribute('data-state', 'black');
-    else       fade.removeAttribute('data-state');
-    if (instant) {
-      // restore transition on next frame
-      requestAnimationFrame(() => fade.removeAttribute('data-instant'));
-    }
+  /** Raise `el` above its sibling layer: incoming slides fade in on top. */
+  function setTop(el) {
+    imgA.toggleAttribute('data-top', el === imgA);
+    imgB.toggleAttribute('data-top', el === imgB);
+  }
+
+  /** Override the CSS crossfade duration for this element's next fade. */
+  function setImgFadeDuration(el, ms) {
+    el.style.transitionDuration = `${ms}ms`;
+  }
+
+  /** Show/hide with no animation (used for layers hidden beneath the top one). */
+  function showImageInstant(el, visible) {
+    const prev = el.style.transitionDuration;
+    el.style.transitionDuration = '0ms';
+    void el.offsetWidth;
+    showImage(el, visible);
+    void el.offsetWidth;
+    el.style.transitionDuration = prev || '';
   }
 
   /** Prevent upscaling: clamp element to its natural pixel dimensions */
@@ -258,12 +261,16 @@
   // the Telegram preview fallback URL (only present on proven_high_res
   // slides). This lets a transient images.adsttc.com hiccup degrade to
   // the t.me/s preview rather than producing a black slide.
-  async function ensureSlideLoaded(el, slide) {
+  // `generation` (when given) aborts the attempt if a newer transition has
+  // started, so a stale load never touches the layer that is now on screen.
+  async function ensureSlideLoaded(el, slide, generation = null) {
     if (!slide || !slide.url) return false;
     const ok = await ensureLayerReady(el, slide.url);
+    if (generation !== null && generation !== transitionGeneration) return false;
     if (ok) return true;
     if (typeof slide.url_fallback === 'string' && slide.url_fallback && slide.url_fallback !== slide.url) {
       const okFb = await ensureLayerReady(el, slide.url_fallback);
+      if (generation !== null && generation !== transitionGeneration) return false;
       if (okFb) {
         // Permanently point this slide at the working fallback so subsequent
         // re-renders (looping back around) do not pay the failure cost again.
@@ -290,28 +297,15 @@
     return el.decode().catch(() => {});
   }
 
+  // Warm upcoming images and pre-arm the hidden back layer with the next
+  // slide so the upcoming crossfade starts instantly.
   function beginPreloading() {
     if (!slides.length) return;
-    const next = slides[(idx + 1) % slides.length];
-    if (!next || !next.url) {
-      nextPreloaded = false;
-      return;
-    }
-
-    const generation = ++preloadGeneration;
-    nextPreloaded = false;
     warmUpcomingSlides(1, PRELOAD_LOOKAHEAD);
-
-    ensureSlideLoaded(backEl, next)
-      .then((ok) => {
-        if (generation !== preloadGeneration) return;
-        nextPreloaded = ok;
-        showImage(backEl, false);
-      })
-      .catch(() => {
-        if (generation !== preloadGeneration) return;
-        nextPreloaded = false;
-      });
+    const next = slides[(idx + 1) % slides.length];
+    if (next && next.url) {
+      ensureSlideLoaded(backEl, next, transitionGeneration).catch(() => {});
+    }
   }
 
   function swapLayers() {
@@ -327,82 +321,7 @@
     timer = setTimeout(() => { fn(); }, dur);
   }
 
-  // Run the current slide cycle: fade-in -> hold -> fade-out -> next
-  async function runCurrent() {
-    if (!slides.length) return;
-    const s = slides[idx];
-
-    preloadGeneration += 1;
-    nextPreloaded = false;
-    setLoading(true);
-    // Ensure stage is black and image hidden before loading
-    showImage(frontEl, false);
-    // Clear previous clamp so the new image isn't constrained by stale values
-    frontEl.style.maxWidth  = '';
-    frontEl.style.maxHeight = '';
-    setFadeBlack(true, true);
-
-    // If the front layer already has this image loaded (via preload+swap), skip re-fetch
-    let ok;
-    if (isElementReady(frontEl, s.url)) {
-      ok = true;
-    } else {
-      // Try to load the image into the front layer (with fallback retry).
-      ok = await ensureSlideLoaded(frontEl, s);
-    }
-    if (!ok) {
-      consecutiveSkips++;
-      console.warn('[slideshow] skipping broken slide', s.id, s.url);
-      setLoading(false);
-      if (consecutiveSkips >= MAX_SKIPS) {
-        // Bail out: stay on black, retry in 10s
-        timer = setTimeout(() => { consecutiveSkips = 0; runCurrent(); }, 10_000);
-        return;
-      }
-      advance(true);
-      runCurrent();
-      return;
-    }
-    consecutiveSkips = 0;
-    setLoading(false);
-
-    // Prevent upscaling beyond native resolution
-    clampToNatural(frontEl);
-
-    // Update caption now (it fades with the image-in)
-    formatCaption(s);
-    updateHud();
-    updateLetterboxLayout();
-
-    // Phase 1: fade-in over 5s. Image goes opaque, black overlay goes transparent.
-    showImage(frontEl, true);
-    setFadeBlack(false);
-    showCaption(true);
-
-    beginPreloading();
-
-    startPhase('fadeIn', FADE_MS, () => {
-      // Phase 2: hold visible for 30s while the next slides stay hot in cache.
-      startPhase('hold', HOLD_MS, () => {
-        // Phase 3: fade-out over 3s. Image stays visible; we just raise the black overlay.
-        showCaption(false);
-        setFadeBlack(true);
-        startPhase('fadeOut', FADE_MS, () => {
-          // Cycle done — advance and continue
-          showImage(frontEl, false);
-          // back layer's src may have been set by preloader — swap so it becomes front
-          if (nextPreloaded) {
-            swapLayers();
-          }
-          nextPreloaded = false;
-          advance(true);
-          runCurrent();
-        });
-      });
-    });
-  }
-
-  function advance(forward) {
+  function stepIndex(forward) {
     if (!slides.length) return;
     if (forward) {
       if (idx >= slides.length - 1) {
@@ -416,60 +335,108 @@
     }
   }
 
+  // Advance idx (skipping broken slides) until one loads into the hidden
+  // back layer. The current image stays on screen the whole time.
+  async function advanceToLoadable(forward, generation) {
+    for (let tries = 0; tries < MAX_SKIPS; tries++) {
+      stepIndex(forward);
+      const s = slides[idx];
+      const ok = await ensureSlideLoaded(backEl, s, generation);
+      if (generation !== transitionGeneration) return null;
+      if (ok) {
+        consecutiveSkips = 0;
+        return s;
+      }
+      consecutiveSkips++;
+      console.warn('[slideshow] skipping broken slide', s.id, s.url);
+    }
+    return null;
+  }
+
+  // Crossfade to the next loadable slide. The incoming image fades in ON TOP
+  // of the current one: the current slide never disappears (and the screen
+  // never goes black) until the next has fully faded in.
+  async function doTransition(forward = true, fadeMs = FADE_MS) {
+    clearTimers();
+    const generation = ++transitionGeneration;
+    phase = 'transition';
+
+    // If a previous crossfade was interrupted mid-fade (rapid prev/next),
+    // finalize it first: the visible incoming layer becomes the front, so
+    // the back layer we are about to load into stays hidden.
+    if (backEl.getAttribute('data-state') === 'visible') {
+      showImageInstant(frontEl, false);
+      swapLayers();
+    }
+
+    const frontShowing = frontEl.getAttribute('data-state') === 'visible';
+    if (!frontShowing) setLoading(true); // only the very first slide starts from black
+
+    const target = await advanceToLoadable(forward, generation);
+    if (generation !== transitionGeneration) return;
+    setLoading(false);
+    if (!target) {
+      // Nothing loadable right now — keep the current image and retry soon.
+      startPhase('hold', 10_000, () => { consecutiveSkips = 0; doTransition(forward); });
+      return;
+    }
+
+    // Clear stale clamp, then clamp to the incoming image's native size
+    backEl.style.maxWidth  = '';
+    backEl.style.maxHeight = '';
+    clampToNatural(backEl);
+
+    setTop(backEl);
+    setImgFadeDuration(backEl, fadeMs);
+    showCaption(false);
+    showImage(backEl, true); // crossfade begins over the still-visible front
+
+    startPhase('transition', fadeMs, () => {
+      // Old front is now fully covered — hide it without animation and swap.
+      showImageInstant(frontEl, false);
+      swapLayers();
+      formatCaption(target);
+      updateHud();
+      updateLetterboxLayout();
+      showCaption(true);
+      beginPreloading();
+      if (isPaused) {
+        // Park: resume from togglePause restarts the hold countdown.
+        phase = 'hold';
+        phaseDur = HOLD_MS;
+        phaseRemainAtPause = HOLD_MS;
+        return;
+      }
+      startPhase('hold', HOLD_MS, () => doTransition());
+    });
+  }
+
   // ---- Manual controls -----------------------------------------------------
   function gotoSlide(delta) {
-    // Hard cut: black out, swap, restart cycle
-    clearTimers();
-    preloadGeneration += 1;
-    nextPreloaded = false;
-    showImage(frontEl, false);
-    showImage(backEl, false);
-    setFadeBlack(true, true);
-    showCaption(false);
-    advance(delta > 0);
-    runCurrent();
+    // Quick crossfade — no black cut. Generation bump inside doTransition
+    // cancels any in-flight auto transition.
+    doTransition(delta > 0, MANUAL_FADE_MS);
   }
 
   function togglePause() {
     if (isPaused) {
       isPaused = false;
       $('btnPause').textContent = '⏸';
-      // Resume current phase with remaining time
-      if (phaseRemainAtPause > 0) {
-        const cont = (phase === 'fadeIn')
-          ? () => startPhase('hold', HOLD_MS, () => {
-              showCaption(false);
-              setFadeBlack(true);
-              startPhase('fadeOut', FADE_MS, finishCycle);
-            })
-          : (phase === 'hold')
-          ? () => {
-              showCaption(false);
-              setFadeBlack(true);
-              startPhase('fadeOut', FADE_MS, finishCycle);
-            }
-          : finishCycle;
-        timer = setTimeout(cont, phaseRemainAtPause);
-        if (phase === 'hold' && !nextPreloaded) beginPreloading();
-      } else {
-        runCurrent();
+      if (phase === 'hold' && timer === null) {
+        startPhase('hold', Math.max(1000, phaseRemainAtPause), () => doTransition());
       }
+      // An in-flight transition resumes itself: its completion callback
+      // checks isPaused and arms the next hold.
     } else {
       isPaused = true;
       $('btnPause').textContent = '▶';
-      const elapsed = performance.now() - phaseStart;
-      phaseRemainAtPause = Math.max(0, phaseDur - elapsed);
-      clearTimers();
-      // Freeze visual state — leave transitions where they are
+      if (phase === 'hold' && timer) {
+        const elapsed = performance.now() - phaseStart;
+        phaseRemainAtPause = Math.max(0, phaseDur - elapsed);
+        clearTimers();
+      }
+      // During a transition the crossfade completes, then parks (see above).
     }
-  }
-
-  function finishCycle() {
-    showImage(frontEl, false);
-    if (nextPreloaded) swapLayers();
-    nextPreloaded = false;
-    advance(true);
-    runCurrent();
   }
 
   function enterFullscreen() {
@@ -603,7 +570,6 @@
     setTimeout(() => hint.removeAttribute('data-state'), 4500);
 
     // Initial state: stage is black, no image visible
-    setFadeBlack(true, true);
     showImage(imgA, false);
     showImage(imgB, false);
     updateHud();
@@ -612,30 +578,20 @@
     // Recompute equal top/bottom black bands on viewport changes.
     window.addEventListener('resize', updateLetterboxLayout, { passive: true });
 
-    // Begin
-    runCurrent();
+    // Begin: idx=-1 so the first transition lands on slides[0], fading in
+    // over the black stage (the only time the stage is ever black).
+    idx = -1;
+    doTransition();
   }
 
   // Re-arm rendering after long backgrounding (browsers throttle setTimeout).
   // If the tab was hidden long enough that timers stalled past the current
-  // phase budget, force-finish the cycle and start fresh on the next slide.
+  // phase budget, move on to the next slide with a normal crossfade.
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState !== 'visible' || isPaused) return;
-    if (phase === 'idle' && timer === null) {
-      runCurrent();
-      return;
-    }
     const elapsed = performance.now() - phaseStart;
-    if (phaseDur > 0 && elapsed > phaseDur + 1500) {
-      // Timer was throttled past its budget — restart cleanly
-      clearTimers();
-      nextPreloaded = false;
-      showImage(frontEl, false);
-      showImage(backEl, false);
-      setFadeBlack(true, true);
-      showCaption(false);
-      advance(true);
-      runCurrent();
+    if (timer && phaseDur > 0 && elapsed > phaseDur + 1500) {
+      doTransition(); // clears stale timers and cancels stale async work
     }
   });
 
