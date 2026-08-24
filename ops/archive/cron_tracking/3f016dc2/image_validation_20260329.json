@@ -1,0 +1,398 @@
+{
+  "dfab_house": {
+    "source_url": "https://www.archdaily.com/942221/dfab-house-eth-zurich-plus-nccr-digital-fabrication",
+    "raw_count": 44,
+    "candidate_count": 29,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5ef1/577d/b357/6529/f500/02f7/large_jpg/DFAB_HOUSE_11.jpg?1592874763",
+      "https://images.adsttc.com/media/images/5ef1/5623/b357/658c/7f00/04e0/large_jpg/DFAB_HOUSE_13.jpg?1592874489",
+      "https://images.adsttc.com/media/images/5ef1/5486/b357/658c/7f00/04d7/large_jpg/DFAB_HOUSE_16.jpg?1592874048",
+      "https://images.adsttc.com/media/images/5ef1/5b40/b357/658c/7f00/04f3/large_jpg/DFAB_HOUSE_04.jpg?1592875782",
+      "https://images.adsttc.com/media/images/5ef1/569f/b357/658c/7f00/04e3/large_jpg/DFAB_HOUSE_12.jpg?1592874607",
+      "https://images.adsttc.com/media/images/5ef1/5516/b357/6529/f500/02ec/large_jpg/DFAB_HOUSE_15.jpg?1592874192",
+      "https://images.adsttc.com/media/images/5ef1/55ce/b357/658c/7f00/04de/large_jpg/DFAB_HOUSE_14.jpg?1592874390"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5ef1/577d/b357/6529/f500/02f7/large_jpg/DFAB_HOUSE_11.jpg?1592874763",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 589675,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5ef1/5623/b357/658c/7f00/04e0/large_jpg/DFAB_HOUSE_13.jpg?1592874489",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1057389,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5ef1/5486/b357/658c/7f00/04d7/large_jpg/DFAB_HOUSE_16.jpg?1592874048",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 469773,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5ef1/5b40/b357/658c/7f00/04f3/large_jpg/DFAB_HOUSE_04.jpg?1592875782",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 481392,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5ef1/569f/b357/658c/7f00/04e3/large_jpg/DFAB_HOUSE_12.jpg?1592874607",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 580089,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5ef1/5516/b357/6529/f500/02ec/large_jpg/DFAB_HOUSE_15.jpg?1592874192",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 577780,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5ef1/55ce/b357/658c/7f00/04de/large_jpg/DFAB_HOUSE_14.jpg?1592874390",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 630812,
+        "good": true
+      }
+    ]
+  },
+  "maslak_no1": {
+    "source_url": "https://www.archdaily.com/800160/maslak-n-office-tower-emre-arolat-architects",
+    "raw_count": 49,
+    "candidate_count": 35,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5837/9fab/e58e/ce93/1c00/0043/large_jpg/161005D0018.jpg?1480040358",
+      "https://images.adsttc.com/media/images/5837/a0de/e58e/ce83/5000/007e/large_jpg/161005D0093.jpg?1480040665",
+      "https://images.adsttc.com/media/images/5837/a0bc/e58e/ce83/5000/007c/large_jpg/161005D0087.jpg?1480040629",
+      "https://images.adsttc.com/media/images/5837/a040/e58e/ce93/1c00/004a/large_jpg/161005D0058.jpg?1480040505",
+      "https://images.adsttc.com/media/images/5837/a01d/e58e/ce83/5000/0075/large_jpg/161005D0052.jpg?1480040471",
+      "https://images.adsttc.com/media/images/5837/9ffb/e58e/ce93/1c00/0047/large_jpg/161005D0046.jpg?1480040436",
+      "https://images.adsttc.com/media/images/5837/a0ff/e58e/ce83/5000/007f/large_jpg/161005D0096.jpg?1480040696"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5837/9fab/e58e/ce93/1c00/0043/large_jpg/161005D0018.jpg?1480040358",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 490094,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5837/a0de/e58e/ce83/5000/007e/large_jpg/161005D0093.jpg?1480040665",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 566623,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5837/a0bc/e58e/ce83/5000/007c/large_jpg/161005D0087.jpg?1480040629",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 827584,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5837/a040/e58e/ce93/1c00/004a/large_jpg/161005D0058.jpg?1480040505",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 947473,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5837/a01d/e58e/ce83/5000/0075/large_jpg/161005D0052.jpg?1480040471",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 675819,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5837/9ffb/e58e/ce93/1c00/0047/large_jpg/161005D0046.jpg?1480040436",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 793299,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5837/a0ff/e58e/ce83/5000/007f/large_jpg/161005D0096.jpg?1480040696",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 706700,
+        "good": true
+      }
+    ]
+  },
+  "malta_maritime_trade_centre": {
+    "source_url": "https://www.archdaily.com/502293/malta-maritime-trade-centre-architecture-project",
+    "raw_count": 27,
+    "candidate_count": 16,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5361/af9e/c07a/802d/e100/0048/large_jpg/MMA01.jpg?1398910851",
+      "https://images.adsttc.com/media/images/5361/b043/c07a/80f0/d900/004f/large_jpg/PORTADA.jpg?1398911013",
+      "https://images.adsttc.com/media/images/5361/afba/c07a/80f0/d900/004d/large_jpg/MMA05.jpg?1398910887",
+      "https://images.adsttc.com/media/images/5361/b005/c07a/80e2/8000/0051/large_jpg/MMA13.jpg?1398910961",
+      "https://images.adsttc.com/media/images/5361/b005/c07a/802d/e100/0049/large_jpg/MMA08.jpg?1398910944",
+      "https://images.adsttc.com/media/images/5361/afe8/c07a/80f0/d900/004e/large_jpg/MMA10.jpg?1398910927",
+      "https://images.adsttc.com/media/images/5361/afa1/c07a/80f0/d900/004c/large_jpg/DSCN9065.jpg?1398910851"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5361/af9e/c07a/802d/e100/0048/large_jpg/MMA01.jpg?1398910851",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 615273,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/b043/c07a/80f0/d900/004f/large_jpg/PORTADA.jpg?1398911013",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 883328,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/afba/c07a/80f0/d900/004d/large_jpg/MMA05.jpg?1398910887",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1086309,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/b005/c07a/80e2/8000/0051/large_jpg/MMA13.jpg?1398910961",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 414248,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/b005/c07a/802d/e100/0049/large_jpg/MMA08.jpg?1398910944",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 734362,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/afe8/c07a/80f0/d900/004e/large_jpg/MMA10.jpg?1398910927",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 475658,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/afa1/c07a/80f0/d900/004c/large_jpg/DSCN9065.jpg?1398910851",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 868883,
+        "good": true
+      }
+    ]
+  },
+  "thirty_st_mary_axe": {
+    "source_url": "https://www.archdaily.com/928285/30-st-mary-axe-tower-foster-plus-partners",
+    "raw_count": 48,
+    "candidate_count": 35,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5dca/bc5f/3312/fd0a/c900/001d/large_jpg/1004_FP345727_indesign.jpg?1573567577",
+      "https://images.adsttc.com/media/images/5dca/bc13/3312/fd0a/c900/001a/large_jpg/1004_FP345733_indesign.jpg?1573567495",
+      "https://images.adsttc.com/media/images/5dca/bd12/3312/fd0a/c900/0024/large_jpg/1004_FP74370_indesign.jpg?1573567750",
+      "https://images.adsttc.com/media/images/5dca/bc9a/3312/fd0a/c900/0020/large_jpg/1004_FP205681_indesign.jpg?1573567630",
+      "https://images.adsttc.com/media/images/5dca/bcbc/3312/fd75/1400/0006/large_jpg/1004_FP151650_indesign.jpg?1573567665",
+      "https://images.adsttc.com/media/images/5dca/bc79/3312/fd75/1400/0005/large_jpg/1004_FP205689_indesign.jpg?1573567604",
+      "https://images.adsttc.com/media/images/5dca/bc23/3312/fd0a/c900/001b/large_jpg/1004_FP47656_indesign.jpg?1573567513"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5dca/bc5f/3312/fd0a/c900/001d/large_jpg/1004_FP345727_indesign.jpg?1573567577",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1247182,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dca/bc13/3312/fd0a/c900/001a/large_jpg/1004_FP345733_indesign.jpg?1573567495",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2010771,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dca/bd12/3312/fd0a/c900/0024/large_jpg/1004_FP74370_indesign.jpg?1573567750",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2391549,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dca/bc9a/3312/fd0a/c900/0020/large_jpg/1004_FP205681_indesign.jpg?1573567630",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 3568158,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dca/bcbc/3312/fd75/1400/0006/large_jpg/1004_FP151650_indesign.jpg?1573567665",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1817933,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dca/bc79/3312/fd75/1400/0005/large_jpg/1004_FP205689_indesign.jpg?1573567604",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1088453,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dca/bc23/3312/fd0a/c900/001b/large_jpg/1004_FP47656_indesign.jpg?1573567513",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 3018802,
+        "good": true
+      }
+    ]
+  },
+  "da_nang_hitech_hq": {
+    "source_url": "https://www.archdaily.com/1027308/da-nang-hi-tech-park-headquarters-building-huni-architectes",
+    "raw_count": 28,
+    "candidate_count": 18,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/67bc/96e6/fc55/de00/0148/2314/large_jpg/HTP01.jpg?1740412659",
+      "https://images.adsttc.com/media/images/67bc/96e6/fc55/de00/0148/2316/large_jpg/HTP03.jpg?1740412724",
+      "https://images.adsttc.com/media/images/67bc/96e6/fc55/de00/0148/2315/large_jpg/HTP02.jpg?1740412676",
+      "https://images.adsttc.com/media/images/67bc/96e9/fc55/de00/0148/231e/large_jpg/HTP11.jpg?1740412697",
+      "https://images.adsttc.com/media/images/67bc/96ea/fc55/de00/0148/2320/large_jpg/HTP13.jpg?1740412703",
+      "https://images.adsttc.com/media/images/67bc/96e8/fc55/de00/0148/231a/large_jpg/HTP07.jpg?1740412686",
+      "https://images.adsttc.com/media/images/67bc/96e7/fc55/de00/0148/2319/large_jpg/HTP06.jpg?1740412659"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/67bc/96e6/fc55/de00/0148/2314/large_jpg/HTP01.jpg?1740412659",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 834661,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67bc/96e6/fc55/de00/0148/2316/large_jpg/HTP03.jpg?1740412724",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1000281,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67bc/96e6/fc55/de00/0148/2315/large_jpg/HTP02.jpg?1740412676",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1055316,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67bc/96e9/fc55/de00/0148/231e/large_jpg/HTP11.jpg?1740412697",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 803180,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67bc/96ea/fc55/de00/0148/2320/large_jpg/HTP13.jpg?1740412703",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 734686,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67bc/96e8/fc55/de00/0148/231a/large_jpg/HTP07.jpg?1740412686",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1404470,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67bc/96e7/fc55/de00/0148/2319/large_jpg/HTP06.jpg?1740412659",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 733333,
+        "good": true
+      }
+    ]
+  },
+  "hospital_manta": {
+    "source_url": "https://www.archdaily.com/928430/hospital-manta-pmmt",
+    "raw_count": 49,
+    "candidate_count": 39,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5dcc/d172/3312/fdf3/3700/0023/large_jpg/BICUBIK-0567.jpg?1573704002",
+      "https://images.adsttc.com/media/images/5dcc/bed3/3312/fd9d/e800/0005/large_jpg/BICUBIK-7010.jpg?1573699256",
+      "https://images.adsttc.com/media/images/5dcc/c505/3312/fdf3/3700/001a/large_jpg/BICUBIK-8916.jpg?1573700838",
+      "https://images.adsttc.com/media/images/5dcc/bea3/3312/fd9d/e800/0004/large_jpg/BICUBIK-6793.jpg?1573699204",
+      "https://images.adsttc.com/media/images/5dcc/c365/3312/fd9d/e800/001e/large_jpg/BICUBIK-8437.jpg?1573700430",
+      "https://images.adsttc.com/media/images/5dcc/c017/3312/fdf3/3700/0008/large_jpg/BICUBIK-7405.jpg?1573699586",
+      "https://images.adsttc.com/media/images/5dcc/c403/3312/fd9d/e800/0021/large_jpg/BICUBIK-8525.jpg?1573700581"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5dcc/d172/3312/fdf3/3700/0023/large_jpg/BICUBIK-0567.jpg?1573704002",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2039282,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dcc/bed3/3312/fd9d/e800/0005/large_jpg/BICUBIK-7010.jpg?1573699256",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1531539,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dcc/c505/3312/fdf3/3700/001a/large_jpg/BICUBIK-8916.jpg?1573700838",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2221366,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dcc/bea3/3312/fd9d/e800/0004/large_jpg/BICUBIK-6793.jpg?1573699204",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1607420,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dcc/c365/3312/fd9d/e800/001e/large_jpg/BICUBIK-8437.jpg?1573700430",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 3015874,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dcc/c017/3312/fdf3/3700/0008/large_jpg/BICUBIK-7405.jpg?1573699586",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1080841,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5dcc/c403/3312/fd9d/e800/0021/large_jpg/BICUBIK-8525.jpg?1573700581",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 3378398,
+        "good": true
+      }
+    ]
+  }
+}

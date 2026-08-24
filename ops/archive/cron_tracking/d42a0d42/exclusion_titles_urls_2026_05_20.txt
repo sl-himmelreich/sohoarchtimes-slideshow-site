@@ -1,0 +1,178 @@
+count 177
+001	Beyond the Geometry Plastic 3D Printed Pavilion	https://www.archdaily.com/1048306/beyond-the-geometry-plastic-3d-printed-pavilion-jingjing-zhao-plus-soomeenhahm-design	
+002	Endesa Pavilion	https://www.archdaily.com/166438/endesa-pavilion-institute-for-advanced-architecture-of-catalonia	
+003	Louverwall	https://parametric-architecture.com/louverwall-by-and/	
+004	Crosslight Wedding Chapel	https://parametric-architecture.com/crosslight-wedding-chapel-by-ideorealm-design/	
+005	Studio Ardete Headquarters	https://parametric-architecture.com/shaping-a-living-facade-at-studio-ardetes-headquarters-in-mohali/	
+006	Beeah Headquarters	https://parametric-architecture.com/beeah-headquarters-sharjah-case-study/	
+007	Ascentage Pharmaceutical Headquarters	https://parametric-architecture.com/ascentage-pharmaceutical-headquarters-oli-architecture/	
+008	Dynafit Headquarters	https://parametric-architecture.com/dynafit-hq-by-barozzi-veiga/	
+009	Al Bahar Towers Responsive Facade	https://www.archdaily.com/270592/al-bahar-towers-responsive-facade-aedas	
+010	Generative Design Pavilion	https://www.archdaily.com/804456/autodesks-generative-design-pavilion-plays-with-properties-and-fabrication-processes-in-stone-and-fabric	
+011	ICD/ITKE Research Pavilion 2014-15	https://www.archdaily.com/772334/icd-itke-research-pavilion-2014-15-university-of-stuttgart	
+012	Mushroom Pavilion at Casa Wabi	https://parametric-architecture.com/oma-mushroom-pavilion-at-casa-wabi/	
+013	L’île Folie Pavilion	https://parametric-architecture.com/lile-folie-pavilion-theverymany/	
+014	Kulhad Pavilion for Serendipity Arts Festival 2025	https://parametric-architecture.com/wallmakers-kulhad-pavilion/	
+015	Cappella del Suono	https://parametric-architecture.com/cappella-del-suono-pavilion-italy/	
+016	The Carbon Garden & Pavilion	https://parametric-architecture.com/mushroom-like-carbon-garden-pavilion/	
+017	Adjaye Associates Completes All-Timber Performing Arts Pavilion in Barbados	https://parametric-architecture.com/adjaye-associates-barbados-arts-centre/	
+018	Pujiang Platform	https://parametric-architecture.com/mvrdv-completes-the-pujiang-platform/	
+019	Kinetic Pavilion of Shadow (Choreography of a Cloud, Dancing Shadows)	https://parametric-architecture.com/yokomae-et-bouayad-at-louvre-abu-dhabi/	
+020	PAKK Pavilion in Tallinn Pushes Sustainable Architecture with Modular Timber and Mycelium Insulation	https://parametric-architecture.com/pakk-pavilion-timber-architecture/	
+021	MVRDV Wooden Wonders Pavilion	https://parametric-architecture.com/mvrdvs-wooden-wonders-pavilion/	
+022	PILOTI Pavilion	https://parametric-architecture.com/piloti-pavilion-by-marc-fornes/	
+023	Pier 865	https://parametric-architecture.com/pier-865-by-marc-fornes-theverymany/	
+024	DEOND Exsalted Pavilion of Lightness	https://parametric-architecture.com/exsalted-pavilion-dubai-design-week/	
+025	Dior Bamboo Pavilion Tokyo	https://parametric-architecture.com/dior-bamboo-pavilion-tokyo/	
+026	CCTV Headquarters / OMA	https://www.archdaily.com/236175/cctv-headquarters-oma	https://www.archdaily.com/236175/cctv-headquarters-oma
+027	Heydar Aliyev Cultural Center	https://parametric-architecture.com/heydar-aliyev-cultural-center-study/	https://parametric-architecture.com/heydar-aliyev-cultural-center-study/
+028	Techcombank Headquarters Hanoi / Foster + Partners	https://www.archdaily.com/1008366/techcombank-headquarters-hanoi-foster-plus-partners	https://www.archdaily.com/1008366/techcombank-headquarters-hanoi-foster-plus-partners
+029	SOFTSTONE Office Building / SETUParchitecture	https://parametric-architecture.com/softstone-office-building-by-setuparchitecture/	https://parametric-architecture.com/softstone-office-building-by-setuparchitecture/
+030	Bund Finance Centre	https://parametric-architecture.com/bund-finance-centre-by-foster-partners-and-heatherwick-studio/	https://parametric-architecture.com/bund-finance-centre-by-foster-partners-and-heatherwick-studio/
+031	Communique Headquarters / DaeWha Kang Design	https://www.archdaily.com/780596/communique-headquarters-daewha-kang-design	https://www.archdaily.com/780596/communique-headquarters-daewha-kang-design
+032	Bill & Melinda Gates Center for Computer Science & Engineering / LMN Architects	https://www.archdaily.com/914647/bill-and-melinda-gates-center-for-computer-science-and-engineering-lmn-architects	https://www.archdaily.com/914647/bill-and-melinda-gates-center-for-computer-science-and-engineering-lmn-architects
+033	MONOSPINAL Headquarters Office Building / Makoto Yamaguchi Design	https://www.archdaily.com/1016470/monospinal-headquarters-office-building-makoto-yamaguchi-design	https://www.archdaily.com/1016470/monospinal-headquarters-office-building-makoto-yamaguchi-design
+034	Revolving Bricks Office Building / A.P.Pars Architects & Associates	https://www.archdaily.com/972761/revolving-bricks-office-building-appars-architects-and-associates	https://www.archdaily.com/972761/revolving-bricks-office-building-appars-architects-and-associates
+035	Nation Office Building Intervention / TANK Architectes	https://www.archdaily.com/1026501/nation-office-building-intervention-tank-architectes	https://www.archdaily.com/1026501/nation-office-building-intervention-tank-architectes
+036	Loop of Wisdom Museum & Reception Center / Powerhouse Company	https://www.archdaily.com/949622/loop-of-wisdom-museum-powerhouse-company	https://www.archdaily.com/949622/loop-of-wisdom-museum-powerhouse-company
+037	Copyright Cloud Headquarter / HDD	https://www.archdaily.com/948109/copyright-cloud-headquarter-hdd	https://www.archdaily.com/948109/copyright-cloud-headquarter-hdd
+038	Computer History Museum / Mark Horton - Architecture	https://www.archdaily.com/163795/computer-history-museum-mark-horton-architecture	https://www.archdaily.com/163795/computer-history-museum-mark-horton-architecture
+039	Landesgartenschau Exhibition Hall / ICD/ITKE/IIGS University of Stuttgart	https://www.archdaily.com/520897/landesgartenschau-exhibition-hall-icd-itke-iigs-university-of-stuttgart	https://www.archdaily.com/520897/landesgartenschau-exhibition-hall-icd-itke-iigs-university-of-stuttgart
+040	New Science and Technology Museum of Henan Province / TJAD Atelier L+	https://www.archdaily.com/1034203/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus	https://www.archdaily.com/1034203/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus
+041	DFAB House / NCCR Digital Fabrication	https://www.archdaily.com/942221/dfab-house-eth-zurich-plus-nccr-digital-fabrication	https://www.archdaily.com/942221/dfab-house-eth-zurich-plus-nccr-digital-fabrication
+042	Maslak No.1 Office Tower / EAA - Emre Arolat Architecture	https://www.archdaily.com/800160/maslak-n-office-tower-emre-arolat-architects	https://www.archdaily.com/800160/maslak-n-office-tower-emre-arolat-architects
+043	30 St Mary Axe Tower / Foster + Partners	https://www.archdaily.com/928285/30-st-mary-axe-tower-foster-plus-partners	https://www.archdaily.com/928285/30-st-mary-axe-tower-foster-plus-partners
+044	Hospital Manta / PMMT	https://www.archdaily.com/928430/hospital-manta-pmmt	https://www.archdaily.com/928430/hospital-manta-pmmt
+045	Da Nang Hi-Tech Park Headquarters Building / HUNI Architectes	https://www.archdaily.com/1027308/da-nang-hi-tech-park-headquarters-building-huni-architectes	https://www.archdaily.com/1027308/da-nang-hi-tech-park-headquarters-building-huni-architectes
+046	Morpheus Hotel / Zaha Hadid Architects	https://www.archdaily.com/896433/morpheus-hotel-zaha-hadid-architects	https://www.archdaily.com/896433/morpheus-hotel-zaha-hadid-architects
+047	Lumina Shanghai / Gensler	https://www.archdaily.com/989776/lumina-shanghai-gensler	https://www.archdaily.com/989776/lumina-shanghai-gensler
+048	Malta Maritime Trade Centre / AP Valletta	https://www.archdaily.com/502293/malta-maritime-trade-centre-architecture-project	https://www.archdaily.com/502293/malta-maritime-trade-centre-architecture-project
+049	Ali Mohammed T. Al-Ghanim Clinic / AGi architects	https://www.archdaily.com/611323/ali-mohammed-t-al-ghanim-clinic-agi-architects	https://www.archdaily.com/611323/ali-mohammed-t-al-ghanim-clinic-agi-architects
+050	LanQiao Clubhouse / HHD_FUN Architects	https://www.archdaily.com/290317/lanqiao-clubhouse-hhd_fun-architects	https://www.archdaily.com/290317/lanqiao-clubhouse-hhd_fun-architects
+051	One Thousand Museum Residential Tower / Zaha Hadid Architects	https://parametric-architecture.com/one-thousand-museum-residential-tower-erected-by-zaha-hadid-architects/	https://parametric-architecture.com/one-thousand-museum-residential-tower-erected-by-zaha-hadid-architects/
+052	RCC Headquarters / Foster + Partners	https://parametric-architecture.com/rcc-headquarters-features-triangulated-parts-inspired-by-the-crystal-lattice-of-copper/	https://parametric-architecture.com/rcc-headquarters-features-triangulated-parts-inspired-by-the-crystal-lattice-of-copper/
+053	Museum Tower Kyobashi / Nikken Sekkei	https://www.archdaily.com/975692/the-museum-tower-kyobashi-nikken-sekkei	https://www.archdaily.com/975692/the-museum-tower-kyobashi-nikken-sekkei
+054	One Za'abeel Tower / Nikken Sekkei	https://www.archdaily.com/1015281/one-zaabeel-tower-nikken-sekkei	https://www.archdaily.com/1015281/one-zaabeel-tower-nikken-sekkei
+055	Stasys Museum / IMPLMNT architects	https://www.archdaily.com/1023136/stasys-museum-implmnt-architects	https://www.archdaily.com/1023136/stasys-museum-implmnt-architects
+056	Metropolitan Railway Station	https://parametric-architecture.com/metropolitan-railway-station-features-mushroom-pillars-made-of-latticed-steel/	https://parametric-architecture.com/metropolitan-railway-station-features-mushroom-pillars-made-of-latticed-steel/
+057	Songjiang Art Campus	https://www.archdaily.com/604653/songjiang-art-campus-archi-union-architects	https://www.archdaily.com/604653/songjiang-art-campus-archi-union-architects
+058	Port House	https://parametric-architecture.com/zaha-hadid-port-house-floating-crystal/	https://parametric-architecture.com/zaha-hadid-port-house-floating-crystal/
+059	Lightrailstation The Hague	https://www.archdaily.com/992259/lightrailstation-the-hague-architectural-studio-zja	https://www.archdaily.com/992259/lightrailstation-the-hague-architectural-studio-zja
+060	CMA CGM Headquarters	https://www.archdaily.com/351657/zaha-hadid-architects-first-built-tower-cma-cgm-headquarters	https://www.archdaily.com/351657/zaha-hadid-architects-first-built-tower-cma-cgm-headquarters
+061	New Venue of the Yuz Museum / Scenic Architecture Office	https://www.archdaily.com/1006370/new-venue-of-the-yuz-museum-scenic-architecture-office	https://www.archdaily.com/1006370/new-venue-of-the-yuz-museum-scenic-architecture-office
+062	Anrenfang Heritage Museum and Anren Station / DDB Architects	https://www.archdaily.com/1013811/anrenfang-heritage-museum-and-anren-station-ddb-architects	https://www.archdaily.com/1013811/anrenfang-heritage-museum-and-anren-station-ddb-architects
+063	King Abdullah Financial District Metro Station / Zaha Hadid Architects	https://www.archdaily.com/1024201/king-abdullah-financial-district-metro-station-zaha-hadid-architects	https://www.archdaily.com/1024201/king-abdullah-financial-district-metro-station-zaha-hadid-architects
+064	Shanghai Tower / Gensler	https://www.archdaily.com/783216/shanghai-tower-gensler	https://www.archdaily.com/783216/shanghai-tower-gensler
+065	Venue B of Shanghai Westbund World Artificial Intelligence Conference / Archi-Union Architecture	https://www.archdaily.com/902285/venue-b-of-shanghai-westbund-world-artificial-intelligence-conference-archi-union-architecture	https://www.archdaily.com/902285/venue-b-of-shanghai-westbund-world-artificial-intelligence-conference-archi-union-architecture
+066	X Museum / Studio NOR	https://www.archdaily.com/1024371/x-museum-studio-nor	https://www.archdaily.com/1024371/x-museum-studio-nor
+067	Harbin Opera House / MAD Architects	https://www.archdaily.com/778933/harbin-opera-house-mad-architects	https://www.archdaily.com/778933/harbin-opera-house-mad-architects
+068	World Trade Center Transportation Hub / Santiago Calatrava	https://www.archdaily.com/783965/world-trade-center-transportation-hub-santiago-calatrava	https://www.archdaily.com/783965/world-trade-center-transportation-hub-santiago-calatrava
+069	AD Classics: The Guggenheim Museum Bilbao / Gehry Partners	https://www.archdaily.com/422470/ad-classics-the-guggenheim-museum-bilbao-frank-gehry	https://www.archdaily.com/422470/ad-classics-the-guggenheim-museum-bilbao-frank-gehry
+070	Global Center for Health Innovation	https://lmnarchitects.com/project/cleveland-convention-center-civic-core	https://lmnarchitects.com/project/cleveland-convention-center-civic-core
+071	DFAB House / NCCR Digital Fabrication	https://www.archdaily.com/942221/dfab-house-eth-zurich-plus-nccr-digital-fabrication	https://www.archdaily.com/942221/dfab-house-eth-zurich-plus-nccr-digital-fabrication
+072	BMW 'Dynaform'	https://www.bollinger-grohmann.com/en.projects.bmw-dynaform.html	https://www.bollinger-grohmann.com/en.projects.bmw-dynaform.html
+073	The HydraPier Pavilion	https://asymptote.net/projects/the-hydrapier-pavilion/	https://asymptote.net/projects/the-hydrapier-pavilion/
+074	New Milan Trade Fair / Massimiliano & Doriana Fuksas	https://www.archdaily.com/248138/new-milan-trade-fair-studio-fuksas	https://www.archdaily.com/248138/new-milan-trade-fair-studio-fuksas
+075	Aviva Stadium	https://populous.com/showcases/aviva-stadium	https://populous.com/showcases/aviva-stadium
+076	Metropol Parasol	https://jmayerh.de/metropol-parasol/	https://jmayerh.de/metropol-parasol/
+077	Heydar Aliyev Center / Zaha Hadid Architects	https://www.archdaily.com/448774/heydar-aliyev-center-zaha-hadid-architects	https://www.archdaily.com/448774/heydar-aliyev-center-zaha-hadid-architects
+078	National Taichung Theater	http://www.toyo-ito.co.jp/WWW/Project_Descript/2015-/2015-p_04/2015-p_04_en.html	http://www.toyo-ito.co.jp/WWW/Project_Descript/2015-/2015-p_04/2015-p_04_en.html
+079	Absolute Towers / MAD Architects	https://www.archdaily.com/306566/absolute-towers-mad-architects	https://www.archdaily.com/306566/absolute-towers-mad-architects
+080	Bonfiglioli HQ	https://parametric-architecture.com/bonfiglioli-hq-features-an-angular-form-covered-in-a-pleated-mesh/	https://parametric-architecture.com/bonfiglioli-hq-features-an-angular-form-covered-in-a-pleated-mesh/
+081	Museum of the Future	https://www.archdaily.com/983458/overcoming-design-challenges-with-technology-museum-of-the-future-in-dubai	https://www.archdaily.com/983458/overcoming-design-challenges-with-technology-museum-of-the-future-in-dubai
+082	National Museum of Qatar	https://parametric-architecture.com/national-museum-of-qatar-by-atelier-jean-novel/	https://parametric-architecture.com/national-museum-of-qatar-by-atelier-jean-novel/
+083	Leeza SOHO / Zaha Hadid Architects	https://www.archdaily.com/928726/leeza-soho-zaha-hadid-architects	https://www.archdaily.com/928726/leeza-soho-zaha-hadid-architects
+084	Dongdaemun Design Plaza / Zaha Hadid Architects	https://www.archdaily.com/489604/dongdaemun-design-plaza-zaha-hadid-architects	https://www.archdaily.com/489604/dongdaemun-design-plaza-zaha-hadid-architects
+085	The Yas Hotel / Asymptote Architecture	https://www.archdaily.com/43336/the-yas-hotel-asymptote	https://www.archdaily.com/43336/the-yas-hotel-asymptote
+086	Louvre Abu Dhabi / Ateliers Jean Nouvel	https://www.archdaily.com/883157/louvre-abu-dhabi-atelier-jean-nouvel	https://www.archdaily.com/883157/louvre-abu-dhabi-atelier-jean-nouvel
+087	Opus / Zaha Hadid Architects	https://www.archdaily.com/922310/opus-hotel-zaha-hadid-architects	https://www.archdaily.com/922310/opus-hotel-zaha-hadid-architects
+088	Al Janoub Stadium / Zaha Hadid Architects	https://www.archdaily.com/917335/al-janoub-stadium-zaha-hadid-architects	https://www.archdaily.com/917335/al-janoub-stadium-zaha-hadid-architects
+089	Guangzhou Opera House / Zaha Hadid Architects	https://www.archdaily.com/115949/guangzhou-opera-house-zaha-hadid-architects	https://www.archdaily.com/115949/guangzhou-opera-house-zaha-hadid-architects
+090	Guangzhou Circle / Joseph di Pasquale architect	https://www.archdaily.com/464054/guangzhou-circle-joseph-di-pasquale-architect	https://www.archdaily.com/464054/guangzhou-circle-joseph-di-pasquale-architect
+091	Chaoyang Park Plaza / MAD Architects	https://www.archdaily.com/884841/chaoyang-park-plaza-mad-architects	https://www.archdaily.com/884841/chaoyang-park-plaza-mad-architects
+092	Galaxy SOHO / Zaha Hadid Architects	https://www.archdaily.com/294549/galaxy-soho-zaha-hadid-architects-by-hufton-crow	https://www.archdaily.com/294549/galaxy-soho-zaha-hadid-architects-by-hufton-crow
+093	Beijing Daxing International Airport / Zaha Hadid Architects	https://www.archdaily.com/925536/beijing-daxing-international-airport-zaha-hadid-architects	https://www.archdaily.com/925536/beijing-daxing-international-airport-zaha-hadid-architects
+094	Shenzhen Bao'an International Airport / Massimiliano & Doriana Fuksas	https://www.archdaily.com/472197/shenzhen-bao-an-international-airport-studio-fuksas	https://www.archdaily.com/472197/shenzhen-bao-an-international-airport-studio-fuksas
+095	Tianjin Binhai Library / MVRDV + TUPDI	https://www.archdaily.com/882819/tianjin-binhai-library-mvrdv-plus-tianjin-urban-planning-and-design-institute	https://www.archdaily.com/882819/tianjin-binhai-library-mvrdv-plus-tianjin-urban-planning-and-design-institute
+096	House of Music, Budapest / Sou Fujimoto Architects	https://www.archdaily.com/1001574/house-of-music-budapest-sou-fujimoto-architects	https://www.archdaily.com/1001574/house-of-music-budapest-sou-fujimoto-architects
+097	Taipei Performing Arts Center / OMA	https://www.archdaily.com/981894/taipei-performing-arts-center-oma	https://www.archdaily.com/981894/taipei-performing-arts-center-oma
+098	MahaNakhon Tower / Büro Ole Scheeren	https://www.archdaily.com/964053/mahanakhon-buro-ole-scheeren	https://www.archdaily.com/964053/mahanakhon-buro-ole-scheeren
+099	House of Wisdom Library and Cultural Center / Foster + Partners	https://www.archdaily.com/958407/house-of-wisdom-library-and-cultural-center-foster-plus-partners	https://www.archdaily.com/958407/house-of-wisdom-library-and-cultural-center-foster-plus-partners
+100	Aqua Tower / Studio Gang	https://www.archdaily.com/42694/aqua-tower-studio-gang-architects	https://www.archdaily.com/42694/aqua-tower-studio-gang-architects
+101	Capital Gate / RMJM	https://www.archdaily.com/889854/capital-gate-rmjm	https://www.archdaily.com/889854/capital-gate-rmjm
+102	Shenzhen Energy Mansion / BIG	https://www.archdaily.com/899785/shenzhen-energy-mansion-big	https://www.archdaily.com/899785/shenzhen-energy-mansion-big
+103	The Twist Museum / BIG	https://www.archdaily.com/925106/the-twist-museum-big	https://www.archdaily.com/925106/the-twist-museum-big
+104	101 West 14th Street	https://parametric-architecture.com/101-west-14th-streets-modern-facade-creates-a-light-and-airy-feel-with-fractal-geometry/	https://oda-architecture.com/projects/101-w-14th-street/
+105	Al Dar Headquarters / MZ Architects	https://www.archdaily.com/240524/al-dar-headquarters-mz-architects	https://www.archdaily.com/240524/al-dar-headquarters-mz-architects
+106	Archermit’s Feixue Pavilion	https://parametric-architecture.com/archermit-feixue-pavilion-petal-roof/	http://www.archermit.com/show-149-494-1.html
+107	Bernard Tschumi Architects’ Circular Philo Building at Institut Le Rosey	https://parametric-architecture.com/bernard-tschumi-architects-philo/	https://www.archdaily.com/1040322/philo-science-and-innovation-center-institut-le-rosey-bernard-tschumi-architects
+108	Centre Pompidou-Metz / Shigeru Ban Architects	https://www.archdaily.com/490141/centre-pompidou-metz-shigeru-ban-architects	https://www.archdaily.com/490141/centre-pompidou-metz-shigeru-ban-architects
+109	CopenHill Energy Plant and Urban Recreation Center / BIG	https://www.archdaily.com/925970/copenhill-energy-plant-and-urban-recreation-center-big	https://www.archdaily.com/925970/copenhill-energy-plant-and-urban-recreation-center-big
+110	ITC Green Center	https://parametric-architecture.com/itc-green-center-morphogenesis/	https://www.morphogenesis.org/our-works/itc-green-centre/
+111	King’s Cross Station / John McAslan + Partners	https://www.archdaily.com/219082/kings-cross-station-john-mcaslan-partners	https://www.archdaily.com/219082/kings-cross-station-john-mcaslan-partners
+112	LAX New Concourse Completed by Woods Bagot Using Modular Construction	https://parametric-architecture.com/lax-airport-modular-construction/	https://www.woodsbagot.com/projects/lax-msc-south/
+113	MAXXI Museum / Zaha Hadid Architects	https://www.archdaily.com/43822/maxxi-museum-zaha-hadid-architects	https://www.archdaily.com/43822/maxxi-museum-zaha-hadid-architects
+114	One Central Park / Ateliers Jean Nouvel + Patrick Blanc	https://www.archdaily.com/551329/one-central-park-jean-nouvel-patrick-blanc	https://www.archdaily.com/551329/one-central-park-jean-nouvel-patrick-blanc
+115	Pierres Vives / Zaha Hadid Architects	https://www.archdaily.com/273554/pierres-vives-zaha-hadid-architects	https://www.archdaily.com/273554/pierres-vives-zaha-hadid-architects
+116	Qatar National Convention Centre / Arata Isozaki	https://www.archdaily.com/425521/qatar-national-convention-centre-arata-isozaki	https://www.archdaily.com/425521/qatar-national-convention-centre-arata-isozaki
+117	Qingdao Science & Technology Museum	https://parametric-architecture.com/qingdao-science-technology-museum/	https://parametric-architecture.com/qingdao-science-technology-museum/
+118	Rolex Learning Center / SANAA	https://www.archdaily.com/53536/rolex-learning-center-sanaa-by-iwan-baan	https://www.archdaily.com/53536/rolex-learning-center-sanaa-by-iwan-baan
+119	Shenzhen Science and Technology Museum / Zaha Hadid Architects	https://www.archdaily.com/1029762/shenzhen-science-and-technology-museum-zaha-hadid-architects	https://www.archdaily.com/1029762/shenzhen-science-and-technology-museum-zaha-hadid-architects
+120	Striatus: A 3D Concrete Printed Masonry Bridge in Venice, Italy	https://parametric-architecture.com/striatus-a-3d-concrete-printed-masonry-bridge-in-venice-italy/	https://parametric-architecture.com/striatus-a-3d-concrete-printed-masonry-bridge-in-venice-italy/
+121	UNS Completes Wasl Tower in Dubai Rising 302 Meters Above the City	https://parametric-architecture.com/unstudio-completes-wasl-tower-in-dubai/	https://www.unstudio.com/projects/wasl-tower/
+122	Xuelei Fragrance Museum	https://parametric-architecture.com/largest-fragrance-museum-in-guangzhou/	https://www.archdaily.com/1037854/guangzhou-xuelei-fragrance-museum-shenzhen-huahui-design
+123	Structural Cellulose Wall	https://parametric-architecture.com/structural-cellulose-wall/	https://parametric-architecture.com/structural-cellulose-wall/
+124	Arnhem Central Transfer Terminal	https://www.archdaily.com/777495/arnhem-central-transfer-terminal-unstudio	https://www.archdaily.com/777495/arnhem-central-transfer-terminal-unstudio
+125	Mercedes-Benz Museum	https://www.unstudio.com/projects/mercedes-benz-museum	https://www.unstudio.com/projects/mercedes-benz-museum
+126	Raffles City Hangzhou	https://www.archdaily.com/879869/raffles-city-hangzhou-unstudio	https://www.archdaily.com/879869/raffles-city-hangzhou-unstudio
+127	Galleria Centercity	https://www.archdaily.com/125125/galleria-centercity-unstudio	https://www.archdaily.com/125125/galleria-centercity-unstudio
+128	Theatre Agora	https://www.archdaily.com/100224/theatre-agora-unstudio	https://www.archdaily.com/100224/theatre-agora-unstudio
+129	Möbius House	https://www.unstudio.com/projects/mobius-house/	https://www.unstudio.com/projects/mobius-house/
+130	Wasl Tower	https://parametric-architecture.com/unstudio-completes-wasl-tower-in-dubai/	https://www.unstudio.com/projects/wasl-tower/
+131	Doha Metro Network	https://www.unstudio.com/projects/doha-metro	https://www.unstudio.com/projects/doha-metro/
+132	Music Theatre (MUMUTH)	https://www.unstudio.com/projects/music-theatre	https://www.unstudio.com/projects/music-theatre/
+133	Huawei Flagship Store	https://www.archdaily.com/1012862/huawei-flagship-store-unstudio	https://www.archdaily.com/1012862/huawei-flagship-store-unstudio
+134	The Looking Glass Facade Renovation	https://www.archdaily.com/930069/the-looking-glass-facade-renovation-unstudio	https://www.archdaily.com/930069/the-looking-glass-facade-renovation-unstudio
+135	Chongqing Gaoke Group Office	https://www.archdaily.com/987823/chongqing-gaoke-group-office-aedas	https://www.archdaily.com/987823/chongqing-gaoke-group-office-aedas
+136	Lè Architecture	https://www.archdaily.com/902292/le-architecture-aedas	https://www.archdaily.com/902292/le-architecture-aedas
+137	Shenzhen HJ Land Xiyue Tower	https://parametric-architecture.com/xiyue-tower-integrates-various-functions-into-a-bamboo-formed-building/	https://parametric-architecture.com/xiyue-tower-integrates-various-functions-into-a-bamboo-formed-building/
+138	One River North	https://www.archdaily.com/1022428/one-river-north-mad-architects	https://www.archdaily.com/1022428/one-river-north-mad-architects
+139	Guanyun Qiantang City	https://www.archdaily.com/1026807/guanyun-qiantang-city-aedas	https://www.archdaily.com/1026807/guanyun-qiantang-city-aedas
+140	Quzhou Sports Park	https://www.archdaily.com/990244/quzhou-sports-park-mad-architects	https://www.archdaily.com/990244/quzhou-sports-park-mad-architects
+141	Gardenhouse	https://www.archdaily.com/946522/gardenhouse-mad-architects	https://www.archdaily.com/946522/gardenhouse-mad-architects
+142	Jiaxing Train Station	https://www.archdaily.com/1013113/mad-completes-the-train-station-in-the-forest-their-first-transit-oriented-development-in-china	https://www.archdaily.com/1013113/mad-completes-the-train-station-in-the-forest-their-first-transit-oriented-development-in-china
+143	UNIC Apartments	https://www.archdaily.com/985994/unic-mad-architects	https://www.archdaily.com/985994/unic-mad-architects
+144	Baiziwan Social Housing	https://www.archdaily.com/984014/baiziwan-social-housing-mad-architects	https://www.archdaily.com/984014/baiziwan-social-housing-mad-architects
+145	Yohoo Museum	https://www.archdaily.com/1024957/yohoo-museum-aedas	https://www.archdaily.com/1024957/yohoo-museum-aedas
+146	Nanhu Future Science Park	https://www.archdaily.com/1014961/hangzhou-alibaba-damo-nanhu-industry-park-aedas	https://www.archdaily.com/1014961/hangzhou-alibaba-damo-nanhu-industry-park-aedas
+147	Nansha International Cruise Terminal Complex	https://www.archdaily.com/985774/nansha-international-cruise-terminal-complex-aedas	https://www.archdaily.com/985774/nansha-international-cruise-terminal-complex-aedas
+148	ZGC International Innovation Center	https://www.archdaily.com/1017726/zgc-international-innovation-center-mad-architects	https://www.archdaily.com/1017726/zgc-international-innovation-center-mad-architects
+149	Fenix Art Museum	https://www.archdaily.com/1030328/fenix-art-museum-mad-architects	https://www.archdaily.com/1030328/fenix-art-museum-mad-architects
+150	Hyperlane	https://www.archdaily.com/1030231/hyperlane-aedas	https://www.archdaily.com/1030231/hyperlane-aedas
+151	Yabuli Entrepreneurs’ Congress Center	https://www.archdaily.com/980485/yabuli-entrepreneurs-congress-center-mad-architects	https://www.archdaily.com/980485/yabuli-entrepreneurs-congress-center-mad-architects
+152	Chengdu Science Fiction Museum	https://www.archdaily.com/1008749/chengdu-science-fiction-museum-zaha-hadid-architects	https://www.archdaily.com/1008749/chengdu-science-fiction-museum-zaha-hadid-architects
+153	Lishui Airport	https://www.archdaily.com/1038687/lishui-airport-mad-architects	https://www.archdaily.com/1038687/lishui-airport-mad-architects
+154	Long March Cultural Digital Art Museum	https://www.archdaily.com/1022354/long-march-cultural-digital-art-museum-china-ippr	https://www.archdaily.com/1022354/long-march-cultural-digital-art-museum-china-ippr
+155	K. Wah Riverside E18 Residence	https://www.archdaily.com/1008054/k-wah-riverside-e18-residence-eid-arch-plus-shanghai-tianhua-architectural-design-plus-aedas	https://www.archdaily.com/1008054/k-wah-riverside-e18-residence-eid-arch-plus-shanghai-tianhua-architectural-design-plus-aedas
+156	Shanghai International Fortune Centre	https://www.archdaily.com/968430/shanghai-international-fortune-centre-aedas	https://www.archdaily.com/968430/shanghai-international-fortune-centre-aedas
+157	Nansha Kingboard Plaza	https://www.archdaily.com/964732/nansha-kingboard-plaza-aedas	https://www.archdaily.com/964732/nansha-kingboard-plaza-aedas
+158	Shanghai Landmark Center	https://www.archdaily.com/868956/shanghai-landmark-center-aedas	https://www.archdaily.com/868956/shanghai-landmark-center-aedas
+159	Zhuhai Jinwan Civic Art Center	https://www.archdaily.com/1010787/zhuhai-jinwan-civic-art-center-zaha-hadid-architects	https://www.archdaily.com/1010787/zhuhai-jinwan-civic-art-center-zaha-hadid-architects
+160	Ceramic House	https://www.archdaily.com/1010548/ceramic-house-studio-rap	https://www.archdaily.com/1010548/ceramic-house-studio-rap
+161	Da Wang Jing Mixed-use Development	https://www.archdaily.com/924863/da-wang-jing-mixed-use-development-aedas	https://www.archdaily.com/924863/da-wang-jing-mixed-use-development-aedas
+162	Fondation Louis Vuitton	https://www.archdaily.com/555694/fondation-louis-vuitton-gehry-partners	https://www.archdaily.com/555694/fondation-louis-vuitton-gehry-partners
+163	Hong Kong West Kowloon Station	https://www.archdaily.com/911930/hong-kong-west-kowloon-station-aedas	https://www.archdaily.com/911930/hong-kong-west-kowloon-station-aedas
+164	Infinitus Plaza	https://www.archdaily.com/971645/infinitus-plaza-zaha-hadid-architects	https://www.archdaily.com/971645/infinitus-plaza-zaha-hadid-architects
+165	Ordos Art & City Museum	https://www.archdaily.com/211597/ordos-art-city-museum-mad-architects	https://www.archdaily.com/211597/ordos-art-city-museum-mad-architects
+166	Sandcrawler	https://www.archdaily.com/534778/sandcrawler-andrew-bromberg-of-aedas	https://www.archdaily.com/534778/sandcrawler-andrew-bromberg-of-aedas
+167	Sunac Guangzhou Grand Theatre	https://parametric-architecture.com/sunac-guangzhou-grand-theatre-by-steven-chilton-architects/	https://parametric-architecture.com/sunac-guangzhou-grand-theatre-by-steven-chilton-architects/
+168	Swatch and Omega Campus	https://www.archdaily.com/926166/swatch-and-omega-campus-shigeru-ban-architects	https://www.archdaily.com/926166/swatch-and-omega-campus-shigeru-ban-architects
+169	The Star	https://www.archdaily.com/510587/the-star-andrew-bromberg-of-aedas	https://www.archdaily.com/510587/the-star-andrew-bromberg-of-aedas
+170	Echo Energy-Generating Interfaculty Teaching Building / UNStudio	https://www.archdaily.com/985343/echo-energy-generating-interfaculty-teaching-building-unstudio	https://www.archdaily.com/985343/echo-energy-generating-interfaculty-teaching-building-unstudio
+171	Canton Tower / Information Based Architecture	https://www.archdaily.com/89849/canton-tower-information-based-architecture	https://www.archdaily.com/89849/canton-tower-information-based-architecture
+172	Beijing Greenland Center / SOM	https://www.archdaily.com/790173/beijing-greenland-center-som	https://www.archdaily.com/790173/beijing-greenland-center-som
+173	Orange County Museum of Art	https://parametric-architecture.com/orange-county-museum-of-art-morphosis/	https://parametric-architecture.com/orange-county-museum-of-art-morphosis/
+174	CoBLOgó Office / SUBdV	https://www.archdaily.com/874039/coblogo-subdv	https://www.archdaily.com/874039/coblogo-subdv
+175	3Cubes Office Building / gmp Architects	https://www.archdaily.com/771345/3cubes-office-building-gmp-architekten	https://www.archdaily.com/771345/3cubes-office-building-gmp-architekten
+176	BUGA Fibre Pavilion / ICD/ITKE University of Stuttgart	https://www.archdaily.com/916650/buga-fibre-pavilion-icd-itke-university-of-stuttgart	https://www.archdaily.com/916650/buga-fibre-pavilion-icd-itke-university-of-stuttgart
+177	The MaoHaus / AntiStatics Architecture	https://www.archdaily.com/886282/the-maohaus-antistatics-architecture	https://www.archdaily.com/886282/the-maohaus-antistatics-architecture

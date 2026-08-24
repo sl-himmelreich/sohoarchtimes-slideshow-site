@@ -1,0 +1,47 @@
+{
+  "date": "2026-05-06",
+  "mode": "manual_recovery_after_failed_weekly_run",
+  "channel": "@SohoArchTimes",
+  "request_context": "сегодня должен был быть еженедельный запуск; публикация восстановлена вручную сразу после сбоя фоновой задачи",
+  "status": "success",
+  "published_count": 3,
+  "notes": [
+    "Утренний еженедельный запуск не опубликовал посты из-за неправильного пути через Telegram connector.",
+    "Ручное восстановление выполнено через локальный publish_album.py и прямой Bot API, как в предыдущих успешных запусках.",
+    "Первоначально в сегодняшнюю партию попали дубли X Museum и One Thousand Museum; X Museum фактически успел опубликоваться, One Thousand Museum был остановлен реестром как дубль и заменён на Harbin Opera House.",
+    "Итоговая тройка публично видима и подтверждена по прямым ссылкам на посты."
+  ],
+  "published_posts": [
+    {
+      "title": "X Museum / Studio NOR",
+      "source_url": "https://www.archdaily.com/1024371/x-museum-studio-nor",
+      "post_url": "https://t.me/SohoArchTimes/356",
+      "message_id": 356,
+      "media_group_id": "14224409578189250",
+      "visible_publicly": true,
+      "visibility_snippet": "X Museum"
+    },
+    {
+      "title": "Harbin Opera House / MAD Architects",
+      "source_url": "https://www.archdaily.com/778933/harbin-opera-house-mad-architects",
+      "post_url": "https://t.me/SohoArchTimes/361",
+      "message_id": 361,
+      "media_group_id": "14224411349285802",
+      "visible_publicly": true,
+      "visibility_snippet": "Harbin Opera House"
+    },
+    {
+      "title": "World Trade Center Transportation Hub / Santiago Calatrava",
+      "source_url": "https://www.archdaily.com/783965/world-trade-center-transportation-hub-santiago-calatrava",
+      "post_url": "https://t.me/SohoArchTimes/366",
+      "message_id": 366,
+      "media_group_id": "14224411455465506",
+      "visible_publicly": true,
+      "visibility_snippet": "World Trade Center Transportation Hub"
+    }
+  ],
+  "artifacts": {
+    "today_batch_dir": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260506",
+    "registry": "/home/user/workspace/cron_tracking/3f016dc2/published_objects.json"
+  }
+}

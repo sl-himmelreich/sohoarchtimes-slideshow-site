@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "visible": {"type": "boolean", "title": "Visible"},
+    "caption_start": {"type": "string", "title": "Caption Start"},
+    "image_count": {"type": "string", "title": "Image Count"},
+    "issue": {"type": "string", "title": "Issue"}
+  },
+  "required": ["visible", "caption_start", "image_count"]
+}

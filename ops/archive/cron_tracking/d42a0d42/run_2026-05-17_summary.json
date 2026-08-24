@@ -1,0 +1,23 @@
+{
+  "run_date": "2026-05-17",
+  "timezone": "Europe/Moscow",
+  "status": "success",
+  "published_posts": [
+    {
+      "title": "Beijing Greenland Center / SOM",
+      "telegram_message_id": 906,
+      "public_url": "https://t.me/s/SohoArchTimes/906",
+      "source_url": "https://www.archdaily.com/790173/beijing-greenland-center-som"
+    },
+    {
+      "title": "Orange County Museum of Art",
+      "telegram_message_id": 911,
+      "public_url": "https://t.me/s/SohoArchTimes/911",
+      "source_url": "https://parametric-architecture.com/orange-county-museum-of-art-morphosis/"
+    }
+  ],
+  "site_sync": {
+    "performed": false,
+    "reason": "new posts are younger than 12 hours and must not appear on the site yet"
+  }
+}

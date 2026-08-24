@@ -1,0 +1,398 @@
+{
+  "loop_of_wisdom": {
+    "source_url": "https://www.archdaily.com/949622/loop-of-wisdom-museum-powerhouse-company",
+    "raw_count": 44,
+    "candidate_count": 32,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5f88/536e/63c0/17d6/a100/007d/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_25.jpg?1602769766",
+      "https://images.adsttc.com/media/images/5f88/51e4/63c0/17d6/a100/0062/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_01.jpg?1602769372",
+      "https://images.adsttc.com/media/images/5f88/5218/63c0/17d6/a100/0066/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_05.jpg?1602769422",
+      "https://images.adsttc.com/media/images/5f88/5201/63c0/17f7/0700/008e/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_03.jpg?1602769400",
+      "https://images.adsttc.com/media/images/5f88/52ae/63c0/17d6/a100/006f/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_11.jpg?1602769569",
+      "https://images.adsttc.com/media/images/5f88/5387/63c0/17d6/a100/007f/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_27.jpg?1602769790",
+      "https://images.adsttc.com/media/images/5f88/5223/63c0/17f7/0700/0092/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_06.jpg?1602769435"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5f88/536e/63c0/17d6/a100/007d/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_25.jpg?1602769766",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2307430,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f88/51e4/63c0/17d6/a100/0062/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_01.jpg?1602769372",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2418903,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f88/5218/63c0/17d6/a100/0066/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_05.jpg?1602769422",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 3725099,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f88/5201/63c0/17f7/0700/008e/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_03.jpg?1602769400",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2416737,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f88/52ae/63c0/17d6/a100/006f/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_11.jpg?1602769569",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2072955,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f88/5387/63c0/17d6/a100/007f/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_27.jpg?1602769790",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2334205,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f88/5223/63c0/17f7/0700/0092/large_jpg/Powerhouse_Company_-_Loop_of_Wisdom_-_photo_by_Jonathan_Leijonhufvud_06.jpg?1602769435",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1869056,
+        "good": true
+      }
+    ]
+  },
+  "copyright_cloud": {
+    "source_url": "https://www.archdaily.com/948109/copyright-cloud-headquarter-hdd",
+    "raw_count": 67,
+    "candidate_count": 57,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5f68/e120/63c0/17fe/ca00/012c/large_jpg/_DSF0027.jpg?1600708885",
+      "https://images.adsttc.com/media/images/5f68/e110/63c0/17b3/2900/016d/large_jpg/_DSF0009.jpg?1600708868",
+      "https://images.adsttc.com/media/images/5f69/2efe/63c0/1745/1200/0009/large_jpg/_DSF0794_white.jpg?1600728819",
+      "https://images.adsttc.com/media/images/5f69/2ebf/63c0/1745/1200/0007/large_jpg/_DSF0666.jpg?1600728757",
+      "https://images.adsttc.com/media/images/5f69/2f0f/63c0/1745/1200/000b/large_jpg/_DSF9811.jpg?1600728836",
+      "https://images.adsttc.com/media/images/5f68/e308/63c0/17b3/2900/017e/large_jpg/_DSF0435-2.jpg?1600709373",
+      "https://images.adsttc.com/media/images/5f68/e2f9/63c0/17fe/ca00/0138/large_jpg/_DSF0420.jpg?1600709356"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5f68/e120/63c0/17fe/ca00/012c/large_jpg/_DSF0027.jpg?1600708885",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2262527,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f68/e110/63c0/17b3/2900/016d/large_jpg/_DSF0009.jpg?1600708868",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2368923,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f69/2efe/63c0/1745/1200/0009/large_jpg/_DSF0794_white.jpg?1600728819",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1911116,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f69/2ebf/63c0/1745/1200/0007/large_jpg/_DSF0666.jpg?1600728757",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2410016,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f69/2f0f/63c0/1745/1200/000b/large_jpg/_DSF9811.jpg?1600728836",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 4865639,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f68/e308/63c0/17b3/2900/017e/large_jpg/_DSF0435-2.jpg?1600709373",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2162539,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f68/e2f9/63c0/17fe/ca00/0138/large_jpg/_DSF0420.jpg?1600709356",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 4347096,
+        "good": true
+      }
+    ]
+  },
+  "computer_history_museum": {
+    "source_url": "https://www.archdaily.com/163795/computer-history-museum-mark-horton-architecture",
+    "raw_count": 30,
+    "candidate_count": 22,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5015/7719/28ba/0d02/f000/144e/large_jpg/stringio.jpg?1414479789",
+      "https://images.adsttc.com/media/images/5015/76b7/28ba/0d02/f000/143d/large_jpg/stringio.jpg?1414479792",
+      "https://images.adsttc.com/media/images/5015/771f/28ba/0d02/f000/144f/large_jpg/stringio.jpg?1414479795",
+      "https://images.adsttc.com/media/images/5015/76bd/28ba/0d02/f000/143e/large_jpg/stringio.jpg?1414479798",
+      "https://images.adsttc.com/media/images/5015/7725/28ba/0d02/f000/1450/large_jpg/stringio.jpg?1414479801",
+      "https://images.adsttc.com/media/images/5015/76fc/28ba/0d02/f000/1448/large_jpg/stringio.jpg?1414479804",
+      "https://images.adsttc.com/media/images/5015/76c3/28ba/0d02/f000/143f/large_jpg/stringio.jpg?1414479807"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5015/7719/28ba/0d02/f000/144e/large_jpg/stringio.jpg?1414479789",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 556994,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5015/76b7/28ba/0d02/f000/143d/large_jpg/stringio.jpg?1414479792",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 232458,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5015/771f/28ba/0d02/f000/144f/large_jpg/stringio.jpg?1414479795",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 432524,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5015/76bd/28ba/0d02/f000/143e/large_jpg/stringio.jpg?1414479798",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 279796,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5015/7725/28ba/0d02/f000/1450/large_jpg/stringio.jpg?1414479801",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 462440,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5015/76fc/28ba/0d02/f000/1448/large_jpg/stringio.jpg?1414479804",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 450328,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5015/76c3/28ba/0d02/f000/143f/large_jpg/stringio.jpg?1414479807",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 284121,
+        "good": true
+      }
+    ]
+  },
+  "landesgartenschau": {
+    "source_url": "https://www.archdaily.com/520897/landesgartenschau-exhibition-hall-icd-itke-iigs-university-of-stuttgart",
+    "raw_count": 62,
+    "candidate_count": 49,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/53ab/66bd/c07a/8033/bd00/0134/large_jpg/Laga_300_Interior-North.jpg?1403741862",
+      "https://images.adsttc.com/media/images/53ab/6836/c07a/8033/bd00/0140/large_jpg/Laga_440_Exterior-Night.jpg?1403742238",
+      "https://images.adsttc.com/media/images/53ab/6785/c07a/8033/bd00/013a/large_jpg/Laga_400_Exterior-East.jpg?1403742066",
+      "https://images.adsttc.com/media/images/53ab/6817/c07a/8033/bd00/013f/large_jpg/Laga_430_Exterior-Detail.jpg?1403742210",
+      "https://images.adsttc.com/media/images/53ab/670d/c07a/80e7/3200/0133/large_jpg/Laga_311_Interior-East.jpg?1403741935",
+      "https://images.adsttc.com/media/images/53ab/66a1/c07a/80e7/3200/0130/large_jpg/Laga_232_Assembly.jpg?1403741836",
+      "https://images.adsttc.com/media/images/53ab/675e/c07a/80e7/3200/0135/large_jpg/Laga_340_Interior-Night.jpg?1403742020"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/53ab/66bd/c07a/8033/bd00/0134/large_jpg/Laga_300_Interior-North.jpg?1403741862",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 455934,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/53ab/6836/c07a/8033/bd00/0140/large_jpg/Laga_440_Exterior-Night.jpg?1403742238",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 384769,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/53ab/6785/c07a/8033/bd00/013a/large_jpg/Laga_400_Exterior-East.jpg?1403742066",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1019658,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/53ab/6817/c07a/8033/bd00/013f/large_jpg/Laga_430_Exterior-Detail.jpg?1403742210",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 855143,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/53ab/670d/c07a/80e7/3200/0133/large_jpg/Laga_311_Interior-East.jpg?1403741935",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 346966,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/53ab/66a1/c07a/80e7/3200/0130/large_jpg/Laga_232_Assembly.jpg?1403741836",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 690768,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/53ab/675e/c07a/80e7/3200/0135/large_jpg/Laga_340_Interior-Night.jpg?1403742020",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 419014,
+        "good": true
+      }
+    ]
+  },
+  "henan_museum": {
+    "source_url": "https://www.archdaily.com/1034203/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus",
+    "raw_count": 60,
+    "candidate_count": 47,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/68c9/d839/8791/b754/e13d/02eb/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_15.jpg?1758058563",
+      "https://images.adsttc.com/media/images/68c9/d839/8791/b754/e13d/02ed/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_1.jpg?1758058564",
+      "https://images.adsttc.com/media/images/68c9/d83a/d84f/6b73/24ae/371d/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_12.jpg?1758058564",
+      "https://images.adsttc.com/media/images/68c9/d83a/8791/b754/e13d/02ef/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_10.jpg?1758058563",
+      "https://images.adsttc.com/media/images/68c9/d83a/8791/b754/e13d/02ee/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_13.jpg?1758058564",
+      "https://images.adsttc.com/media/images/68c9/d839/8791/b754/e13d/02ea/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_9.jpg?1758058561",
+      "https://images.adsttc.com/media/images/68c9/d83a/d84f/6b7e/50a0/6e27/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_4.jpg?1758058579"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/68c9/d839/8791/b754/e13d/02eb/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_15.jpg?1758058563",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2492313,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/68c9/d839/8791/b754/e13d/02ed/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_1.jpg?1758058564",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 3238918,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/68c9/d83a/d84f/6b73/24ae/371d/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_12.jpg?1758058564",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2035578,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/68c9/d83a/8791/b754/e13d/02ef/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_10.jpg?1758058563",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1764745,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/68c9/d83a/8791/b754/e13d/02ee/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_13.jpg?1758058564",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1697824,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/68c9/d839/8791/b754/e13d/02ea/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_9.jpg?1758058561",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2087616,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/68c9/d83a/d84f/6b7e/50a0/6e27/large_jpg/new-science-and-technology-museum-of-henan-province-tjad-atelier-l-plus_4.jpg?1758058579",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2422749,
+        "good": true
+      }
+    ]
+  },
+  "buga_fibre_pavilion": {
+    "source_url": "https://www.archdaily.com/916650/buga-fibre-pavilion-icd-itke-university-of-stuttgart",
+    "raw_count": 51,
+    "candidate_count": 40,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5cd2/f038/284d/d1fd/6300/0015/large_jpg/feature-_ICD-ITKE_BugaFiber2019_02.jpg?1557327908",
+      "https://images.adsttc.com/media/images/5cd2/f154/284d/d1e6/3e00/0036/large_jpg/ICD-ITKE_BugaFiber2019_07.jpg?1557328203",
+      "https://images.adsttc.com/media/images/5cd2/f4ca/284d/d1e6/3e00/0044/large_jpg/RH2699-0012.jpg?1557329093",
+      "https://images.adsttc.com/media/images/5cd2/f160/284d/d1fd/6300/001b/large_jpg/ICD-ITKE_BugaFiber2019_08.jpg?1557328214",
+      "https://images.adsttc.com/media/images/5cd2/f4ea/284d/d1e6/3e00/0045/large_jpg/RH2699-0086.jpg?1557329124",
+      "https://images.adsttc.com/media/images/5cd2/f19d/284d/d1fd/6300/001d/large_jpg/ICD-ITKE_BugaFiber2019_12.jpg?1557328276",
+      "https://images.adsttc.com/media/images/5cd2/f0e8/284d/d1fd/6300/0018/large_jpg/ICD-ITKE_BugaFiber2019_04.jpg?1557328059"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5cd2/f038/284d/d1fd/6300/0015/large_jpg/feature-_ICD-ITKE_BugaFiber2019_02.jpg?1557327908",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2477062,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5cd2/f154/284d/d1e6/3e00/0036/large_jpg/ICD-ITKE_BugaFiber2019_07.jpg?1557328203",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1724648,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5cd2/f4ca/284d/d1e6/3e00/0044/large_jpg/RH2699-0012.jpg?1557329093",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 466752,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5cd2/f160/284d/d1fd/6300/001b/large_jpg/ICD-ITKE_BugaFiber2019_08.jpg?1557328214",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1534929,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5cd2/f4ea/284d/d1e6/3e00/0045/large_jpg/RH2699-0086.jpg?1557329124",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 493274,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5cd2/f19d/284d/d1fd/6300/001d/large_jpg/ICD-ITKE_BugaFiber2019_12.jpg?1557328276",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2062489,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5cd2/f0e8/284d/d1fd/6300/0018/large_jpg/ICD-ITKE_BugaFiber2019_04.jpg?1557328059",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1457836,
+        "good": true
+      }
+    ]
+  }
+}

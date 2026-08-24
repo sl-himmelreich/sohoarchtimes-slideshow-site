@@ -1,0 +1,6 @@
+SohoArchTimes visibility check for 2026-05-11
+496 https://t.me/SohoArchTimes/496 Shenzhen Bao'an International Airport visible=true
+501 https://t.me/SohoArchTimes/501 Tianjin Binhai Library visible=true
+506 https://t.me/SohoArchTimes/506 House of Music, Budapest visible=true
+511 https://t.me/SohoArchTimes/511 Taipei Performing Arts Center visible=true
+516 https://t.me/SohoArchTimes/516 MahaNakhon Tower visible=true

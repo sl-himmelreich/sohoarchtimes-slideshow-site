@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Erasmus Bridge",
+    "slug": "erasmus_bridge",
+    "source_url": "https://www.unstudio.com/projects/erasmus-bridge/",
+    "canonical_source_url": "https://www.unstudio.com/projects/erasmus-bridge/",
+    "location": "Rotterdam, Netherlands",
+    "architects": "UNStudio",
+    "year": "1996",
+    "materials": "На странице проекта материалы не специфицированы; выразительность моста построена на асимметричном пилоне, системе вант и подъемном пролетном механизме bascule section.",
+    "summary_en": "Erasmus Bridge is an asymmetric cable-stayed bridge with a backward-leaning 139-meter pylon, radiating cable arrays, and an integrated bascule section. The project turns structural geometry into a civic landmark known as The Swan.",
+    "image_urls": [
+      "https://a.storyblok.com/f/324448/2919x2306/6ec1e6d27b/hero.jpg",
+      "https://a.storyblok.com/f/324448/3003x2002/463ddd5b97/tilleman-090103-001-a4size.jpg",
+      "https://a.storyblok.com/f/324448/1280x854/d2dd7daf06/9003_n160_wwwkits.jpg",
+      "https://a.storyblok.com/f/324448/3000x2003/505bad777f/point-1.jpg",
+      "https://a.storyblok.com/f/324448/6607x3046/500700b22c/map.jpg"
+    ]
+  },
+  {
+    "title": "Music Theatre (MUMUTH)",
+    "slug": "music_theatre_mumuth",
+    "source_url": "https://www.unstudio.com/projects/music-theatre",
+    "canonical_source_url": "https://www.unstudio.com/projects/music-theatre/",
+    "location": "Graz, Austria",
+    "architects": "UNStudio, Ben van Berkel, Caroline Bos",
+    "year": "2008",
+    "materials": "Concrete structural twist, glass curtain wall facade with vertical metal framing, интегрированные потолочно-стеновые акустические панели и световые приборы в параметрической внутренней оболочке.",
+    "summary_en": "MUMUTH is organized around a central spiraling concrete twist that acts as structure, circulation, and spatial organizer. The project negotiates between curvilinear internal geometry and a rectilinear outer envelope through a repeated parametric facade and acoustic panel system.",
+    "image_urls": [
+      "https://a.storyblok.com/f/324448/886x1180/62bb465ed0/hero.jpg",
+      "https://a.storyblok.com/f/324448/1152x1535/d9b3815452/cr4002-048.jpg",
+      "https://a.storyblok.com/f/324448/1000x1332/34f22db281/cr4002-086.jpg",
+      "https://a.storyblok.com/f/324448/1021x1500/5db5275a78/mumuth-graz-uns-3247.jpg",
+      "https://a.storyblok.com/f/324448/886x665/74d3d9a49d/graz_cr4002-107.jpg"
+    ]
+  }
+]

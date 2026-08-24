@@ -1,0 +1,462 @@
+[
+  {
+    "title": "Chongqing Gaoke Group Office",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/6306/15bc/79c4/895b/df9f/dea5/large_jpg/not-ready-chongqing-gaoke-group-office-aedas_6.jpg",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 946029,
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6306/15c2/79c4/895b/df9f/dea7/large_jpg/not-ready-chongqing-gaoke-group-office-aedas_7.jpg",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 748332,
+        "width": 2000,
+        "height": 1334
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6306/15b8/79c4/895b/df9f/dea4/large_jpg/not-ready-chongqing-gaoke-group-office-aedas_2.jpg",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1392158,
+        "width": 2000,
+        "height": 3000
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6306/15bd/dfb6/3149/7028/6c35/large_jpg/not-ready-chongqing-gaoke-group-office-aedas_8.jpg",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 976810,
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6306/15c2/dfb6/3149/7028/6c36/large_jpg/not-ready-chongqing-gaoke-group-office-aedas_9.jpg",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1009423,
+        "width": 2000,
+        "height": 1332
+      }
+    ]
+  },
+  {
+    "title": "Lè Architecture",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/5ba1/b4a8/f197/cc1b/4800/009f/large_jpg/1.jpg?1537324179",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 778457,
+        "width": 2000,
+        "height": 1636
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5ba1/b387/f197/cc36/9f00/03b6/large_jpg/5.jpg?1537323888",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1159281,
+        "width": 2000,
+        "height": 2285
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5ba1/b409/f197/cc1b/4800/0099/large_jpg/3.jpg?1537324023",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 926979,
+        "width": 2000,
+        "height": 1314
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5ba1/b423/f197/cc1b/4800/009a/large_jpg/7.jpg?1537324047",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1756231,
+        "width": 2000,
+        "height": 2999
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5ba1/b48f/f197/cc36/9f00/03b9/large_jpg/6.jpg?1537324155",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 707716,
+        "width": 2000,
+        "height": 1334
+      }
+    ]
+  },
+  {
+    "title": "Shenzhen HJ Land Xiyue Tower",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://parametric-architecture.com/wp-content/uploads/2023/11/Xiyue-Tower-8.jpg",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 308487,
+        "width": 1500,
+        "height": 1000
+      },
+      {
+        "url": "https://parametric-architecture.com/wp-content/uploads/2023/11/Xiyue-Tower-1.jpg",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 491244,
+        "width": 1500,
+        "height": 1000
+      },
+      {
+        "url": "https://parametric-architecture.com/wp-content/uploads/2023/11/Xiyue-Tower-5.jpg",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 524540,
+        "width": 1500,
+        "height": 1000
+      },
+      {
+        "url": "https://parametric-architecture.com/wp-content/uploads/2023/11/Xiyue-Tower-2.jpg",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 466077,
+        "width": 1500,
+        "height": 1000
+      },
+      {
+        "url": "https://parametric-architecture.com/wp-content/uploads/2023/11/Xiyue-Tower-7.jpg",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 263788,
+        "width": 1500,
+        "height": 1000
+      }
+    ]
+  },
+  {
+    "title": "One River North",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/670f/8464/3dfd/b464/e03a/ed63/large_jpg/one-river-north-mad-architects_10.jpg?1729070279",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1102012,
+        "width": 2000,
+        "height": 1334
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/670f/8457/2aec/2b01/7c36/0e7a/large_jpg/one-river-north-mad-architects_1.jpg?1729070278",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2043572,
+        "width": 2000,
+        "height": 2999
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/670f/845b/2aec/2b01/7c36/0e7b/large_jpg/one-river-north-mad-architects_2.jpg?1729070233",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2745235,
+        "width": 2000,
+        "height": 2998
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/670f/845e/3dfd/b464/e03a/ed61/large_jpg/one-river-north-mad-architects_7.jpg?1729070275",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2056259,
+        "width": 2000,
+        "height": 2999
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/670f/8464/2aec/2b01/7c36/0e7f/large_jpg/one-river-north-mad-architects_6.jpg?1729070283",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1068996,
+        "width": 2000,
+        "height": 1334
+      }
+    ]
+  },
+  {
+    "title": "Guanyun Qiantang City",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/67ab/7adb/dae3/4801/8ae8/897b/large_jpg/guanyun-qiantang-city-aedas_11.jpg?1739291383",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1070677,
+        "width": 2000,
+        "height": 1500
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67ab/7ae2/ea72/f101/8803/4903/large_jpg/guanyun-qiantang-city-aedas_13.jpg?1739291390",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1047684,
+        "width": 2000,
+        "height": 1500
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67ab/7adf/ea72/f101/8803/4902/large_jpg/guanyun-qiantang-city-aedas_15.jpg?1739291511",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 601596,
+        "width": 2000,
+        "height": 2169
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67ab/7ad2/ea72/f101/8803/48ff/large_jpg/guanyun-qiantang-city-aedas_6.jpg?1739291374",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 752946,
+        "width": 2000,
+        "height": 1566
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67ab/7ae0/dae3/4801/8ae8/897d/large_jpg/guanyun-qiantang-city-aedas_17.jpg?1739291372",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 3619571,
+        "width": 2000,
+        "height": 1333
+      }
+    ]
+  },
+  {
+    "title": "Quzhou Sports Park",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/6342/f224/33b7/6e3d/3492/030e/large_jpg/quzhou-sports-park-mad-architects_36.jpg?1665331787",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1631461,
+        "width": 2000,
+        "height": 1332
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6342/f224/7a53/2720/457c/dfe4/large_jpg/quzhou-sports-park-mad-architects_48.jpg?1665331797",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2336044,
+        "width": 2000,
+        "height": 1406
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6342/f220/7a53/2720/457c/dfe2/large_jpg/quzhou-sports-park-mad-architects_47.jpg?1665331791",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1022968,
+        "width": 2000,
+        "height": 1332
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6342/f21f/33b7/6e3d/3492/030d/large_jpg/quzhou-sports-park-mad-architects_43.jpg?1665331793",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2521324,
+        "width": 2000,
+        "height": 1332
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6342/f216/7a53/2720/457c/dfde/large_jpg/quzhou-sports-park-mad-architects_44.jpg?1665331780",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2163105,
+        "width": 2000,
+        "height": 1492
+      }
+    ]
+  },
+  {
+    "title": "Gardenhouse",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/5f46/b5d4/b357/65fb/0600/03a9/large_jpg/04_MAD_Gardenhouse_photo_by_Nic_Lehoux.jpg?1598469576",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2509137,
+        "width": 2000,
+        "height": 1506
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f46/9296/b357/65e7/a000/043c/large_jpg/18_MAD_Gardenhouse_photo_by_Darren_Bradley.jpg?1598460526",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2092566,
+        "width": 2000,
+        "height": 1632
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f46/92a9/b357/65fb/0600/0368/large_jpg/16_MAD_Gardenhouse_photo_by_Nic_Lehoux.jpg?1598460571",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2385530,
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f46/9428/b357/65fb/0600/0374/large_jpg/15_MAD_Gardenhouse_photo_by_Nic_Lehoux.jpg?1598460952",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2380998,
+        "width": 2000,
+        "height": 2484
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5f46/921f/b357/65e7/a000/0436/large_jpg/03_MAD_Gardenhouse_photo_by_Nic_Lehoux.jpg?1598460419",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 3155850,
+        "width": 2000,
+        "height": 1332
+      }
+    ]
+  },
+  {
+    "title": "Jiaxing Train Station",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/65c3/67f8/b451/ce01/7ceb/b305/large_jpg/mad-completes-their-first-train-station-and-transit-oriented-development-in-china_3.jpg?1707304977",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1054527,
+        "width": 2000,
+        "height": 1332
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/65c3/67d3/f2f1/3e76/3cfd/800d/large_jpg/mad-completes-their-first-train-station-and-transit-oriented-development-in-china_1.jpg?1707304947",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 916375,
+        "width": 2000,
+        "height": 1125
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/65c3/67d0/f2f1/3e76/3cfd/800b/large_jpg/mad-completes-their-first-train-station-and-transit-oriented-development-in-china_2.jpg?1707304953",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 528837,
+        "width": 2000,
+        "height": 1500
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/65c3/67d1/b451/ce01/7ceb/b303/large_jpg/mad-completes-their-first-train-station-and-transit-oriented-development-in-china_4.jpg?1707304950",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 837660,
+        "width": 2000,
+        "height": 1334
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/65c3/6778/b451/ce01/7ceb/b302/large_jpg/mad-completes-their-first-train-station-and-transit-oriented-development-in-china_5.jpg?1707304873",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 618879,
+        "width": 2000,
+        "height": 1500
+      }
+    ]
+  },
+  {
+    "title": "UNIC Apartments",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/62df/804d/a542/a601/66f5/e9b2/large_jpg/unic-mad-architects_20.jpg?1658814546",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 626015,
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62df/7d88/a542/a601/66f5/e9a9/large_jpg/unic-mad-architects_1.jpg?1658813841",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1932696,
+        "width": 2000,
+        "height": 1266
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62df/7d42/a542/a601/66f5/e9a2/large_jpg/unic-mad-architects_2.jpg?1658813771",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 534627,
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62df/7d46/a542/a601/66f5/e9a4/large_jpg/unic-mad-architects_3.jpg?1658813807",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1220128,
+        "width": 2000,
+        "height": 1412
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62df/7d47/a542/a601/66f5/e9a5/large_jpg/unic-mad-architects_6.jpg?1658813781",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2701278,
+        "width": 1800,
+        "height": 2400
+      }
+    ]
+  },
+  {
+    "title": "Baiziwan Social Housing",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/62b2/b4e9/74db/3701/6537/a984/large_jpg/baiziwan-social-housing-mad-architects_14.jpg?1655878910",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 622451,
+        "width": 2000,
+        "height": 1058
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62b1/b867/3e4b/314d/4100/000c/large_jpg/09_MAD_Baiziwan_social_housing_by_CreatAR.jpg?1655814240",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 498708,
+        "width": 1536,
+        "height": 1920
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62b1/b859/3e4b/314d/4100/000a/large_jpg/02_MAD_Baiziwan_Social_Housing_by_CreatAR_Images.jpg?1655814227",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 424474,
+        "width": 1279,
+        "height": 1920
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62b1/b8a6/3e4b/3134/d800/0010/large_jpg/03_MAD_Baiziwan_Social_Housing_by_Zhu_Yumeng.jpg?1655814302",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 714639,
+        "width": 2000,
+        "height": 1600
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62b1/b876/3e4b/314d/4100/000e/large_jpg/05_MAD_Baiziwan_Social_Housing_by_ArchExist.jpg?1655814254",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 835221,
+        "width": 2000,
+        "height": 1334
+      }
+    ]
+  }
+]

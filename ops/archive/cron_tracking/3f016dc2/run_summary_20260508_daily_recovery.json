@@ -1,0 +1,66 @@
+{
+  "date": "2026-05-08",
+  "mode": "manual_recovery_after_daily_cron_tool_fix",
+  "channel": "@SohoArchTimes",
+  "status": "success",
+  "published_count": 5,
+  "notes": [
+    "Утренний ежедневный запуск был восстановлен вручную после сбоя cron-задачи, вызванного неподходящим фоновым режимом без доступа к нужным инструментам и файлам.",
+    "Расписание исправлено: задача 058f1a90 переведена в полный режим выполнения, чтобы следующие ежедневные запуски могли извлекать данные со страниц и создавать локальные object.json файлы.",
+    "Перед публикацией подписи были дополнительно проверены и улучшены на Claude Opus 4.7 в усиленном reasoning-режиме, как требовал пользователь."
+  ],
+  "published_posts": [
+    {
+      "title": "Absolute Towers / MAD Architects",
+      "source_url": "https://www.archdaily.com/306566/absolute-towers-mad-architects",
+      "post_url": "https://t.me/SohoArchTimes/421",
+      "message_id": 421,
+      "media_group_id": "14225766988809498",
+      "visible_publicly": true,
+      "visibility_snippet": "Absolute Towers, Миссиссога, Онтарио, Канада. Архитектурное бюро MAD Architects, реализация — 2012 …"
+    },
+    {
+      "title": "Bonfiglioli HQ",
+      "source_url": "https://parametric-architecture.com/bonfiglioli-hq-features-an-angular-form-covered-in-a-pleated-mesh/",
+      "post_url": "https://t.me/SohoArchTimes/426",
+      "message_id": 426,
+      "media_group_id": "14225767095610554",
+      "visible_publicly": true,
+      "visibility_snippet": "Bonfiglioli HQ, Кальдерара-ди-Рено, Италия. Бюро Peter Pichler Architecture, завершение — 2024 год.…"
+    },
+    {
+      "title": "Museum of the Future",
+      "source_url": "https://www.archdaily.com/983458/overcoming-design-challenges-with-technology-museum-of-the-future-in-dubai",
+      "post_url": "https://t.me/SohoArchTimes/431",
+      "message_id": 431,
+      "media_group_id": "14225767492981354",
+      "visible_publicly": true,
+      "visibility_snippet": "Museum of the Future, Дубай, ОАЭ. Архитектура — Killa Design, инженерия — Buro Happold, открытие — …"
+    },
+    {
+      "title": "National Museum of Qatar",
+      "source_url": "https://parametric-architecture.com/national-museum-of-qatar-by-atelier-jean-novel/",
+      "post_url": "https://t.me/SohoArchTimes/436",
+      "message_id": 436,
+      "media_group_id": "14225767598569042",
+      "visible_publicly": true,
+      "visibility_snippet": "National Museum of Qatar, Доха, Катар. Atelier Jean Nouvel, открытие — 2019 год. Здание площадью 52…"
+    },
+    {
+      "title": "Leeza SOHO / Zaha Hadid Architects",
+      "source_url": "https://www.archdaily.com/928726/leeza-soho-zaha-hadid-architects",
+      "post_url": "https://t.me/SohoArchTimes/441",
+      "message_id": 441,
+      "media_group_id": "14225768008087426",
+      "visible_publicly": true,
+      "visibility_snippet": "Leeza SOHO, Пекин, Китай. Zaha Hadid Architects, ввод — 2019 год. 45-этажная башня поставлена над д…"
+    }
+  ],
+  "artifacts": {
+    "facts_file": "/home/user/workspace/cron_tracking/3f016dc2/facts_20260508_daily5.json",
+    "captions_file": "/home/user/workspace/cron_tracking/3f016dc2/captions_20260508_daily5.json",
+    "today_batch_dir": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260508_daily5",
+    "visibility_check": "/home/user/workspace/telegram_sohoarchtimes_visibility_2026-05-08.txt",
+    "registry": "/home/user/workspace/cron_tracking/3f016dc2/published_objects.json"
+  }
+}

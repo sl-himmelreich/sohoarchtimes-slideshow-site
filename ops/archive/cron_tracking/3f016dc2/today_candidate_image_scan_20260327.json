@@ -1,0 +1,29 @@
+{
+  "rcc_hq": {
+    "url": "https://parametric-architecture.com/rcc-headquarters-features-triangulated-parts-inspired-by-the-crystal-lattice-of-copper/",
+    "error": "HTTPSConnectionPool(host='parametric-architecture.com', port=443): Read timed out. (read timeout=60)"
+  },
+  "shenzhen_museum": {
+    "url": "https://parametric-architecture.com/zaha-hadid-architects-shenzhen-science-and-technology-museum/",
+    "error": "HTTPSConnectionPool(host='parametric-architecture.com', port=443): Read timed out. (read timeout=60)"
+  },
+  "jomoo_hq": {
+    "url": "https://parametric-architecture.com/oma-jomoo-headquarters-china/",
+    "error": "HTTPSConnectionPool(host='parametric-architecture.com', port=443): Read timed out. (read timeout=60)"
+  },
+  "origami_office": {
+    "url": "https://parametric-architecture.com/manuelle-gautrand-designs-an-office-building-with-a-folded-glass-facade-resembling-japanese-origami/",
+    "error": "HTTPSConnectionPool(host='parametric-architecture.com', port=443): Read timed out. (read timeout=60)"
+  },
+  "termeh": {
+    "url": "https://parametric-architecture.com/termeh-office-commercial-building-has-a-wave-like-design-that-blends-with-its-surroundings/",
+    "error": "HTTPSConnectionPool(host='parametric-architecture.com', port=443): Read timed out. (read timeout=60)"
+  },
+  "communique": {
+    "url": "https://www.archdaily.com/780596/communique-headquarters-daewha-kang-design",
+    "image_count": 1,
+    "images": [
+      "https://images.adsttc.com/media/images/569e/1bbb/e58e/cef0/8400/00d8/large_jpg/portada_03_DKD_Communique_Icon_Facade.jpg?1453202352"
+    ]
+  }
+}

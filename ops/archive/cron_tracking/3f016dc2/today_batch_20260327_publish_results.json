@@ -1,0 +1,32 @@
+[
+  {
+    "file": "communique_headquarters.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/176\", \"message_id\": 176, \"media_group_id\": \"14196748266629834\"}",
+    "stderr": ""
+  },
+  {
+    "file": "gates_center_cse.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/181\", \"message_id\": 181, \"media_group_id\": \"14196748385239722\"}",
+    "stderr": ""
+  },
+  {
+    "file": "monospinal_headquarters.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/186\", \"message_id\": 186, \"media_group_id\": \"14196748779335034\"}",
+    "stderr": ""
+  },
+  {
+    "file": "revolving_bricks_office_building.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/191\", \"message_id\": 191, \"media_group_id\": \"14196748869062922\"}",
+    "stderr": ""
+  },
+  {
+    "file": "nation_office_building_intervention.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/196\", \"message_id\": 196, \"media_group_id\": \"14196749316196114\"}",
+    "stderr": ""
+  }
+]

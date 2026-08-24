@@ -1,0 +1,53 @@
+{
+  "date": "2026-03-31",
+  "status": "success",
+  "published_count": 5,
+  "published_posts": [
+    {
+      "title": "One Thousand Museum Residential Tower / Zaha Hadid Architects",
+      "source_url": "https://parametric-architecture.com/one-thousand-museum-residential-tower-erected-by-zaha-hadid-architects/",
+      "post_url": "https://t.me/SohoArchTimes/276",
+      "message_id": 276,
+      "visible": true
+    },
+    {
+      "title": "RCC Headquarters / Foster + Partners",
+      "source_url": "https://parametric-architecture.com/rcc-headquarters-features-triangulated-parts-inspired-by-the-crystal-lattice-of-copper/",
+      "post_url": "https://t.me/SohoArchTimes/281",
+      "message_id": 281,
+      "visible": true
+    },
+    {
+      "title": "Museum Tower Kyobashi / Nikken Sekkei",
+      "source_url": "https://www.archdaily.com/975692/the-museum-tower-kyobashi-nikken-sekkei",
+      "post_url": "https://t.me/SohoArchTimes/286",
+      "message_id": 286,
+      "visible": true
+    },
+    {
+      "title": "One Za'abeel Tower / Nikken Sekkei",
+      "source_url": "https://www.archdaily.com/1015281/one-zaabeel-tower-nikken-sekkei",
+      "post_url": "https://t.me/SohoArchTimes/291",
+      "message_id": 291,
+      "visible": true
+    },
+    {
+      "title": "Stasys Museum / IMPLMNT architects",
+      "source_url": "https://www.archdaily.com/1023136/stasys-museum-implmnt-architects",
+      "post_url": "https://t.me/SohoArchTimes/296",
+      "message_id": 296,
+      "visible": true
+    }
+  ],
+  "validated_but_unused": [
+    {
+      "title": "Dongdaemun Design Plaza / Zaha Hadid Architects",
+      "source_url": "https://www.archdaily.com/489604/dongdaemun-design-plaza-zaha-hadid-architects",
+      "reason": "only 1 reliable downloadable image in local validation"
+    }
+  ],
+  "notes": [
+    "All five posts were published as 5-image media groups and confirmed publicly visible on the public channel page.",
+    "For Museum Tower Kyobashi and One Za'abeel, direct image URLs had to be re-extracted with exact filenames because the first batch included malformed or access-denied asset variants."
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "communique": {
+    "source_url": "https://www.archdaily.com/780596/communique-headquarters-daewha-kang-design",
+    "medium_count": 19,
+    "ok_count": 5,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/569e/1bbb/e58e/cef0/8400/00d8/large_jpg/portada_03_DKD_Communique_Icon_Facade.jpg?1453202352",
+      "https://images.adsttc.com/media/images/569e/1b40/e58e/cef0/8400/00d5/large_jpg/05a_Overview_Only_New.jpg?1453202228",
+      "https://images.adsttc.com/media/images/569e/1b06/e58e/cef0/8400/00d4/large_jpg/02_DKD_Communique_Silver_Tree.jpg?1453202171",
+      "https://images.adsttc.com/media/images/569e/1b5b/e58e/cef0/8400/00d6/large_jpg/07_DKD_Communique_Tranquil_Roof.jpg?1453202256",
+      "https://images.adsttc.com/media/images/569e/1b6a/e58e/cead/b000/00d8/large_jpg/08_DKD_Communique_Gallery_Basement.jpg?1453202272"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/569e/1bbb/e58e/cef0/8400/00d8/large_jpg/portada_03_DKD_Communique_Icon_Facade.jpg?1453202352",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 688415,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/569e/1b40/e58e/cef0/8400/00d5/large_jpg/05a_Overview_Only_New.jpg?1453202228",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 643289,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/569e/1b06/e58e/cef0/8400/00d4/large_jpg/02_DKD_Communique_Silver_Tree.jpg?1453202171",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1027991,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/569e/1b5b/e58e/cef0/8400/00d6/large_jpg/07_DKD_Communique_Tranquil_Roof.jpg?1453202256",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 873477,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/569e/1b6a/e58e/cead/b000/00d8/large_jpg/08_DKD_Communique_Gallery_Basement.jpg?1453202272",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 242550,
+        "good": true
+      }
+    ]
+  },
+  "gates": {
+    "source_url": "https://www.archdaily.com/914647/bill-and-melinda-gates-center-for-computer-science-and-engineering-lmn-architects",
+    "medium_count": 20,
+    "ok_count": 5,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5cab/d5af/284d/d1c3/9900/0021/large_jpg/14127_MR_N347.jpg?1554765222",
+      "https://images.adsttc.com/media/images/5cab/d5ba/284d/d1c3/9900/0022/large_jpg/feature-_14127_MR_N348.jpg?1554765233",
+      "https://images.adsttc.com/media/images/5cab/d595/284d/d12b/e300/0016/large_jpg/14127_MR_N343.jpg?1554765196",
+      "https://images.adsttc.com/media/images/5cab/d5a4/284d/d12b/e300/0017/large_jpg/14127_MR_N344.jpg?1554765211",
+      "https://images.adsttc.com/media/images/5cab/d588/284d/d1c3/9900/0020/large_jpg/14127_MR_N339.jpg?1554765182"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5cab/d5af/284d/d1c3/9900/0021/large_jpg/14127_MR_N347.jpg?1554765222",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 636694,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5cab/d5ba/284d/d1c3/9900/0022/large_jpg/feature-_14127_MR_N348.jpg?1554765233",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 957922,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5cab/d595/284d/d12b/e300/0016/large_jpg/14127_MR_N343.jpg?1554765196",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 702542,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5cab/d5a4/284d/d12b/e300/0017/large_jpg/14127_MR_N344.jpg?1554765211",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 631186,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5cab/d588/284d/d1c3/9900/0020/large_jpg/14127_MR_N339.jpg?1554765182",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1056500,
+        "good": true
+      }
+    ]
+  },
+  "monospinal": {
+    "source_url": "https://www.archdaily.com/1016470/monospinal-headquarters-office-building-makoto-yamaguchi-design",
+    "medium_count": 45,
+    "ok_count": 5,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/663e/4634/8da3/9928/e9f9/89f4/large_jpg/monospinal-headquarters-office-building-makoto-yamaguchi-design_29.jpg?1715357274",
+      "https://images.adsttc.com/media/images/663e/4635/8da3/9934/46d9/eb9d/large_jpg/monospinal-headquarters-office-building-makoto-yamaguchi-design_30.jpg?1715357283",
+      "https://images.adsttc.com/media/images/663e/4634/da2a/592a/7667/6ec9/large_jpg/monospinal-headquarters-office-building-makoto-yamaguchi-design_50.jpg?1715357258",
+      "https://images.adsttc.com/media/images/663e/4636/8da3/9934/46d9/eb9f/large_jpg/monospinal-headquarters-office-building-makoto-yamaguchi-design_54.jpg?1715357366",
+      "https://images.adsttc.com/media/images/663e/4635/8da3/9928/e9f9/89f5/large_jpg/monospinal-headquarters-office-building-makoto-yamaguchi-design_56.jpg?1715357337"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/663e/4634/8da3/9928/e9f9/89f4/large_jpg/monospinal-headquarters-office-building-makoto-yamaguchi-design_29.jpg?1715357274",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 803801,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/663e/4635/8da3/9934/46d9/eb9d/large_jpg/monospinal-headquarters-office-building-makoto-yamaguchi-design_30.jpg?1715357283",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1764148,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/663e/4634/da2a/592a/7667/6ec9/large_jpg/monospinal-headquarters-office-building-makoto-yamaguchi-design_50.jpg?1715357258",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 802826,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/663e/4636/8da3/9934/46d9/eb9f/large_jpg/monospinal-headquarters-office-building-makoto-yamaguchi-design_54.jpg?1715357366",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 366360,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/663e/4635/8da3/9928/e9f9/89f5/large_jpg/monospinal-headquarters-office-building-makoto-yamaguchi-design_56.jpg?1715357337",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 793751,
+        "good": true
+      }
+    ]
+  },
+  "revolving": {
+    "source_url": "https://www.archdaily.com/972761/revolving-bricks-office-building-appars-architects-and-associates",
+    "medium_count": 27,
+    "ok_count": 5,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/61a6/5fbf/93dd/1274/1f08/94e6/large_jpg/1.jpg?1638293456",
+      "https://images.adsttc.com/media/images/61a6/5fb7/93dd/1274/1f08/94e5/large_jpg/5.jpg?1638293455",
+      "https://images.adsttc.com/media/images/61a6/602e/93dd/1274/1f08/94ed/large_jpg/19.jpg?1638293564",
+      "https://images.adsttc.com/media/images/61a6/5fef/93dd/1274/1f08/94e9/large_jpg/13.jpg?1638293502",
+      "https://images.adsttc.com/media/images/61a6/6085/93dd/1274/1f08/94f7/large_jpg/10-1.jpg?1638293701"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/61a6/5fbf/93dd/1274/1f08/94e6/large_jpg/1.jpg?1638293456",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 3078885,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/61a6/5fb7/93dd/1274/1f08/94e5/large_jpg/5.jpg?1638293455",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2037301,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/61a6/602e/93dd/1274/1f08/94ed/large_jpg/19.jpg?1638293564",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2401345,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/61a6/5fef/93dd/1274/1f08/94e9/large_jpg/13.jpg?1638293502",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2104716,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/61a6/6085/93dd/1274/1f08/94f7/large_jpg/10-1.jpg?1638293701",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 8378462,
+        "good": true
+      }
+    ]
+  },
+  "nation": {
+    "source_url": "https://www.archdaily.com/1026501/nation-office-building-intervention-tank-architectes",
+    "medium_count": 33,
+    "ok_count": 5,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/67a2/8663/1e52/8105/4a96/b5fa/large_jpg/nation-tank_1.jpg?1738704500",
+      "https://images.adsttc.com/media/images/67a2/867e/088f/c414/b8e4/9ec5/large_jpg/nation-tank_2.jpg?1738704546",
+      "https://images.adsttc.com/media/images/67a2/86d7/1e52/8105/4a96/b607/large_jpg/nation-tank_12.jpg?1738704618",
+      "https://images.adsttc.com/media/images/67a2/8681/1e52/8105/4a96/b5fe/large_jpg/nation-tank_5.jpg?1738704528",
+      "https://images.adsttc.com/media/images/67a2/86ac/088f/c414/b8e4/9ec8/large_jpg/nation-tank_6.jpg?1738704592"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/67a2/8663/1e52/8105/4a96/b5fa/large_jpg/nation-tank_1.jpg?1738704500",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2462075,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67a2/867e/088f/c414/b8e4/9ec5/large_jpg/nation-tank_2.jpg?1738704546",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 3337367,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67a2/86d7/1e52/8105/4a96/b607/large_jpg/nation-tank_12.jpg?1738704618",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 4800808,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67a2/8681/1e52/8105/4a96/b5fe/large_jpg/nation-tank_5.jpg?1738704528",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2077722,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/67a2/86ac/088f/c414/b8e4/9ec8/large_jpg/nation-tank_6.jpg?1738704592",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 4754501,
+        "good": true
+      }
+    ]
+  },
+  "principe_amedeo": {
+    "source_url": "https://www.archdaily.com/956729/office-building-principe-amedeo-5-vittorio-grassi-architetto-and-partners",
+    "medium_count": 23,
+    "ok_count": 5,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/6022/ae4f/f91c/818d/7800/03f9/large_jpg/VGA_Principe_Amedeo_PH11.jpg?1612885566",
+      "https://images.adsttc.com/media/images/6022/ad7e/f91c/81f8/ad00/03f6/large_jpg/VGA_Principe_Amedeo_PH01.jpg?1612885358",
+      "https://images.adsttc.com/media/images/6022/ae33/f91c/81f8/ad00/03fe/large_jpg/VGA_Principe_Amedeo_PH09.jpg?1612885538",
+      "https://images.adsttc.com/media/images/6022/ae32/f91c/818d/7800/03f7/large_jpg/VGA_Principe_Amedeo_PH10.jpg?1612885537",
+      "https://images.adsttc.com/media/images/6022/adf2/f91c/818d/7800/03f3/large_jpg/VGA_Principe_Amedeo_PH06.jpg?1612885475"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/6022/ae4f/f91c/818d/7800/03f9/large_jpg/VGA_Principe_Amedeo_PH11.jpg?1612885566",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1873927,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6022/ad7e/f91c/81f8/ad00/03f6/large_jpg/VGA_Principe_Amedeo_PH01.jpg?1612885358",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2018126,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6022/ae33/f91c/81f8/ad00/03fe/large_jpg/VGA_Principe_Amedeo_PH09.jpg?1612885538",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1602824,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6022/ae32/f91c/818d/7800/03f7/large_jpg/VGA_Principe_Amedeo_PH10.jpg?1612885537",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1181360,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6022/adf2/f91c/818d/7800/03f3/large_jpg/VGA_Principe_Amedeo_PH06.jpg?1612885475",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1601830,
+        "good": true
+      }
+    ]
+  }
+}

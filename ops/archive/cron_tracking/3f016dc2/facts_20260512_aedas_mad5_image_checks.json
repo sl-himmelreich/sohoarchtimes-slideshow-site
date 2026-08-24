@@ -1,0 +1,232 @@
+[
+  {
+    "title": "Yohoo Museum",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/6763/8601/8d8d/7f01/87d6/bc7b/large_jpg/yohoo-museum-aedas_7.jpg?1734575701",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1176414,
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6763/8602/8d8d/7f01/87d6/bc7c/large_jpg/yohoo-museum-aedas_4.jpg?1734575669",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1564235,
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6763/8600/33ba/6901/7f06/88a8/large_jpg/yohoo-museum-aedas_3.jpg?1734575709",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1843976,
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6763/8600/6fb4/f001/89fc/6f9a/large_jpg/yohoo-museum-aedas_6.jpg?1734575651",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1033997,
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6763/8600/8d8d/7f01/87d6/bc79/large_jpg/yohoo-museum-aedas_1.jpg?1734575677",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 980232,
+        "width": 2000,
+        "height": 1333
+      }
+    ]
+  },
+  {
+    "title": "Nanhu Future Science Park",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/6602/4b98/ac59/6f29/1898/eb8c/large_jpg/hangzhou-alibaba-damo-nanhu-industry-park-aedas_15.jpg?1711426484",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1376408,
+        "width": 2000,
+        "height": 1722
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6602/4b98/ac59/6f01/7c1d/99b7/large_jpg/hangzhou-alibaba-damo-nanhu-industry-park-aedas_16.jpg?1711426475",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1300704,
+        "width": 1579,
+        "height": 2000
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6602/4b97/ac59/6f01/7c1d/99b6/large_jpg/hangzhou-alibaba-damo-nanhu-industry-park-aedas_17.jpg?1711426468",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1217091,
+        "width": 2000,
+        "height": 1850
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6602/4b98/ac59/6f24/1666/dd86/large_jpg/hangzhou-alibaba-damo-nanhu-industry-park-aedas_18.jpg?1711426479",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 862470,
+        "width": 2000,
+        "height": 981
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6602/4b98/b093/fa6c/7d08/3c8c/large_jpg/hangzhou-alibaba-damo-nanhu-industry-park-aedas_19.jpg?1711426477",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 937196,
+        "width": 2000,
+        "height": 978
+      }
+    ]
+  },
+  {
+    "title": "Nansha International Cruise Terminal Complex",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/62d9/4bf4/fbd1/0a44/f6e3/0bd6/large_jpg/not-ready-nansha-international-cruise-terminal-complex-aedas_5.jpg?1658407935",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 711892,
+        "width": 2000,
+        "height": 1125
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62d9/4bf9/a533/f01f/0b16/b9b6/large_jpg/not-ready-nansha-international-cruise-terminal-complex-aedas_10.jpg?1658407948",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 627561,
+        "width": 2000,
+        "height": 1498
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62d9/4bf8/a533/f01f/0b16/b9b4/large_jpg/not-ready-nansha-international-cruise-terminal-complex-aedas_9.jpg?1658407943",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 619689,
+        "width": 2000,
+        "height": 1500
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62d9/4bfb/a533/f01b/c45f/be6f/large_jpg/not-ready-nansha-international-cruise-terminal-complex-aedas_2.jpg?1658407946",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 585062,
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/62d9/4bf9/a533/f023/edea/63ea/large_jpg/not-ready-nansha-international-cruise-terminal-complex-aedas_8.jpg?1658407944",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 549916,
+        "width": 2000,
+        "height": 1500
+      }
+    ]
+  },
+  {
+    "title": "ZGC International Innovation Center",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/666c/8b66/03ec/376b/eac2/a00f/large_jpg/zgc-international-innovation-center-mad-architects_6.jpg?1718389619",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 311159,
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/666c/8b52/03ec/376b/eac2/a000/large_jpg/zgc-international-innovation-center-mad-architects_1.jpg?1718389600",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 428035,
+        "width": 2000,
+        "height": 1373
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/666c/8b53/03ec/376b/eac2/a001/large_jpg/zgc-international-innovation-center-mad-architects_2.jpg?1718389601",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 538968,
+        "width": 2000,
+        "height": 1335
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/666c/8b58/b38d/4761/8116/b107/large_jpg/zgc-international-innovation-center-mad-architects_13.jpg?1718389614",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1263230,
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/666c/8b55/03ec/376b/eac2/a002/large_jpg/zgc-international-innovation-center-mad-architects_8.jpg?1718389607",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 389625,
+        "width": 2000,
+        "height": 1665
+      }
+    ]
+  },
+  {
+    "title": "Fenix Art Museum",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/682c/9a38/82d8/2601/88bc/cacc/large_jpg/fenix-art-museum-mad-architects_4.jpg?1747753551",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 581968,
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/682c/9a37/82d8/2601/88bc/cacb/large_jpg/fenix-art-museum-mad-architects_2.jpg?1747753552",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 468640,
+        "width": 2000,
+        "height": 1334
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/682c/9a39/82d8/2601/88bc/cace/large_jpg/fenix-art-museum-mad-architects_8.jpg?1747753550",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 446875,
+        "width": 2000,
+        "height": 1334
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/682c/9a52/9f99/7801/8783/8852/large_jpg/fenix-art-museum-mad-architects_1.jpg?1747753569",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 736867,
+        "width": 2000,
+        "height": 1375
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/682c/9a38/82d8/2601/88bc/cacd/large_jpg/fenix-art-museum-mad-architects_6.jpg?1747753565",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 322960,
+        "width": 2000,
+        "height": 1334
+      }
+    ]
+  }
+]

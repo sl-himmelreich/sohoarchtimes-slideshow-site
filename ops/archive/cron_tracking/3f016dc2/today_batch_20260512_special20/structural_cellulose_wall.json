@@ -1,0 +1,14 @@
+{
+  "title": "Structural Cellulose Wall",
+  "slug": "structural_cellulose_wall",
+  "source_url": "https://parametric-architecture.com/structural-cellulose-wall/",
+  "canonical_source_url": "https://parametric-architecture.com/structural-cellulose-wall/",
+  "caption_ru": "Structural Cellulose Wall\nЛокация: Инсбрук, Австрия\nАрхитектор: i.sd structure and design, University of Innsbruck, Georg Grasser, Allison Weiler\nГод реализации: 2024\nМатериалы: целлюлозно-казеиновый композит, текстильно-каркасные системы из тканых панелей и трубчатых элементов в текстильных рукавах\n\nИсследовательская стена развивает биокомпозитную архитектуру, в которой целлюлозно-казеиновая масса роботизированно напыляется на текстильный каркас. Сценарий фабрикации увязывает захват облака точек и генерацию роботических траекторий, что позволяет программировать переменную плотность материала и адаптивную геометрию поверхности. В результате стираются границы между несущей структурой, оболочкой и методом изготовления, а параметрическая логика встраивается прямо в материальную организацию.",
+  "image_urls": [
+    "https://parametric-architecture.com/wp-content/uploads/2026/05/Structural-Cellulose-Wall-1600x900.webp",
+    "https://parametric-architecture.com/wp-content/uploads/2026/05/685089440_18098965367028353_6137267158174225013_n.webp",
+    "https://parametric-architecture.com/wp-content/uploads/2026/05/685780989_18098965349028353_3390496071200957684_n.webp",
+    "https://parametric-architecture.com/wp-content/uploads/2026/05/692487312_18098965364028353_2325936200884717923_n.webp",
+    "https://parametric-architecture.com/wp-content/uploads/2026/05/1.webp"
+  ]
+}

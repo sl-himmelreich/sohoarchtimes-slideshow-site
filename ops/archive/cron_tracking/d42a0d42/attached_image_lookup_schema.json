@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "identified_object_name": {
+      "type": "string",
+      "title": "Object Name"
+    },
+    "identified": {
+      "type": "string",
+      "title": "Identified"
+    },
+    "best_info_link": {
+      "type": "string",
+      "title": "Info Link"
+    },
+    "source_site": {
+      "type": "string",
+      "title": "Source Site"
+    },
+    "area_or_scale_note": {
+      "type": "string",
+      "title": "Area / Scale"
+    },
+    "fit_for_sohoarchtimes_queue": {
+      "type": "string",
+      "title": "Fits Queue"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "identified_object_name",
+    "identified",
+    "best_info_link",
+    "source_site",
+    "area_or_scale_note",
+    "fit_for_sohoarchtimes_queue",
+    "notes"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-03-27",
+  "channel": "@SohoArchTimes",
+  "status": "completed",
+  "latest_visible_message_id": 196,
+  "published_posts": [
+    {
+      "title": "Communique Headquarters / DaeWha Kang Design",
+      "post_url": "https://t.me/SohoArchTimes/176"
+    },
+    {
+      "title": "Bill & Melinda Gates Center for Computer Science & Engineering / LMN Architects",
+      "post_url": "https://t.me/SohoArchTimes/181"
+    },
+    {
+      "title": "MONOSPINAL Headquarters Office Building / Makoto Yamaguchi Design",
+      "post_url": "https://t.me/SohoArchTimes/186"
+    },
+    {
+      "title": "Revolving Bricks Office Building / A.P.Pars Architects & Associates",
+      "post_url": "https://t.me/SohoArchTimes/191"
+    },
+    {
+      "title": "Nation Office Building Intervention / TANK Architectes",
+      "post_url": "https://t.me/SohoArchTimes/196"
+    }
+  ],
+  "notes": [
+    "Used only ArchDaily public project pages today.",
+    "Validated direct image URLs before publication.",
+    "Public visibility on Telegram was confirmed for all five posts."
+  ]
+}

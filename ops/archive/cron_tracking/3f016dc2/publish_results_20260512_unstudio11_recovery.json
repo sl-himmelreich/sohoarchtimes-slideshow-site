@@ -1,0 +1,38 @@
+[
+  {
+    "file": "wasl_tower_exception_20260512.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/686\", \"message_id\": 686, \"media_group_id\": \"14228740338769650\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/686",
+      "message_id": 686,
+      "media_group_id": "14228740338769650"
+    }
+  },
+  {
+    "file": "doha_metro_network.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/691\", \"message_id\": 691, \"media_group_id\": \"14228740440128562\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/691",
+      "message_id": 691,
+      "media_group_id": "14228740440128562"
+    }
+  },
+  {
+    "file": "booking_com_city_campus.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/696\", \"message_id\": 696, \"media_group_id\": \"14228740852966146\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/696",
+      "message_id": 696,
+      "media_group_id": "14228740852966146"
+    }
+  }
+]

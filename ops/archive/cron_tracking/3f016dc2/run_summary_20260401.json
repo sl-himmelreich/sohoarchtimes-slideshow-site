@@ -1,0 +1,79 @@
+{
+  "date": "2026-04-01",
+  "status": "success",
+  "published_count": 5,
+  "published_posts": [
+    {
+      "title": "Metropolitan Railway Station",
+      "source_url": "https://parametric-architecture.com/metropolitan-railway-station-features-mushroom-pillars-made-of-latticed-steel/",
+      "post_url": "https://t.me/SohoArchTimes/301",
+      "message_id": 301,
+      "visible": true
+    },
+    {
+      "title": "Songjiang Art Campus",
+      "source_url": "https://www.archdaily.com/604653/songjiang-art-campus-archi-union-architects",
+      "post_url": "https://t.me/SohoArchTimes/306",
+      "message_id": 306,
+      "visible": true
+    },
+    {
+      "title": "Port House",
+      "source_url": "https://parametric-architecture.com/zaha-hadid-port-house-floating-crystal/",
+      "post_url": "https://t.me/SohoArchTimes/311",
+      "message_id": 311,
+      "visible": true
+    },
+    {
+      "title": "Lightrailstation The Hague",
+      "source_url": "https://www.archdaily.com/992259/lightrailstation-the-hague-architectural-studio-zja",
+      "post_url": "https://t.me/SohoArchTimes/316",
+      "message_id": 316,
+      "visible": true
+    },
+    {
+      "title": "CMA CGM Headquarters",
+      "source_url": "https://www.archdaily.com/351657/zaha-hadid-architects-first-built-tower-cma-cgm-headquarters",
+      "post_url": "https://t.me/SohoArchTimes/326",
+      "message_id": 326,
+      "visible": true
+    }
+  ],
+  "validated_but_unused": [
+    {
+      "title": "Shanghai Tower / Gensler",
+      "source_url": "https://www.archdaily.com/783216/shanghai-tower-gensler",
+      "reason": "not needed after final five were secured"
+    },
+    {
+      "title": "Venue B of Shanghai Westbund World Artificial Intelligence Conference / Archi-Union Architecture",
+      "source_url": "https://www.archdaily.com/902285/venue-b-of-shanghai-westbund-world-artificial-intelligence-conference-archi-union-architecture",
+      "reason": "not needed after final five were secured"
+    },
+    {
+      "title": "Shaoxing Highway toll-gate of Huhangyong Expressway / Atelier RenTian",
+      "source_url": "https://www.archdaily.com/1006804/shaoxing-highway-toll-gate-of-huhangyong-expressway-atelier-rentian",
+      "reason": "only 1 reliable downloadable image in local validation"
+    },
+    {
+      "title": "Inkstone House OCT Linpan Cultural Center / Archi-Union",
+      "source_url": "https://www.archdaily.com/918697/inkstone-house-oct-linpan-cultural-center-achi-union",
+      "reason": "only 2 reliable downloadable images in local validation"
+    },
+    {
+      "title": "MahaNakhon",
+      "source_url": "https://parametric-architecture.com/10-parametric-towers/",
+      "reason": "article only exposed one unique image"
+    },
+    {
+      "title": "The Canton Tower",
+      "source_url": "https://parametric-architecture.com/10-parametric-towers/",
+      "reason": "article only exposed one unique image"
+    }
+  ],
+  "notes": [
+    "All five posts were published as 5-image media groups and confirmed publicly visible on the public channel page.",
+    "For Lightrailstation The Hague and CMA CGM Headquarters, exact ArchDaily large_jpg filenames were re-extracted to avoid broken gallery asset variants.",
+    "publish_album.py was relaxed to accept image downloads when content-type is blank but the URL path clearly points to a real image asset, which resolved CMA CGM download failure."
+  ]
+}

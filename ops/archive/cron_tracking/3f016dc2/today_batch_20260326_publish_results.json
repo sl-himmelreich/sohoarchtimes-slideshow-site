@@ -1,0 +1,32 @@
+[
+  {
+    "file": "cctv_headquarters_oma.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/151\", \"message_id\": 151, \"media_group_id\": \"14196046282722522\"}",
+    "stderr": ""
+  },
+  {
+    "file": "heydar_aliyev_cultural_center.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/156\", \"message_id\": 156, \"media_group_id\": \"14196046380322994\"}",
+    "stderr": ""
+  },
+  {
+    "file": "nation_office_building_intervention_tank.json",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 147, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 128, in main\n    local_paths = download_images(source_url, obj['image_urls'], slug)\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 63, in download_images\n    raise RuntimeError(f'Failed to download image {idx}: {url}')\nRuntimeError: Failed to download image 2: https://images.adsttc.com/media/images/67a2/867e/088f/c414/b8e4/9ec5/large_jpg/nation-office-building-intervention-tank-architectes-photo.jpg?1738704510"
+  },
+  {
+    "file": "techcombank_headquarters_hanoi.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/161\", \"message_id\": 161, \"media_group_id\": \"14196046795394330\"}",
+    "stderr": ""
+  },
+  {
+    "file": "the_connor_group_corporate_headquarters.json",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 147, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 128, in main\n    local_paths = download_images(source_url, obj['image_urls'], slug)\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 63, in download_images\n    raise RuntimeError(f'Failed to download image {idx}: {url}')\nRuntimeError: Failed to download image 2: https://images.adsttc.com/media/images/5445/a1b3/e58e/ce18/0a00/0027/large_jpg/9911-03.jpg?1413849459"
+  }
+]

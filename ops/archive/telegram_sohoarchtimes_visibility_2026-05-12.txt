@@ -1,0 +1,6 @@
+SohoArchTimes visibility check for 2026-05-12
+521 https://t.me/SohoArchTimes/521 House of Wisdom Library and Cultural Center visible=true
+526 https://t.me/SohoArchTimes/526 Aqua Tower visible=true
+531 https://t.me/SohoArchTimes/531 Capital Gate visible=true
+536 https://t.me/SohoArchTimes/536 Shenzhen Energy Mansion visible=true
+541 https://t.me/SohoArchTimes/541 The Twist Museum visible=true

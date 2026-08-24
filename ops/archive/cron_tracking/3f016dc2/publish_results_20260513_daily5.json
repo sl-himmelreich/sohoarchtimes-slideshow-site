@@ -1,0 +1,57 @@
+[
+  {
+    "index": 1,
+    "title": "Hyperlane",
+    "slug": "hyperlane",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260513_daily5/01_hyperlane.json",
+    "source_url": "https://www.archdaily.com/1030231/hyperlane-aedas",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 2,
+    "title": "Yabuli Entrepreneurs’ Congress Center",
+    "slug": "yabuli_entrepreneurs_congress_center",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260513_daily5/02_yabuli_entrepreneurs_congress_center.json",
+    "source_url": "https://www.archdaily.com/980485/yabuli-entrepreneurs-congress-center-mad-architects",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 3,
+    "title": "Chengdu Science Fiction Museum",
+    "slug": "chengdu_science_fiction_museum",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260513_daily5/03_chengdu_science_fiction_museum.json",
+    "source_url": "https://www.archdaily.com/1008749/chengdu-science-fiction-museum-zaha-hadid-architects",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 4,
+    "title": "Lishui Airport",
+    "slug": "lishui_airport",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260513_daily5/04_lishui_airport.json",
+    "source_url": "https://www.archdaily.com/1038687/lishui-airport-mad-architects",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 5,
+    "title": "Long March Cultural Digital Art Museum",
+    "slug": "long_march_cultural_digital_art_museum",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260513_daily5/05_long_march_cultural_digital_art_museum.json",
+    "source_url": "https://www.archdaily.com/1022354/long-march-cultural-digital-art-museum-china-ippr",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  }
+]

@@ -1,0 +1,14 @@
+Telegram public feed check for SohoArchTimes on 2026-05-19 UTC
+
+Observed behavior:
+- Main feed text extraction showed posts through 911, with 911 visible as Orange County Museum of Art.
+- Navigating to /916 and /921 still rendered the same feed region anchored around posts 886 and 911, not posts 916 or 921.
+- Screenshot of /916 and /921 viewport showed the Swatch and Omega Campus post card with a 5-image collage, but page text identifies that card as post 886, not 916 or 921.
+
+Results:
+- Post 916: visible in feed = no. 5-image album = no evidence for 916 in feed. Visible caption/title text for 916 = none; nearest visible posts were 886 and 911.
+- Post 921: visible in feed = no. 5-image album = no evidence for 921 in feed. Visible caption/title text for 921 = none; nearest visible posts were 886 and 911.
+
+Relevant visible nearby captions:
+- Post 886: Swatch and Omega Campus / Биль, Швейцария / Архитекторы: Shigeru Ban Architects / Год: 2019 ... (shown as a 5-image collage in the screenshot viewport)
+- Post 911: Orange County Museum of Art / Ориндж-Каунти, Калифорния, США / Morphosis Architects / 2022 ...

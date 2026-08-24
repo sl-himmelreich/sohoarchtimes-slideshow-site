@@ -1,0 +1,42 @@
+{
+  "date": "2026-03-29",
+  "status": "completed",
+  "published_count": 5,
+  "all_five_visible": true,
+  "posts": [
+    {
+      "title": "DFAB House / NCCR Digital Fabrication",
+      "post_url": "https://t.me/SohoArchTimes/226",
+      "message_id": 226,
+      "source_url": "https://www.archdaily.com/942221/dfab-house-eth-zurich-plus-nccr-digital-fabrication"
+    },
+    {
+      "title": "Maslak No.1 Office Tower / EAA - Emre Arolat Architecture",
+      "post_url": "https://t.me/SohoArchTimes/231",
+      "message_id": 231,
+      "source_url": "https://www.archdaily.com/800160/maslak-n-office-tower-emre-arolat-architects"
+    },
+    {
+      "title": "30 St Mary Axe Tower / Foster + Partners",
+      "post_url": "https://t.me/SohoArchTimes/236",
+      "message_id": 236,
+      "source_url": "https://www.archdaily.com/928285/30-st-mary-axe-tower-foster-plus-partners"
+    },
+    {
+      "title": "Hospital Manta / PMMT",
+      "post_url": "https://t.me/SohoArchTimes/241",
+      "message_id": 241,
+      "source_url": "https://www.archdaily.com/928430/hospital-manta-pmmt"
+    },
+    {
+      "title": "Da Nang Hi-Tech Park Headquarters Building / HUNI Architectes",
+      "post_url": "https://t.me/SohoArchTimes/246",
+      "message_id": 246,
+      "source_url": "https://www.archdaily.com/1027308/da-nang-hi-tech-park-headquarters-building-huni-architectes"
+    }
+  ],
+  "reserve_candidate": {
+    "title": "Malta Maritime Trade Centre / AP Valletta",
+    "source_url": "https://www.archdaily.com/502293/malta-maritime-trade-centre-architecture-project"
+  }
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "file": "wasl_tower_exception_20260512.json",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 158, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 135, in main\n    result = send_album(obj['caption_ru'], local_paths)\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 103, in send_album\n    raise RuntimeError(json.dumps(data, ensure_ascii=False))\nRuntimeError: {\"ok\": false, \"error_code\": 413, \"description\": \"Request Entity Too Large\"}"
+  },
+  {
+    "file": "arnhem_central_transfer_terminal.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/646\", \"message_id\": 646, \"media_group_id\": \"14228737829517290\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/646",
+      "message_id": 646,
+      "media_group_id": "14228737829517290"
+    }
+  },
+  {
+    "file": "mercedes_benz_museum.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/651\", \"message_id\": 651, \"media_group_id\": \"14228737917091666\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/651",
+      "message_id": 651,
+      "media_group_id": "14228737917091666"
+    }
+  },
+  {
+    "file": "raffles_city_hangzhou.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/656\", \"message_id\": 656, \"media_group_id\": \"14228738360985826\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/656",
+      "message_id": 656,
+      "media_group_id": "14228738360985826"
+    }
+  },
+  {
+    "file": "doha_metro_network.json",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 158, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 135, in main\n    result = send_album(obj['caption_ru'], local_paths)\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 103, in send_album\n    raise RuntimeError(json.dumps(data, ensure_ascii=False))\nRuntimeError: {\"ok\": false, \"error_code\": 413, \"description\": \"Request Entity Too Large\"}"
+  },
+  {
+    "file": "galleria_centercity.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/661\", \"message_id\": 661, \"media_group_id\": \"14228738462414642\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/661",
+      "message_id": 661,
+      "media_group_id": "14228738462414642"
+    }
+  },
+  {
+    "file": "booking_com_city_campus.json",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 158, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 135, in main\n    result = send_album(obj['caption_ru'], local_paths)\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 103, in send_album\n    raise RuntimeError(json.dumps(data, ensure_ascii=False))\nRuntimeError: {\"ok\": false, \"error_code\": 400, \"description\": \"Bad Request: failed to send message #2 with the error message \\\"PHOTO_INVALID_DIMENSIONS\\\"\"}"
+  },
+  {
+    "file": "echo_interfaculty_teaching_building.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/666\", \"message_id\": 666, \"media_group_id\": \"14228738923291898\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/666",
+      "message_id": 666,
+      "media_group_id": "14228738923291898"
+    }
+  },
+  {
+    "file": "theatre_agora.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/671\", \"message_id\": 671, \"media_group_id\": \"14228739314922090\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/671",
+      "message_id": 671,
+      "media_group_id": "14228739314922090"
+    }
+  },
+  {
+    "file": "mobius_house.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/676\", \"message_id\": 676, \"media_group_id\": \"14228739407604418\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/676",
+      "message_id": 676,
+      "media_group_id": "14228739407604418"
+    }
+  },
+  {
+    "file": "hanjie_wanda_square.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/681\", \"message_id\": 681, \"media_group_id\": \"14228739823001282\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/681",
+      "message_id": 681,
+      "media_group_id": "14228739823001282"
+    }
+  }
+]
