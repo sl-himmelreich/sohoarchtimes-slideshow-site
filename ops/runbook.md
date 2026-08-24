@@ -53,6 +53,8 @@ Important implementation notes:
   - chat id `-1003823260493`
   - local multipart upload to `sendMediaGroup`
   - registry updates on success
+  - publisher proof updates on success (`ops/publisher_proof.json`) — the site
+    builder uses it to render original-resolution images (proven_high_res)
 - If Telegram returns 429, the helper script waits and retries automatically.
 - If you get repeated extraction failures from a source, switch sources instead of retrying the same page family.
 
