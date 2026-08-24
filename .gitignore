@@ -1,4 +1,8 @@
 __pycache__/
 *.pyc
 .env
+*.env
 token.txt
+.secrets/
+*.key
+*.pem
