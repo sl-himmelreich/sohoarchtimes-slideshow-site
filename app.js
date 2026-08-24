@@ -439,6 +439,92 @@
     }
   }
 
+  // ---- Site refresh button (⟳ in the HUD) ----------------------------------
+  // Click: rebuild slides.json from the CURRENT public Telegram state via the
+  // repo's manual GitHub Action, wait for the fresh build, reload the page.
+  // Needs a GitHub token stored once in this browser (double-click to set);
+  // without a token the button simply reloads the page.
+  const REBUILD_API = 'https://api.github.com/repos/sl-himmelreich/sohoarchtimes-slideshow-site/actions/workflows/rebuild.yml/dispatches';
+  const REBUILD_TOKEN_KEY = 'soho_rebuild_token';
+  const REBUILD_WAIT_MS = 5 * 60 * 1000;
+
+  function getRebuildToken() {
+    try { return (localStorage.getItem(REBUILD_TOKEN_KEY) || '').trim(); } catch (_) { return ''; }
+  }
+
+  async function fetchBuildVersion() {
+    const res = await fetch(`./slides.json?cb=${Date.now().toString(36)}`, { cache: 'no-store' });
+    const d = await res.json();
+    return (d && d.build_version) || '';
+  }
+
+  async function triggerSiteRebuild() {
+    const token = getRebuildToken();
+    if (!token) { location.reload(); return; }
+    const btn = $('btnReload');
+    if (btn.hasAttribute('data-busy')) return;
+    btn.setAttribute('data-busy', '1');
+    try {
+      let before = '';
+      try { before = await fetchBuildVersion(); } catch (_) {}
+      const ctrl = new AbortController();
+      const dispatchTimeout = setTimeout(() => ctrl.abort(), 15000);
+      const res = await fetch(REBUILD_API, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' },
+        body: JSON.stringify({ ref: 'main' }),
+        signal: ctrl.signal,
+      });
+      clearTimeout(dispatchTimeout);
+      if (res.status !== 204) {
+        btn.removeAttribute('data-busy');
+        alert(`Пересборка не запустилась (HTTP ${res.status}). Проверьте токен: двойной клик по кнопке ⟳.`);
+        return;
+      }
+      // The Action rebuilds and commits only if Telegram changed; GitHub Pages
+      // then redeploys. Wait for a new build_version, or time out and reload.
+      const t0 = Date.now();
+      while (Date.now() - t0 < REBUILD_WAIT_MS) {
+        await new Promise((r) => setTimeout(r, 8000));
+        try {
+          const v = await fetchBuildVersion();
+          if (before && v && v !== before) break;
+        } catch (_) {}
+      }
+    } catch (err) {
+      console.warn('[rebuild] failed:', err);
+    }
+    location.reload();
+  }
+
+  function promptRebuildToken() {
+    let existing = getRebuildToken();
+    const v = window.prompt(
+      'GitHub-токен для пересборки сайта по Telegram (хранится только в этом браузере).\nПустое значение — кнопка просто перезагружает страницу.',
+      existing
+    );
+    if (v === null) return;
+    try {
+      if (v.trim()) localStorage.setItem(REBUILD_TOKEN_KEY, v.trim());
+      else localStorage.removeItem(REBUILD_TOKEN_KEY);
+    } catch (_) {}
+  }
+
+  function wireReloadButton() {
+    const btn = $('btnReload');
+    let clickTimer = null;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // не задевать fullscreen-по-клику на сцене
+      if (clickTimer) return; // второй клик обработает dblclick
+      clickTimer = setTimeout(() => { clickTimer = null; triggerSiteRebuild(); }, 350);
+    });
+    btn.addEventListener('dblclick', (e) => {
+      e.stopPropagation();
+      if (clickTimer) { clearTimeout(clickTimer); clickTimer = null; }
+      promptRebuildToken();
+    });
+  }
+
   function enterFullscreen() {
     const el = document.documentElement;
     const fn = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
@@ -545,8 +631,7 @@
     $('btnNext').addEventListener('click',  () => { nudgeControls(); gotoSlide(+1); });
     $('btnPause').addEventListener('click', () => { nudgeControls(); togglePause(); });
     $('btnFull').addEventListener('click',  () => { nudgeControls(); enterFullscreen(); });
-    // stopPropagation: клик по кнопке не должен доходить до stage (там первый клик — fullscreen)
-    $('btnReload').addEventListener('click', (e) => { e.stopPropagation(); location.reload(); });
+    wireReloadButton();
 
     document.addEventListener('keydown', onKey);
     ['mousemove', 'touchstart', 'pointermove'].forEach((ev) =>
