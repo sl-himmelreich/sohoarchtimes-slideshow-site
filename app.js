@@ -578,6 +578,8 @@
     $('btnNext').addEventListener('click',  () => { nudgeControls(); gotoSlide(+1); });
     $('btnPause').addEventListener('click', () => { nudgeControls(); togglePause(); });
     $('btnFull').addEventListener('click',  () => { nudgeControls(); enterFullscreen(); });
+    // stopPropagation: клик по кнопке не должен доходить до stage (там первый клик — fullscreen)
+    $('btnReload').addEventListener('click', (e) => { e.stopPropagation(); location.reload(); });
 
     document.addEventListener('keydown', onKey);
     ['mousemove', 'touchstart', 'pointermove'].forEach((ev) =>
