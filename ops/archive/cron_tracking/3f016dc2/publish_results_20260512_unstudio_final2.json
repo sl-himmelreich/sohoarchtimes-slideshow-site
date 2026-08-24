@@ -1,0 +1,20 @@
+[
+  {
+    "file": "huawei_flagship_store_final.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/711\", \"message_id\": 711, \"media_group_id\": \"14228747261675946\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/711",
+      "message_id": 711,
+      "media_group_id": "14228747261675946"
+    }
+  },
+  {
+    "file": "looking_glass_facade_renovation_final.json",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 145, in main\n    local_paths = download_images(source_url, obj['image_urls'], slug)\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 77, in download_images\n    raise RuntimeError(f'Failed to download image {idx}: {url}')\nRuntimeError: Failed to download image 1: https://images.adsttc.com/media/images/5df1/13ca/3312/fd16/7900/0791/large_jpg/EvabloEM_UNStudio_PCHooftstraat-083_copy.jpg?1576080319"
+  }
+]

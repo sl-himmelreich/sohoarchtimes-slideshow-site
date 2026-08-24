@@ -1,0 +1,128 @@
+[
+  {
+    "index": 1,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/101_west_14th_street.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/546\", \"message_id\": 546, \"media_group_id\": \"14228691813798002\"}",
+    "stderr": ""
+  },
+  {
+    "index": 2,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/al_dar_headquarters_mz_architects.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/551\", \"message_id\": 551, \"media_group_id\": \"14228691913252994\"}",
+    "stderr": ""
+  },
+  {
+    "index": 3,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/archermit_s_feixue_pavilion.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/556\", \"message_id\": 556, \"media_group_id\": \"14228692316975314\"}",
+    "stderr": ""
+  },
+  {
+    "index": 4,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/bernard_tschumi_architects_circular_philo_building_at_institut_le_rosey.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/561\", \"message_id\": 561, \"media_group_id\": \"14228692404958498\"}",
+    "stderr": ""
+  },
+  {
+    "index": 5,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/centre_pompidou_metz_shigeru_ban_architects.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/566\", \"message_id\": 566, \"media_group_id\": \"14228692827640658\"}",
+    "stderr": ""
+  },
+  {
+    "index": 6,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/copenhill_energy_plant_and_urban_recreation_center_big.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/571\", \"message_id\": 571, \"media_group_id\": \"14228692918331794\"}",
+    "stderr": ""
+  },
+  {
+    "index": 7,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/itc-green-center.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/576\", \"message_id\": 576, \"media_group_id\": \"14228693353104786\"}",
+    "stderr": ""
+  },
+  {
+    "index": 8,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/king_s_cross_station_john_mcaslan_partners.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/581\", \"message_id\": 581, \"media_group_id\": \"14228693457804210\"}",
+    "stderr": ""
+  },
+  {
+    "index": 9,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/lax_new_concourse_completed_by_woods_bagot_using_modular_construction.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/586\", \"message_id\": 586, \"media_group_id\": \"14228693839068658\"}",
+    "stderr": ""
+  },
+  {
+    "index": 10,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/maxxi_museum_zaha_hadid_architects.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/591\", \"message_id\": 591, \"media_group_id\": \"14228693926771642\"}",
+    "stderr": ""
+  },
+  {
+    "index": 11,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/one_central_park_ateliers_jean_nouvel_patrick_blanc.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/596\", \"message_id\": 596, \"media_group_id\": \"14228694343761194\"}",
+    "stderr": ""
+  },
+  {
+    "index": 12,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/pierres_vives_zaha_hadid_architects.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/601\", \"message_id\": 601, \"media_group_id\": \"14228694429953378\"}",
+    "stderr": ""
+  },
+  {
+    "index": 13,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/qatar_national_convention_centre_arata_isozaki.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/606\", \"message_id\": 606, \"media_group_id\": \"14228694849275290\"}",
+    "stderr": ""
+  },
+  {
+    "index": 14,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/qingdao_science_technology_museum.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/611\", \"message_id\": 611, \"media_group_id\": \"14228694955946954\"}",
+    "stderr": ""
+  },
+  {
+    "index": 15,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/rolex_learning_center_sanaa.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/616\", \"message_id\": 616, \"media_group_id\": \"14228695363811498\"}",
+    "stderr": ""
+  },
+  {
+    "index": 16,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/shenzhen_science_and_technology_museum_zaha_hadid_architects.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/621\", \"message_id\": 621, \"media_group_id\": \"14228695446803674\"}",
+    "stderr": ""
+  },
+  {
+    "index": 17,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/striatus_a_3d_concrete_printed_masonry_bridge_in_venice_italy.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/626\", \"message_id\": 626, \"media_group_id\": \"14228695871708882\"}",
+    "stderr": ""
+  },
+  {
+    "index": 18,
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/structural_cellulose_wall.json",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 150, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 132, in main\n    result = send_album(obj['caption_ru'], local_paths)\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 103, in send_album\n    raise RuntimeError(json.dumps(data, ensure_ascii=False))\nRuntimeError: {\"ok\": false, \"error_code\": 400, \"description\": \"Bad Request: failed to send message #4 with the error message \\\"IMAGE_PROCESS_FAILED\\\"\"}"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "build_version": "20260525T180915",
+  "image_policy": "telegram_faithful_v2",
+  "total_slides": 335,
+  "src_distribution": {
+    "telegram_preview": 335
+  },
+  "host_distribution": {
+    "telesco.pe": 335
+  },
+  "invariants": {
+    "no_source_full_rendered": true,
+    "no_api_telegram_file_bot_urls": true,
+    "all_urls_are_telegram_cdn": true,
+    "deleted_posts_excluded": true,
+    "grace_window_respected_for_mid_946": true
+  },
+  "top_message_ids": [
+    911,
+    881,
+    866,
+    861,
+    856,
+    841,
+    816,
+    811,
+    806,
+    801
+  ]
+}

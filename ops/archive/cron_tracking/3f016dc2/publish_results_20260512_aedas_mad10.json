@@ -1,0 +1,112 @@
+[
+  {
+    "index": 1,
+    "title": "Chongqing Gaoke Group Office",
+    "slug": "chongqing_gaoke_group_office",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260512_aedas_mad10/01_chongqing_gaoke_group_office.json",
+    "source_url": "https://www.archdaily.com/987823/chongqing-gaoke-group-office-aedas",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 2,
+    "title": "Lè Architecture",
+    "slug": "le_architecture",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260512_aedas_mad10/02_le_architecture.json",
+    "source_url": "https://www.archdaily.com/902292/le-architecture-aedas",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 3,
+    "title": "Shenzhen HJ Land Xiyue Tower",
+    "slug": "shenzhen_hj_land_xiyue_tower",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260512_aedas_mad10/03_shenzhen_hj_land_xiyue_tower.json",
+    "source_url": "https://parametric-architecture.com/xiyue-tower-integrates-various-functions-into-a-bamboo-formed-building/",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 4,
+    "title": "One River North",
+    "slug": "one_river_north",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260512_aedas_mad10/04_one_river_north.json",
+    "source_url": "https://www.archdaily.com/1022428/one-river-north-mad-architects",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 5,
+    "title": "Guanyun Qiantang City",
+    "slug": "guanyun_qiantang_city",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260512_aedas_mad10/05_guanyun_qiantang_city.json",
+    "source_url": "https://www.archdaily.com/1026807/guanyun-qiantang-city-aedas",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 6,
+    "title": "Quzhou Sports Park",
+    "slug": "quzhou_sports_park",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260512_aedas_mad10/06_quzhou_sports_park.json",
+    "source_url": "https://www.archdaily.com/990244/quzhou-sports-park-mad-architects",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 7,
+    "title": "Gardenhouse",
+    "slug": "gardenhouse",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260512_aedas_mad10/07_gardenhouse.json",
+    "source_url": "https://www.archdaily.com/946522/gardenhouse-mad-architects",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 8,
+    "title": "Jiaxing Train Station",
+    "slug": "jiaxing_train_station",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260512_aedas_mad10/08_jiaxing_train_station.json",
+    "source_url": "https://www.archdaily.com/1013113/mad-completes-the-train-station-in-the-forest-their-first-transit-oriented-development-in-china",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 9,
+    "title": "UNIC Apartments",
+    "slug": "unic_apartments",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260512_aedas_mad10/09_unic_apartments.json",
+    "source_url": "https://www.archdaily.com/985994/unic-mad-architects",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  },
+  {
+    "index": 10,
+    "title": "Baiziwan Social Housing",
+    "slug": "baiziwan_social_housing",
+    "payload_path": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260512_aedas_mad10/10_baiziwan_social_housing.json",
+    "source_url": "https://www.archdaily.com/984014/baiziwan-social-housing-mad-architects",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 169, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 125, in main\n    raise RuntimeError(f'Missing required field: {key}')\nRuntimeError: Missing required field: image_urls",
+    "published": false
+  }
+]

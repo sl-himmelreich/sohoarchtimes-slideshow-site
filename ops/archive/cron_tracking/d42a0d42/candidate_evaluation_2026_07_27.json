@@ -1,0 +1,19 @@
+{
+  "selected": {
+    "title": "Shenzhen Capital Plaza / CCDI GROUP 21 Design Studio",
+    "source_url": "https://www.archdaily.com/1001332/shenzhen-capital-plaza-ccdi-group-21-design-studio",
+    "reason": "Built project, explicit area 167,640 m², strong advanced-envelope / diagrid facade logic, 5 verified high-quality images, no duplicate found in registry."
+  },
+  "rejected": [
+    {
+      "title": "National Bank of Kuwait Headquarters / Foster + Partners",
+      "source_url": "https://www.archdaily.com/985036/national-bank-of-kuwait-headquarters-foster-plus-partners",
+      "reason": "Area is not stated on the allowed source page, so the 1,000 m² threshold cannot be reliably confirmed from the allowed source."
+    },
+    {
+      "title": "Haina Baichuan Headquarters / Dongxiying Studio CCDI",
+      "source_url": "https://www.archdaily.com/958559/haina-baichuan-headquarters-dongxiying-studio-ccdi",
+      "reason": "Built and large enough, but the project page does not convincingly place it in the required parametric / computational / digital-fabrication / advanced-envelope paradigm."
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+[
+  {
+    "title": "Infinitus Plaza",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/618a/81d5/9a95/7a01/645d/5c8f/large_jpg/1-zha-infinitus-plaza-photo-by-liang-xue.jpg?1636467205",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 881743,
+        "width": 2000,
+        "height": 1431
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/618a/81d8/9a95/7a01/645d/5c91/medium_jpg/5-zha-infinitus-plaza-photo-by-liang-xue.jpg?1636467254",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 65217,
+        "width": 528,
+        "height": 352
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/618a/81b2/9a95/7a01/645d/5c89/medium_jpg/7-zha-infinitus-plaza-photo-by-liang-xue.jpg?1636467207",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 69408,
+        "width": 528,
+        "height": 352
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/618a/81dc/9a95/7a01/645d/5c92/medium_jpg/18-zha-infinitus-plaza-photo-by-liang-xue.jpg?1636467244",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 89101,
+        "width": 528,
+        "height": 385
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/618a/81c9/9a95/7a01/645d/5c8d/medium_jpg/6-zha-infinitus-plaza-photo-by-liang-xue.jpg?1636467232",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 154353,
+        "width": 528,
+        "height": 792
+      }
+    ]
+  },
+  {
+    "title": "The Star",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/5384/f93b/c07a/8044/af00/00da/large_jpg/The_Star__Singapore__Designed_by_Andrew_Bromberg_of_Aedas_Aerial.jpg?1401223434",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 921002,
+        "width": 2000,
+        "height": 1347
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5384/f693/c07a/8044/af00/00d4/large_jpg/The_Star__Singapore__Designed_by_Andrew_Bromberg_of_Aedas_Civic_Plaza1.jpg?1401222776",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 597934,
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5384/f7ce/c07a/80f8/9f00/00dc/large_jpg/The_Star__Singapore__Designed_by_Andrew_Bromberg_of_Aedas_Civic_Plaza2.jpg?1401223079",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 853487,
+        "width": 2000,
+        "height": 1726
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5384/f9c2/c07a/80f8/9f00/00e3/large_jpg/The_Star__Singapore__Designed_by_Andrew_Bromberg_of_Aedas_Theater_Interior.jpg?1401223600",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 856752,
+        "width": 2000,
+        "height": 1170
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5384/fa27/c07a/8031/7a00/00ee/large_jpg/The_Star__Singapore__Designed_by_Andrew_Bromberg_of_Aedas_South_Elevation1.jpg?1401223696",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 703676,
+        "width": 2000,
+        "height": 1208
+      }
+    ]
+  },
+  {
+    "title": "Hong Kong West Kowloon Station",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/5c6d/fb00/284d/d151/2900/062f/large_jpg/Hong_Kong_West_Kowloon_Station_by_Andrew_Bromberg_at_Aedas__Photo_by_Virgile_Bertrand_12.jpg?1550711526",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1292821,
+        "width": 2000,
+        "height": 1515
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5c6d/fac1/284d/d1af/7400/0cf6/large_jpg/Hong_Kong_West_Kowloon_Station_by_Andrew_Bromberg_at_Aedas__Photo_by_Virgile_Bertrand_11.jpg?1550711463",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1156187,
+        "width": 2000,
+        "height": 1440
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5c6d/f96e/284d/d1af/7400/0cef/large_jpg/Hong_Kong_West_Kowloon_Station_by_Andrew_Bromberg_at_Aedas__Photo_by_Virgile_Bertrand_4.jpg?1550711124",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1083115,
+        "width": 2000,
+        "height": 1496
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5c6d/f988/284d/d151/2900/0626/large_jpg/Hong_Kong_West_Kowloon_Station_by_Andrew_Bromberg_at_Aedas__Photo_by_Virgile_Bertrand_5.jpg?1550711156",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 704787,
+        "width": 2000,
+        "height": 1120
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5c6d/faa1/284d/d1af/7400/0cf5/large_jpg/Hong_Kong_West_Kowloon_Station_by_Andrew_Bromberg_at_Aedas__Photo_by_Virgile_Bertrand_10.jpg?1550711432",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1258206,
+        "width": 2000,
+        "height": 1399
+      }
+    ]
+  },
+  {
+    "title": "Sandcrawler",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/53e1/c6e1/c07a/80bf/0200/0246/large_jpg/Sandcrawler__Singapore__by_Andrew_Bromberg_of_Aedas_Exterior_1.jpg?1407305410",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 671901,
+        "width": 2000,
+        "height": 1500
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/53e1/c520/c07a/80bf/0200/0241/large_jpg/Sandcrawler__Singapore__by_Andrew_Bromberg_of_Aedas_Exterior_2.jpg?1407304949",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1055353,
+        "width": 1972,
+        "height": 3000
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/53e1/c6b7/c07a/80bf/0200/0245/large_jpg/Sandcrawler__Singapore__by_Andrew_Bromberg_of_Aedas_Aerial_view_within_site_context.jpg?1407305374",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 720162,
+        "width": 2000,
+        "height": 1332
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/53e1/c4e3/c07a/8018/7400/02b5/large_jpg/Sandcrawler__Singapore__by_Andrew_Bromberg_of_Aedas_Courtyard_view.jpg?1407304900",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 890610,
+        "width": 2000,
+        "height": 1202
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/53e1/c510/c07a/8044/5500/0224/large_jpg/Sandcrawler__Singapore__by_Andrew_Bromberg_of_Aedas_Courtyard.jpg?1407304929",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 1246747,
+        "width": 2000,
+        "height": 2166
+      }
+    ]
+  },
+  {
+    "title": "Da Wang Jing Mixed-use Development",
+    "ok": true,
+    "checks": [
+      {
+        "url": "https://images.adsttc.com/media/images/5dae/0992/3312/fd2d/bb00/008c/large_jpg/Da_Wang_Jing_Mixed-use_Development__by_Aedas_10_The_Visual_Effects_of_Bamboos_from_Different_Angles_and_at_Different_Times.jpg?1571686775",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 2468329,
+        "width": 2000,
+        "height": 1761
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5d7d/f9f3/284d/d1ff/b400/0093/medium_jpg/Da_Wang_Jing_Mixed-use_Development__by_Aedas_01_View_from_the_North.jpg?1568537046",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 111472,
+        "width": 528,
+        "height": 610
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5d7d/fd5c/284d/d1cf/ae00/005c/medium_jpg/Da_Wang_Jing_Mixed-use_Development__by_Aedas_13_The_Bottom_of_a_Tower_and_its_Annex_Building.jpg?1568537942",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 60227,
+        "width": 528,
+        "height": 362
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5d7d/fcf5/284d/d1ff/b400/009f/medium_jpg/Da_Wang_Jing_Mixed-use_Development__by_Aedas_11_The_Bottom_of_a_Tower_and_its_Annex_Building.jpg?1568537807",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 76767,
+        "width": 528,
+        "height": 352
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5d7d/faf5/284d/d1cf/ae00/0052/medium_jpg/Da_Wang_Jing_Mixed-use_Development__by_Aedas_05_Distinct_Visual_Aesthetics.jpg?1568537305",
+        "status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 77565,
+        "width": 528,
+        "height": 352
+      }
+    ]
+  }
+]

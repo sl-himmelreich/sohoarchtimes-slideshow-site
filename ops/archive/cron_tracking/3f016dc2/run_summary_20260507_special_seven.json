@@ -1,0 +1,83 @@
+{
+  "date": "2026-05-07",
+  "mode": "manual_exception_seven_user_specified_objects",
+  "channel": "@SohoArchTimes",
+  "status": "success",
+  "published_count": 7,
+  "exception_scope": "Разовое исключение из еженедельных правил только для этой публикации по прямому указанию пользователя.",
+  "notes": [
+    "Опубликованы все 7 объектов, заданные пользователем, в стандартном формате.",
+    "Пользовательские формулировки интегрированы в описания как часть текста постов.",
+    "Центр Гейдара Алиева уже встречался в реестре, поэтому для него был использован разовый publisher без фильтра дублей по прямому указанию пользователя. Это не меняет правила обычной еженедельной публикации."
+  ],
+  "published_posts": [
+    {
+      "title": "BMW 'Dynaform'",
+      "source_url": "https://www.bollinger-grohmann.com/en.projects.bmw-dynaform.html",
+      "post_url": "https://t.me/SohoArchTimes/386",
+      "message_id": 386,
+      "media_group_id": "14225224168985938",
+      "visible_publicly": true,
+      "visibility_snippet": "Павильон BMW Dynaform — Локация: Франкфурт-на-Майне, Германия"
+    },
+    {
+      "title": "The HydraPier Pavilion",
+      "source_url": "https://asymptote.net/projects/the-hydrapier-pavilion/",
+      "post_url": "https://t.me/SohoArchTimes/391",
+      "message_id": 391,
+      "media_group_id": "14225224254890586",
+      "visible_publicly": true,
+      "visibility_snippet": "HydraPier Pavilion — Локация: Харлеммермер, Нидерланды"
+    },
+    {
+      "title": "New Milan Trade Fair / Massimiliano & Doriana Fuksas",
+      "source_url": "https://www.archdaily.com/248138/new-milan-trade-fair-studio-fuksas",
+      "post_url": "https://t.me/SohoArchTimes/396",
+      "message_id": 396,
+      "media_group_id": "14225224659547346",
+      "visible_publicly": true,
+      "visibility_snippet": "New Milan Trade Fair — Локация: Ро-Перо, Италия"
+    },
+    {
+      "title": "Aviva Stadium",
+      "source_url": "https://populous.com/showcases/aviva-stadium",
+      "post_url": "https://t.me/SohoArchTimes/401",
+      "message_id": 401,
+      "media_group_id": "14225224754351002",
+      "visible_publicly": true,
+      "visibility_snippet": "Aviva Stadium — Локация: Дублин, Ирландия"
+    },
+    {
+      "title": "Metropol Parasol",
+      "source_url": "https://jmayerh.de/metropol-parasol/",
+      "post_url": "https://t.me/SohoArchTimes/406",
+      "message_id": 406,
+      "media_group_id": "14225225174731202",
+      "visible_publicly": true,
+      "visibility_snippet": "Metropol Parasol — Локация: Севилья, Испания"
+    },
+    {
+      "title": "Heydar Aliyev Center / Zaha Hadid Architects",
+      "source_url": "https://www.archdaily.com/448774/heydar-aliyev-center-zaha-hadid-architects",
+      "post_url": "https://t.me/SohoArchTimes/411",
+      "message_id": 411,
+      "media_group_id": "14225225259120306",
+      "visible_publicly": true,
+      "visibility_snippet": "Центр Гейдара Алиева — Локация: Баку, Азербайджан"
+    },
+    {
+      "title": "National Taichung Theater",
+      "source_url": "http://www.toyo-ito.co.jp/WWW/Project_Descript/2015-/2015-p_04/2015-p_04_en.html",
+      "post_url": "https://t.me/SohoArchTimes/416",
+      "message_id": 416,
+      "media_group_id": "14225225697449010",
+      "visible_publicly": true,
+      "visibility_snippet": "Национальный театр Тайчжуна — Локация: Тайчжун, Тайвань"
+    }
+  ],
+  "artifacts": {
+    "today_batch_dir": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260507_special_seven",
+    "visibility_check": "/home/user/workspace/telegram_sohoarchtimes_visibility_2026-05-07.txt",
+    "registry": "/home/user/workspace/cron_tracking/3f016dc2/published_objects.json"
+  }
+}

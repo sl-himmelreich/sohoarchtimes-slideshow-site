@@ -1,0 +1,14 @@
+{
+  "title": "The HydraPier Pavilion",
+  "slug": "hydrapier-pavilion-special",
+  "source_url": "https://asymptote.net/projects/the-hydrapier-pavilion/",
+  "canonical_source_url": "https://asymptote.net/projects/the-hydrapier-pavilion/",
+  "caption_ru": "HydraPier Pavilion\nЛокация: Харлеммермер, Нидерланды\nАрхитектор: Asymptote Architecture\nГод реализации: 2002\nМатериалы: doubly curved roof shells из single sheet-metal panels, изготовленных методом explosoform 2.5D panel moulding, и криволинейная стеклянная оболочка с использованием cold-bent glass.\nПример параметрической архитектуры задолго до того, как в Москве её окрестили «эмо-теком». Это один из первых общественных павильонов, в котором параметрическая геометрия была напрямую связана с технологиями изготовления. Проект важен как ранний пример единого контура, в котором проектирование и производство работают совместно, а архитектура, вода, свет и ландшафт собираются в одно вычислительно управляемое пространство.",
+  "image_urls": [
+    "https://asymptote.net/images/projects/the-hydrapier-pavilion/banner.jpg",
+    "https://asymptote.net/images/projects/the-hydrapier-pavilion/exterior-waterfront.jpg",
+    "https://asymptote.net/images/projects/the-hydrapier-pavilion/interior-exhibition.jpg",
+    "https://asymptote.net/images/projects/the-hydrapier-pavilion/exterior-detail.jpg",
+    "https://asymptote.net/images/projects/the-hydrapier-pavilion/exterior-night.jpg"
+  ]
+}

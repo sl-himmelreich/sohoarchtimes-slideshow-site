@@ -1,0 +1,6 @@
+SohoArchTimes visibility check for 2026-05-10
+471 https://t.me/SohoArchTimes/471 Guangzhou Opera House visible=true
+476 https://t.me/SohoArchTimes/476 Guangzhou Circle visible=true
+481 https://t.me/SohoArchTimes/481 Chaoyang Park Plaza visible=true
+486 https://t.me/SohoArchTimes/486 Galaxy SOHO visible=true
+491 https://t.me/SohoArchTimes/491 Beijing Daxing International Airport visible=true

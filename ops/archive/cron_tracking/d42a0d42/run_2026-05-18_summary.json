@@ -1,0 +1,32 @@
+{
+  "run_date": "2026-05-18",
+  "timezone": "Europe/Moscow",
+  "status": "success",
+  "published_posts": [
+    {
+      "title": "CoBLOgó Office / SUBdV",
+      "telegram_message_id": 916,
+      "public_url": "https://t.me/s/SohoArchTimes/916",
+      "source_url": "https://www.archdaily.com/874039/coblogo-subdv"
+    },
+    {
+      "title": "3Cubes Office Building / gmp Architects",
+      "telegram_message_id": 921,
+      "public_url": "https://t.me/s/SohoArchTimes/921",
+      "source_url": "https://www.archdaily.com/771345/3cubes-office-building-gmp-architekten"
+    }
+  ],
+  "site_sync": {
+    "performed": true,
+    "included_message_ids": [911],
+    "excluded_message_ids": [906, 916, 921],
+    "reasoning": {
+      "911": "older than 12 hours and publicly visible",
+      "906": "not publicly visible in Telegram web view, excluded",
+      "916": "new post younger than 12 hours, excluded",
+      "921": "new post younger than 12 hours, excluded"
+    },
+    "slides_count": 455,
+    "site_commit": "696da2b"
+  }
+}

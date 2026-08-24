@@ -1,0 +1,122 @@
+[
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260515_manual10/ceramic_house.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/846\", \"message_id\": 846, \"media_group_id\": \"14230765565486794\"}",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/846",
+      "message_id": 846,
+      "media_group_id": "14230765565486794"
+    }
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260515_manual10/da_wang_jing_mixed_use_development.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/851\", \"message_id\": 851, \"media_group_id\": \"14230765652879610\"}",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/851",
+      "message_id": 851,
+      "media_group_id": "14230765652879610"
+    }
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260515_manual10/fondation_louis_vuitton.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/856\", \"message_id\": 856, \"media_group_id\": \"14230766068954658\"}",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/856",
+      "message_id": 856,
+      "media_group_id": "14230766068954658"
+    }
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260515_manual10/hong_kong_west_kowloon_station.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/861\", \"message_id\": 861, \"media_group_id\": \"14230766158285890\"}",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/861",
+      "message_id": 861,
+      "media_group_id": "14230766158285890"
+    }
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260515_manual10/infinitus_plaza.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/866\", \"message_id\": 866, \"media_group_id\": \"14230766578706426\"}",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/866",
+      "message_id": 866,
+      "media_group_id": "14230766578706426"
+    }
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260515_manual10/ordos_art_city_museum.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/871\", \"message_id\": 871, \"media_group_id\": \"14230766682661042\"}",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/871",
+      "message_id": 871,
+      "media_group_id": "14230766682661042"
+    }
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260515_manual10/sandcrawler.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/876\", \"message_id\": 876, \"media_group_id\": \"14230767105798082\"}",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/876",
+      "message_id": 876,
+      "media_group_id": "14230767105798082"
+    }
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260515_manual10/sunac_guangzhou_grand_theatre.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/881\", \"message_id\": 881, \"media_group_id\": \"14230767211981346\"}",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/881",
+      "message_id": 881,
+      "media_group_id": "14230767211981346"
+    }
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260515_manual10/swatch_and_omega_campus.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/886\", \"message_id\": 886, \"media_group_id\": \"14230767594632778\"}",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/886",
+      "message_id": 886,
+      "media_group_id": "14230767594632778"
+    }
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/payloads_20260515_manual10/the_star.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/891\", \"message_id\": 891, \"media_group_id\": \"14230767682869266\"}",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/891",
+      "message_id": 891,
+      "media_group_id": "14230767682869266"
+    }
+  }
+]

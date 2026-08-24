@@ -1,0 +1,26 @@
+[
+  {
+    "file": "erasmus_bridge.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/701\", \"message_id\": 701, \"media_group_id\": \"14228742696883874\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/701",
+      "message_id": 701,
+      "media_group_id": "14228742696883874"
+    }
+  },
+  {
+    "file": "music_theatre_mumuth.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/706\", \"message_id\": 706, \"media_group_id\": \"14228742780867266\"}",
+    "stderr": "",
+    "json": {
+      "ok": true,
+      "post_url": "https://t.me/SohoArchTimes/706",
+      "message_id": 706,
+      "media_group_id": "14228742780867266"
+    }
+  }
+]

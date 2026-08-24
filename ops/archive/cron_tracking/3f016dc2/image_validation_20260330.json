@@ -1,0 +1,652 @@
+{
+  "morpheus_hotel": {
+    "source_url": "https://www.archdaily.com/896433/morpheus-hotel-zaha-hadid-architects",
+    "raw_count": 69,
+    "candidate_count": 57,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5b22/972a/f197/cc06/de00/0020/large_jpg/15_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528993439",
+      "https://images.adsttc.com/media/images/5b22/979a/f197/cc06/de00/0023/large_jpg/16_ZHA_Morpheus_photo_Ivan_Dupont.jpg?1528993661",
+      "https://images.adsttc.com/media/images/5b22/95fa/f197/cc06/de00/001c/large_jpg/11_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528993217",
+      "https://images.adsttc.com/media/images/5b22/9442/f197/ccfa/2700/003e/large_jpg/04_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528992805",
+      "https://images.adsttc.com/media/images/5b22/95bb/f197/cc06/de00/001b/large_jpg/12_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528993184",
+      "https://images.adsttc.com/media/images/5b22/9575/f197/ccfa/2700/0042/large_jpg/10_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528993103",
+      "https://images.adsttc.com/media/images/5b22/93df/f197/cc06/de00/0011/large_jpg/01_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528992709"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5b22/972a/f197/cc06/de00/0020/large_jpg/15_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528993439",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2005789,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5b22/979a/f197/cc06/de00/0023/large_jpg/16_ZHA_Morpheus_photo_Ivan_Dupont.jpg?1528993661",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 4698384,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5b22/95fa/f197/cc06/de00/001c/large_jpg/11_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528993217",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2457684,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5b22/9442/f197/ccfa/2700/003e/large_jpg/04_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528992805",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 4563890,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5b22/95bb/f197/cc06/de00/001b/large_jpg/12_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528993184",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1668176,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5b22/9575/f197/ccfa/2700/0042/large_jpg/10_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528993103",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2747236,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5b22/93df/f197/cc06/de00/0011/large_jpg/01_ZHA_Morpheus_photo_Virgile_Simon_Bertrand.jpg?1528992709",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 2932302,
+        "good": true
+      }
+    ]
+  },
+  "ali_al_ghanim_clinic": {
+    "source_url": "https://www.archdaily.com/611323/ali-mohammed-t-al-ghanim-clinic-agi-architects",
+    "raw_count": 32,
+    "candidate_count": 18,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/550a/49c9/e58e/ce15/1100/00a0/large_jpg/portada_AGI_CLINIC_KUWAIT_071214_1200.jpg?1426737594",
+      "https://images.adsttc.com/media/images/550a/4834/e58e/ce15/1100/009a/large_jpg/AGI_CLINIC_KUWAIT_071214_1145_CLEAN.jpg?1426737187",
+      "https://images.adsttc.com/media/images/550a/49b4/e58e/ce15/1100/009f/large_jpg/AGI_CLINIC_KUWAIT_P_071214_0020_CLEAN.jpg?1426737572",
+      "https://images.adsttc.com/media/images/550a/497a/e58e/ceb2/7000/009f/large_jpg/AGI_CLINIC_KUWAIT_P_071214_0016_CLEAN.jpg?1426737498",
+      "https://images.adsttc.com/media/images/550a/48d2/e58e/ceb2/7000/009c/large_jpg/AGI_CLINIC_KUWAIT_071214_1395.jpg?1426737345",
+      "https://images.adsttc.com/media/images/550a/48bb/e58e/ceb2/7000/009b/large_jpg/AGI_CLINIC_KUWAIT_071214_1307.jpg?1426737323",
+      "https://images.adsttc.com/media/images/550a/484b/e58e/ceb2/7000/0099/large_jpg/AGI_CLINIC_KUWAIT_071214_0833.jpg?1426737211"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/550a/49c9/e58e/ce15/1100/00a0/large_jpg/portada_AGI_CLINIC_KUWAIT_071214_1200.jpg?1426737594",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 749192,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/550a/4834/e58e/ce15/1100/009a/large_jpg/AGI_CLINIC_KUWAIT_071214_1145_CLEAN.jpg?1426737187",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 399224,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/550a/49b4/e58e/ce15/1100/009f/large_jpg/AGI_CLINIC_KUWAIT_P_071214_0020_CLEAN.jpg?1426737572",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 314342,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/550a/497a/e58e/ceb2/7000/009f/large_jpg/AGI_CLINIC_KUWAIT_P_071214_0016_CLEAN.jpg?1426737498",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 521330,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/550a/48d2/e58e/ceb2/7000/009c/large_jpg/AGI_CLINIC_KUWAIT_071214_1395.jpg?1426737345",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 598797,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/550a/48bb/e58e/ceb2/7000/009b/large_jpg/AGI_CLINIC_KUWAIT_071214_1307.jpg?1426737323",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 635497,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/550a/484b/e58e/ceb2/7000/0099/large_jpg/AGI_CLINIC_KUWAIT_071214_0833.jpg?1426737211",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 564567,
+        "good": true
+      }
+    ]
+  },
+  "vadeggio_cassarate_gallery": {
+    "source_url": "https://www.archdaily.com/294656/vadeggio-cassarate-gallery-cino-zucchi-architetti",
+    "raw_count": 32,
+    "candidate_count": 22,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/50a6/3154/b3fc/4b46/eb00/0029/large_jpg/CZA_PA007_8924.jpg?1414008628",
+      "https://images.adsttc.com/media/images/50a6/3215/b3fc/4b46/eb00/002b/large_jpg/CZA_PA007_8642.jpg?1414008586",
+      "https://images.adsttc.com/media/images/50a6/3070/b3fc/4b46/eb00/0027/large_jpg/CZA_PA007_8611.jpg?1414008593",
+      "https://images.adsttc.com/media/images/50a6/2ee3/b3fc/4b46/eb00/0023/large_jpg/CZA_PA007_0167.jpg?1414008600",
+      "https://images.adsttc.com/media/images/50a6/2f59/b3fc/4b46/eb00/0025/large_jpg/CZA_PA007_0069.jpg?1414008607",
+      "https://images.adsttc.com/media/images/50a6/2ff0/b3fc/4b46/eb00/0026/large_jpg/CZA_PA007_0218.jpg?1414008614",
+      "https://images.adsttc.com/media/images/50a6/310f/b3fc/4b46/eb00/0028/large_jpg/CZA_PA007_9060.jpg?1414008621"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/50a6/3154/b3fc/4b46/eb00/0029/large_jpg/CZA_PA007_8924.jpg?1414008628",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 850018,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/50a6/3215/b3fc/4b46/eb00/002b/large_jpg/CZA_PA007_8642.jpg?1414008586",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 970871,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/50a6/3070/b3fc/4b46/eb00/0027/large_jpg/CZA_PA007_8611.jpg?1414008593",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 891187,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/50a6/2ee3/b3fc/4b46/eb00/0023/large_jpg/CZA_PA007_0167.jpg?1414008600",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 706107,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/50a6/2f59/b3fc/4b46/eb00/0025/large_jpg/CZA_PA007_0069.jpg?1414008607",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 780985,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/50a6/2ff0/b3fc/4b46/eb00/0026/large_jpg/CZA_PA007_0218.jpg?1414008614",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 796859,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/50a6/310f/b3fc/4b46/eb00/0028/large_jpg/CZA_PA007_9060.jpg?1414008621",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 653562,
+        "good": true
+      }
+    ]
+  },
+  "shenzhen_airport_t3": {
+    "source_url": "https://www.archdaily.com/472197/shenzhen-bao-an-international-airport-studio-fuksas",
+    "raw_count": 45,
+    "candidate_count": 35,
+    "ok_count": 0,
+    "ok_images": [],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8df6/e8e4/4ea6/6300/00b7/large_jpg/©_Archivio_Fuksas_Untitled_Panorama2_2.jpg?1391037936",
+        "status": 200,
+        "ctype": "",
+        "size": 200362,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8cc7/e8e4/4ed6/d600/00b8/large_jpg/©_Archivio_Fuksas_DSC0016_2.jpg?1391037633",
+        "status": 200,
+        "ctype": "",
+        "size": 364966,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8c8f/e8e4/4ea6/6300/00ad/large_jpg/©_Archivio_Fuksas_2013._DSC0197_.jpg?1391037576",
+        "status": 200,
+        "ctype": "",
+        "size": 580797,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8ce1/e8e4/4e3e/3800/00c2/large_jpg/©_Archivio_Fuksas_DSC0024_2_copy.jpg?1391037656",
+        "status": 200,
+        "ctype": "",
+        "size": 295747,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8ce4/e8e4/4ed6/d600/00bb/large_jpg/©_Archivio_Fuksas_DSC0027.jpg?1391037661",
+        "status": 200,
+        "ctype": "",
+        "size": 226727,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8de3/e8e4/4ed6/d600/00c5/large_jpg/©_Archivio_Fuksas_IMG_5284_2.jpg?1391037915",
+        "status": 200,
+        "ctype": "",
+        "size": 296719,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8dcb/e8e4/4e3e/3800/00c6/large_jpg/©_Archivio_Fuksas_DSC0139.jpg?1391037889",
+        "status": 200,
+        "ctype": "",
+        "size": 1035613,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8c97/e8e4/4ea6/6300/00ae/large_jpg/©_Archivio_Fuksas__DSC0021_2.jpg?1391037584",
+        "status": 200,
+        "ctype": "",
+        "size": 389229,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8c9f/e8e4/4e3e/3800/00bf/large_jpg/©_Archivio_Fuksas_DSC0007.jpg?1391037590",
+        "status": 200,
+        "ctype": "",
+        "size": 301582,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8ca9/e8e4/4e3e/3800/00c0/large_jpg/©_Archivio_Fuksas_DSC0008.jpg?1391037600",
+        "status": 200,
+        "ctype": "",
+        "size": 227811,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8caf/e8e4/4ea6/6300/00af/large_jpg/©_Archivio_Fuksas_DSC0009.jpg?1391037608",
+        "status": 200,
+        "ctype": "",
+        "size": 318048,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8cb8/e8e4/4e3e/3800/00c1/large_jpg/©_Archivio_Fuksas_DSC0011.jpg?1391037615",
+        "status": 200,
+        "ctype": "",
+        "size": 279071,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8cc0/e8e4/4ed6/d600/00b7/large_jpg/©_Archivio_Fuksas_DSC0013.jpg?1391037625",
+        "status": 200,
+        "ctype": "",
+        "size": 309145,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8ccf/e8e4/4ed6/d600/00b9/large_jpg/©_Archivio_Fuksas_DSC0018.jpg?1391037640",
+        "status": 200,
+        "ctype": "",
+        "size": 287610,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8cd7/e8e4/4ed6/d600/00ba/large_jpg/©_Archivio_Fuksas_DSC0020.jpg?1391037648",
+        "status": 200,
+        "ctype": "",
+        "size": 287167,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8cf6/e8e4/4ed6/d600/00bc/large_jpg/©_Archivio_Fuksas_DSC0031_2.jpg?1391037679",
+        "status": 200,
+        "ctype": "",
+        "size": 262775,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8cff/e8e4/4e3e/3800/00c3/large_jpg/©_Archivio_Fuksas_DSC0030_(2).jpg?1391037686",
+        "status": 200,
+        "ctype": "",
+        "size": 1314887,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8d4e/e8e4/4ea6/6300/00b0/large_jpg/©_Archivio_Fuksas_DSC0039.jpg?1391037766",
+        "status": 200,
+        "ctype": "",
+        "size": 180612,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8d53/e8e4/4ed6/d600/00bd/large_jpg/©_Archivio_Fuksas_DSC0032.jpg?1391037772",
+        "status": 200,
+        "ctype": "",
+        "size": 211037,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8d5c/e8e4/4ed6/d600/00be/large_jpg/©_Archivio_Fuksas_DSC0041.jpg?1391037780",
+        "status": 200,
+        "ctype": "",
+        "size": 213621,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8d60/e8e4/4ea6/6300/00b1/large_jpg/©_Archivio_Fuksas_DSC0058.jpg?1391037785",
+        "status": 200,
+        "ctype": "",
+        "size": 253693,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8d6a/e8e4/4ed6/d600/00bf/large_jpg/©_Archivio_Fuksas_DSC0058_2.jpg?1391037794",
+        "status": 200,
+        "ctype": "",
+        "size": 215643,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8d74/e8e4/4e3e/3800/00c4/large_jpg/©_Archivio_Fuksas_DSC0072.jpg?1391037802",
+        "status": 200,
+        "ctype": "",
+        "size": 245280,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8d77/e8e4/4ed6/d600/00c0/large_jpg/©_Archivio_Fuksas_DSC0077.jpg?1391037808",
+        "status": 200,
+        "ctype": "",
+        "size": 222649,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8d83/e8e4/4ed6/d600/00c1/large_jpg/©_Archivio_Fuksas_DSC0089.jpg?1391037821",
+        "status": 200,
+        "ctype": "",
+        "size": 263692,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8d8e/e8e4/4e3e/3800/00c5/large_jpg/©_Archivio_Fuksas_DSC0092_2.jpg?1391037828",
+        "status": 200,
+        "ctype": "",
+        "size": 259833,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8d95/e8e4/4ea6/6300/00b2/large_jpg/©_Archivio_Fuksas_DSC0103.jpg?1391037838",
+        "status": 200,
+        "ctype": "",
+        "size": 195122,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8d9c/e8e4/4ed6/d600/00c2/large_jpg/©_Archivio_Fuksas_DSC0107.jpg?1391037844",
+        "status": 200,
+        "ctype": "",
+        "size": 190476,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8da3/e8e4/4ea6/6300/00b3/large_jpg/©_Archivio_Fuksas_DSC0109.jpg?1391037851",
+        "status": 200,
+        "ctype": "",
+        "size": 274246,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8dab/e8e4/4ed6/d600/00c3/large_jpg/©_Archivio_Fuksas_DSC0128.jpg?1391037858",
+        "status": 200,
+        "ctype": "",
+        "size": 140311,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8db1/e8e4/4ea6/6300/00b4/large_jpg/©_Archivio_Fuksas_DSC0136.jpg?1391037865",
+        "status": 200,
+        "ctype": "",
+        "size": 208616,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8dbc/e8e4/4ed6/d600/00c4/large_jpg/©_Archivio_Fuksas_DSC0137.jpg?1391037878",
+        "status": 200,
+        "ctype": "",
+        "size": 258646,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8dcd/e8e4/4ea6/6300/00b5/large_jpg/©_Archivio_Fuksas_DSC0162_2.jpg?1391037894",
+        "status": 200,
+        "ctype": "",
+        "size": 222294,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8de5/e8e4/4ea6/6300/00b6/large_jpg/©_Archivio_Fuksas_IMG_5285_2.jpg?1391037917",
+        "status": 200,
+        "ctype": "",
+        "size": 313371,
+        "good": false
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/52e9/8df9/e8e4/4ed6/d600/00c6/large_jpg/©_Archivio_Fuksas_Untitled_Panorama2_(2).jpg?1391037939",
+        "status": 200,
+        "ctype": "",
+        "size": 1083164,
+        "good": false
+      }
+    ]
+  },
+  "lanqiao_clubhouse": {
+    "source_url": "https://www.archdaily.com/290317/lanqiao-clubhouse-hhd_fun-architects",
+    "raw_count": 27,
+    "candidate_count": 15,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5098/92fb/28ba/0d03/e100/0107/large_jpg/IMG_6940.jpg?1414096556",
+      "https://images.adsttc.com/media/images/5098/92fd/28ba/0d03/f000/00fe/large_jpg/IMG_6771.jpg?1414096537",
+      "https://images.adsttc.com/media/images/5098/92e1/28ba/0d03/e900/0104/large_jpg/IMG_0653.jpg?1414096539",
+      "https://images.adsttc.com/media/images/5098/92e4/28ba/0d04/1c00/0104/large_jpg/IMG_1269.jpg?1414096542",
+      "https://images.adsttc.com/media/images/5098/92e7/28ba/0d03/e900/0105/large_jpg/IMG_0805.jpg?1414096544",
+      "https://images.adsttc.com/media/images/5098/92f0/28ba/0d03/e900/0106/large_jpg/IMG_1289.jpg?1414096547",
+      "https://images.adsttc.com/media/images/5098/92f0/28ba/0d04/0300/00eb/large_jpg/D7B_5070.jpg?1414096550"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5098/92fb/28ba/0d03/e100/0107/large_jpg/IMG_6940.jpg?1414096556",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 226664,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5098/92fd/28ba/0d03/f000/00fe/large_jpg/IMG_6771.jpg?1414096537",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 310950,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5098/92e1/28ba/0d03/e900/0104/large_jpg/IMG_0653.jpg?1414096539",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 144175,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5098/92e4/28ba/0d04/1c00/0104/large_jpg/IMG_1269.jpg?1414096542",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 123035,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5098/92e7/28ba/0d03/e900/0105/large_jpg/IMG_0805.jpg?1414096544",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 201012,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5098/92f0/28ba/0d03/e900/0106/large_jpg/IMG_1289.jpg?1414096547",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 343882,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5098/92f0/28ba/0d04/0300/00eb/large_jpg/D7B_5070.jpg?1414096550",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 351839,
+        "good": true
+      }
+    ]
+  },
+  "malta_maritime_trade_centre": {
+    "source_url": "https://www.archdaily.com/502293/malta-maritime-trade-centre-architecture-project",
+    "raw_count": 27,
+    "candidate_count": 16,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/5361/af9e/c07a/802d/e100/0048/large_jpg/MMA01.jpg?1398910851",
+      "https://images.adsttc.com/media/images/5361/b043/c07a/80f0/d900/004f/large_jpg/PORTADA.jpg?1398911013",
+      "https://images.adsttc.com/media/images/5361/afba/c07a/80f0/d900/004d/large_jpg/MMA05.jpg?1398910887",
+      "https://images.adsttc.com/media/images/5361/b005/c07a/80e2/8000/0051/large_jpg/MMA13.jpg?1398910961",
+      "https://images.adsttc.com/media/images/5361/b005/c07a/802d/e100/0049/large_jpg/MMA08.jpg?1398910944",
+      "https://images.adsttc.com/media/images/5361/afe8/c07a/80f0/d900/004e/large_jpg/MMA10.jpg?1398910927",
+      "https://images.adsttc.com/media/images/5361/afa1/c07a/80f0/d900/004c/large_jpg/DSCN9065.jpg?1398910851"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/5361/af9e/c07a/802d/e100/0048/large_jpg/MMA01.jpg?1398910851",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 615273,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/b043/c07a/80f0/d900/004f/large_jpg/PORTADA.jpg?1398911013",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 883328,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/afba/c07a/80f0/d900/004d/large_jpg/MMA05.jpg?1398910887",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 1086309,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/b005/c07a/80e2/8000/0051/large_jpg/MMA13.jpg?1398910961",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 414248,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/b005/c07a/802d/e100/0049/large_jpg/MMA08.jpg?1398910944",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 734362,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/afe8/c07a/80f0/d900/004e/large_jpg/MMA10.jpg?1398910927",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 475658,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/5361/afa1/c07a/80f0/d900/004c/large_jpg/DSCN9065.jpg?1398910851",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 868883,
+        "good": true
+      }
+    ]
+  },
+  "lumina_shanghai": {
+    "source_url": "https://www.archdaily.com/989776/lumina-shanghai-gensler",
+    "raw_count": 41,
+    "candidate_count": 28,
+    "ok_count": 7,
+    "ok_images": [
+      "https://images.adsttc.com/media/images/6335/74b3/4dba/6e44/26c9/512b/large_jpg/not-ready-lumina-shanghai-gensler_2.jpg?1664447694",
+      "https://images.adsttc.com/media/images/6335/74b3/7120/0247/6a38/e9af/large_jpg/not-ready-lumina-shanghai-gensler_1.jpg?1664447718",
+      "https://images.adsttc.com/media/images/6335/74b2/4dba/6e44/26c9/512a/large_jpg/not-ready-lumina-shanghai-gensler_4.jpg?1664447696",
+      "https://images.adsttc.com/media/images/6335/74b3/7120/0267/021f/1edd/large_jpg/not-ready-lumina-shanghai-gensler_7.jpg?1664447705",
+      "https://images.adsttc.com/media/images/6335/74b4/7120/0247/6a38/e9b1/large_jpg/not-ready-lumina-shanghai-gensler_9.jpg?1664447724",
+      "https://images.adsttc.com/media/images/6335/74b3/4dba/6e44/26c9/512c/large_jpg/not-ready-lumina-shanghai-gensler_13.jpg?1664447690",
+      "https://images.adsttc.com/media/images/6335/74b3/4dba/6e66/cb7e/daab/large_jpg/not-ready-lumina-shanghai-gensler_10.jpg?1664447702"
+    ],
+    "checked": [
+      {
+        "url": "https://images.adsttc.com/media/images/6335/74b3/4dba/6e44/26c9/512b/large_jpg/not-ready-lumina-shanghai-gensler_2.jpg?1664447694",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 664279,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6335/74b3/7120/0247/6a38/e9af/large_jpg/not-ready-lumina-shanghai-gensler_1.jpg?1664447718",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 840338,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6335/74b2/4dba/6e44/26c9/512a/large_jpg/not-ready-lumina-shanghai-gensler_4.jpg?1664447696",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 877181,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6335/74b3/7120/0267/021f/1edd/large_jpg/not-ready-lumina-shanghai-gensler_7.jpg?1664447705",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 413885,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6335/74b4/7120/0247/6a38/e9b1/large_jpg/not-ready-lumina-shanghai-gensler_9.jpg?1664447724",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 751810,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6335/74b3/4dba/6e44/26c9/512c/large_jpg/not-ready-lumina-shanghai-gensler_13.jpg?1664447690",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 387738,
+        "good": true
+      },
+      {
+        "url": "https://images.adsttc.com/media/images/6335/74b3/4dba/6e66/cb7e/daab/large_jpg/not-ready-lumina-shanghai-gensler_10.jpg?1664447702",
+        "status": 200,
+        "ctype": "image/jpeg",
+        "size": 352981,
+        "good": true
+      }
+    ]
+  }
+}

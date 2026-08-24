@@ -1,0 +1,12 @@
+{
+  "file": "looking_glass_facade_renovation_final.json",
+  "returncode": 0,
+  "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/716\", \"message_id\": 716, \"media_group_id\": \"14228747682263074\"}",
+  "stderr": "",
+  "json": {
+    "ok": true,
+    "post_url": "https://t.me/SohoArchTimes/716",
+    "message_id": 716,
+    "media_group_id": "14228747682263074"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {"type": "string", "title": "Title"},
+    "source_url": {"type": "string", "title": "Source URL"},
+    "canonical_source_url": {"type": "string", "title": "Canonical Source URL"},
+    "architect": {"type": "string", "title": "Architect"},
+    "location": {"type": "string", "title": "Location"},
+    "year": {"type": "string", "title": "Year"},
+    "explicit_area_text": {"type": "string", "title": "Area"},
+    "built_confirmation": {"type": "string", "title": "Built Confirmation"},
+    "materials": {"type": "string", "title": "Materials"},
+    "description_en": {"type": "string", "title": "Description"},
+    "image_urls": {"type": "array", "title": "Image URLs", "items": {"type": "string"}},
+    "match_quality": {"type": "string", "title": "Match Quality"},
+    "eligibility_note": {"type": "string", "title": "Eligibility Note"}
+  },
+  "required": ["title", "source_url", "architect", "explicit_area_text", "built_confirmation", "image_urls", "eligibility_note"]
+}

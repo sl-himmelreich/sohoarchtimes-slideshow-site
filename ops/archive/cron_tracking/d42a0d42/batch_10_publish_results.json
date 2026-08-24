@@ -1,0 +1,62 @@
+[
+  {
+    "file": "/home/user/workspace/cron_tracking/d42a0d42/batch_10_posts/shimao_riverfront_wisdom_towers.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/971\", \"message_id\": 971, \"media_group_id\": \"14259137385501466\", \"telegram_full_image_urls\": [\"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_65.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_66.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_67.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_68.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_69.jpg\"]}\n",
+    "stderr": ""
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/d42a0d42/batch_10_posts/foshan_entrepreneur_building.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/976\", \"message_id\": 976, \"media_group_id\": \"14259137485756090\", \"telegram_full_image_urls\": [\"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_70.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_71.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_72.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_73.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_74.jpg\"]}\n",
+    "stderr": ""
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/d42a0d42/batch_10_posts/suzhou_wujiang_songling_avenue_bus_terminal.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/981\", \"message_id\": 981, \"media_group_id\": \"14259137878055242\", \"telegram_full_image_urls\": [\"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_75.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_76.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_77.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_78.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_79.jpg\"]}\n",
+    "stderr": ""
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/d42a0d42/batch_10_posts/the_spiral.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/986\", \"message_id\": 986, \"media_group_id\": \"14259137984590154\", \"telegram_full_image_urls\": [\"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_80.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_81.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_82.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_83.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_84.jpg\"]}\n",
+    "stderr": ""
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/d42a0d42/batch_10_posts/masarycka_building.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/991\", \"message_id\": 991, \"media_group_id\": \"14259138386462650\", \"telegram_full_image_urls\": [\"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_85.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_86.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_87.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_88.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_89.jpg\"]}\n",
+    "stderr": ""
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/d42a0d42/batch_10_posts/chongqing_gaoke_group_office.json",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 198, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 163, in main\n    raise RuntimeError('Duplicate title in registry')\nRuntimeError: Duplicate title in registry\n"
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/d42a0d42/batch_10_posts/sina_plaza_beijing.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/996\", \"message_id\": 996, \"media_group_id\": \"14259138484114442\", \"telegram_full_image_urls\": [\"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_90.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_91.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_92.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_93.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_94.jpg\"]}\n",
+    "stderr": ""
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/d42a0d42/batch_10_posts/longgang_cultural_centre.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/1001\", \"message_id\": 1001, \"media_group_id\": \"14259138895160506\", \"telegram_full_image_urls\": [\"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_95.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_96.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_97.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_98.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_99.jpg\"]}\n",
+    "stderr": ""
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/d42a0d42/batch_10_posts/generali_tower.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/1006\", \"message_id\": 1006, \"media_group_id\": \"14259138996444418\", \"telegram_full_image_urls\": [\"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_100.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_101.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_102.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_103.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_104.jpg\"]}\n",
+    "stderr": ""
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/d42a0d42/batch_10_posts/shandong_provincial_cultural_and_art_center.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/1011\", \"message_id\": 1011, \"media_group_id\": \"14259139403581210\", \"telegram_full_image_urls\": [\"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_105.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_106.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_107.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_108.jpg\", \"https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_109.jpg\"]}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "file": "zigzag_tower_atelier_fcjz.json",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 147, in <module>\n    main()\n    ~~~~^^\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 128, in main\n    local_paths = download_images(source_url, obj['image_urls'], slug)\n  File \"/home/user/workspace/cron_tracking/3f016dc2/publish_album.py\", line 63, in download_images\n    raise RuntimeError(f'Failed to download image {idx}: {url}')\nRuntimeError: Failed to download image 2: https://images.adsttc.com/media/images/673c/3577/3106/b516/0562/ed22/large_jpg/zigzag-tower-atelier-fcjz.jpg?1731999094"
+  },
+  {
+    "file": "softstone_office_building_setuparchitecture.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/166\", \"message_id\": 166, \"media_group_id\": \"14196048256555130\"}",
+    "stderr": ""
+  }
+]

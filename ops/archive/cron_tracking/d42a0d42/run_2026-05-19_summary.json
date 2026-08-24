@@ -1,0 +1,35 @@
+{
+  "date": "2026-05-19",
+  "run_time_msk": "2026-05-19T11:05:00+03:00",
+  "site_sync": {
+    "performed": true,
+    "published_recent_mids_on_site": [
+      911
+    ],
+    "excluded_recent_mids_from_site": [
+      906,
+      916,
+      921
+    ],
+    "github_pages_synced": true,
+    "github_commit": "bd60c8b"
+  },
+  "published_today": [
+    {
+      "title": "BUGA Fibre Pavilion / ICD/ITKE University of Stuttgart",
+      "message_id": 926,
+      "post_url": "https://t.me/SohoArchTimes/926",
+      "datetime_published_to_telegram": "2026-05-19T11:04:27+03:00",
+      "public_visibility_confirmed": true
+    },
+    {
+      "title": "The MaoHaus / AntiStatics Architecture",
+      "message_id": 931,
+      "post_url": "https://t.me/SohoArchTimes/931",
+      "datetime_published_to_telegram": "2026-05-19T11:04:49+03:00",
+      "public_visibility_confirmed": true
+    }
+  ],
+  "next_site_sync_not_before": "2026-05-19T23:04:49+03:00",
+  "selection_note": "Used a stricter filter after user feedback: only clearly computational, parametric, or digital-fabrication projects; rejected weaker generic boxes."
+}

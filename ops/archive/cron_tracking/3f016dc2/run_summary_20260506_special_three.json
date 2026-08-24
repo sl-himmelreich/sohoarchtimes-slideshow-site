@@ -1,0 +1,47 @@
+{
+  "date": "2026-05-06",
+  "mode": "manual_exception_three_user_specified_objects",
+  "channel": "@SohoArchTimes",
+  "status": "success",
+  "published_count": 3,
+  "exception_scope": "Разовое исключение из еженедельных правил только для этой публикации по прямому указанию пользователя.",
+  "notes": [
+    "Опубликованы именно три объекта, заданные пользователем: Guggenheim Bilbao, Global Center for Health Innovation и DFAB House.",
+    "В подписи интегрированы пользовательские интерпретации как краткие авторские вставки.",
+    "DFAB House уже присутствовал в реестре, поэтому для него был использован разовый publisher без фильтра дублей по прямому указанию пользователя. Это не меняет правила обычной еженедельной публикации."
+  ],
+  "published_posts": [
+    {
+      "title": "AD Classics: The Guggenheim Museum Bilbao / Gehry Partners",
+      "source_url": "https://www.archdaily.com/422470/ad-classics-the-guggenheim-museum-bilbao-frank-gehry",
+      "post_url": "https://t.me/SohoArchTimes/371",
+      "message_id": 371,
+      "media_group_id": "14224588246401762",
+      "visible_publicly": true,
+      "visibility_snippet": "Музей Гуггенхайма в Бильбао"
+    },
+    {
+      "title": "Global Center for Health Innovation",
+      "source_url": "https://lmnarchitects.com/project/cleveland-convention-center-civic-core",
+      "post_url": "https://t.me/SohoArchTimes/376",
+      "message_id": 376,
+      "media_group_id": "14224588333726170",
+      "visible_publicly": true,
+      "visibility_snippet": "Global Center for Health Innovation"
+    },
+    {
+      "title": "DFAB House / NCCR Digital Fabrication",
+      "source_url": "https://www.archdaily.com/942221/dfab-house-eth-zurich-plus-nccr-digital-fabrication",
+      "post_url": "https://t.me/SohoArchTimes/381",
+      "message_id": 381,
+      "media_group_id": "14224588748695906",
+      "visible_publicly": true,
+      "visibility_snippet": "DFAB House"
+    }
+  ],
+  "artifacts": {
+    "today_batch_dir": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260506_user_three",
+    "visibility_check": "/home/user/workspace/telegram_sohoarchtimes_visibility_2026-05-06.txt",
+    "registry": "/home/user/workspace/cron_tracking/3f016dc2/published_objects.json"
+  }
+}

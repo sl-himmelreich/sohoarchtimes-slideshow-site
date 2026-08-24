@@ -1,0 +1,14 @@
+[
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/uns_completes_wasl_tower_in_dubai_rising_302_meters_above_the_city.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/631\", \"message_id\": 631, \"media_group_id\": \"14228696857563074\"}",
+    "stderr": ""
+  },
+  {
+    "file": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260512_special20/xuelei_fragrance_museum.json",
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"post_url\": \"https://t.me/SohoArchTimes/636\", \"message_id\": 636, \"media_group_id\": \"14228696942625122\"}",
+    "stderr": ""
+  }
+]

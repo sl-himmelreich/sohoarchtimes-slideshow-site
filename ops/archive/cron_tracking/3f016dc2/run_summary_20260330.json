@@ -1,0 +1,58 @@
+{
+  "date": "2026-03-30",
+  "status": "success",
+  "published_count": 5,
+  "published_posts": [
+    {
+      "title": "Morpheus Hotel / Zaha Hadid Architects",
+      "source_url": "https://www.archdaily.com/896433/morpheus-hotel-zaha-hadid-architects",
+      "post_url": "https://t.me/SohoArchTimes/251",
+      "message_id": 251,
+      "visible": true
+    },
+    {
+      "title": "Lumina Shanghai / Gensler",
+      "source_url": "https://www.archdaily.com/989776/lumina-shanghai-gensler",
+      "post_url": "https://t.me/SohoArchTimes/256",
+      "message_id": 256,
+      "visible": true
+    },
+    {
+      "title": "Malta Maritime Trade Centre / AP Valletta",
+      "source_url": "https://www.archdaily.com/502293/malta-maritime-trade-centre-architecture-project",
+      "post_url": "https://t.me/SohoArchTimes/261",
+      "message_id": 261,
+      "visible": true
+    },
+    {
+      "title": "Ali Mohammed T. Al-Ghanim Clinic / AGi architects",
+      "source_url": "https://www.archdaily.com/611323/ali-mohammed-t-al-ghanim-clinic-agi-architects",
+      "post_url": "https://t.me/SohoArchTimes/266",
+      "message_id": 266,
+      "visible": true
+    },
+    {
+      "title": "LanQiao Clubhouse / HHD_FUN Architects",
+      "source_url": "https://www.archdaily.com/290317/lanqiao-clubhouse-hhd_fun-architects",
+      "post_url": "https://t.me/SohoArchTimes/271",
+      "message_id": 271,
+      "visible": true
+    }
+  ],
+  "skipped_candidates": [
+    {
+      "title": "Shenzhen Bao’an International Airport / Studio Fuksas",
+      "source_url": "https://www.archdaily.com/472197/shenzhen-bao-an-international-airport-studio-fuksas",
+      "reason": "0 reliable downloadable images in validation"
+    },
+    {
+      "title": "Vadeggio-Cassarate Gallery / Cino Zucchi Architetti",
+      "source_url": "https://www.archdaily.com/294656/vadeggio-cassarate-gallery-cino-zucchi-architetti",
+      "reason": "held back to keep today’s mix stronger on larger building typologies"
+    }
+  ],
+  "notes": [
+    "All five posts were published as 5-image media groups and confirmed publicly visible on https://t.me/s/SohoArchTimes.",
+    "Lumina Shanghai was rechecked before publishing and treated as realized based on the project page wording and completed-in-2022 page metadata."
+  ]
+}

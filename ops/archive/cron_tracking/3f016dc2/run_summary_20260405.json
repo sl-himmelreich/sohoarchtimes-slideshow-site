@@ -1,0 +1,67 @@
+{
+  "date": "2026-04-05",
+  "mode": "manual_on_request",
+  "channel": "@SohoArchTimes",
+  "request": "опубликой 5 обьектов сейчас",
+  "status": "success",
+  "published_count": 5,
+  "notes": [
+    "Автоматическая публикация ранее отменена пользователем; этот запуск выполнен вручную по прямому запросу.",
+    "Первичная проверка через публичную ленту t.me/s не подтвердила новые id сразу, поэтому видимость была отдельно подтверждена через прямые ссылки на посты.",
+    "Все 5 объектов опубликованы как media group ровно с 5 изображениями и добавлены в реестр without duplicates."
+  ],
+  "selected_candidates": [
+    {
+      "title": "New Venue of the Yuz Museum / Scenic Architecture Office",
+      "source_url": "https://www.archdaily.com/1006370/new-venue-of-the-yuz-museum-scenic-architecture-office",
+      "post_url": "https://t.me/SohoArchTimes/331",
+      "message_id": 331,
+      "media_group_id": "14203355966080082",
+      "visible_publicly": true,
+      "visibility_snippet": "New Venue of the Yuz Museum"
+    },
+    {
+      "title": "Anrenfang Heritage Museum and Anren Station / DDB Architects",
+      "source_url": "https://www.archdaily.com/1013811/anrenfang-heritage-museum-and-anren-station-ddb-architects",
+      "post_url": "https://t.me/SohoArchTimes/336",
+      "message_id": 336,
+      "media_group_id": "14203356056696610",
+      "visible_publicly": true,
+      "visibility_snippet": "Anrenfang Heritage Museum and Anren Station"
+    },
+    {
+      "title": "King Abdullah Financial District Metro Station / Zaha Hadid Architects",
+      "source_url": "https://www.archdaily.com/1024201/king-abdullah-financial-district-metro-station-zaha-hadid-architects",
+      "post_url": "https://t.me/SohoArchTimes/341",
+      "message_id": 341,
+      "media_group_id": "14203356477900266",
+      "visible_publicly": true,
+      "visibility_snippet": "King Abdullah Financial District Metro Station"
+    },
+    {
+      "title": "Shanghai Tower / Gensler",
+      "source_url": "https://www.archdaily.com/783216/shanghai-tower-gensler",
+      "post_url": "https://t.me/SohoArchTimes/346",
+      "message_id": 346,
+      "media_group_id": "14203356574347594",
+      "visible_publicly": true,
+      "visibility_snippet": "Shanghai Tower"
+    },
+    {
+      "title": "Venue B of Shanghai Westbund World Artificial Intelligence Conference / Archi-Union Architecture",
+      "source_url": "https://www.archdaily.com/902285/venue-b-of-shanghai-westbund-world-artificial-intelligence-conference-archi-union-architecture",
+      "post_url": "https://t.me/SohoArchTimes/351",
+      "message_id": 351,
+      "media_group_id": "14203357008671218",
+      "visible_publicly": true,
+      "visibility_snippet": "Venue B of Shanghai Westbund World Artificial Intelligence Conference"
+    }
+  ],
+  "artifacts": {
+    "today_batch_dir": "/home/user/workspace/cron_tracking/3f016dc2/today_batch_20260405",
+    "final_candidates": "/home/user/workspace/cron_tracking/3f016dc2/final_candidates_20260405.json",
+    "image_validation": "/home/user/workspace/cron_tracking/3f016dc2/image_validation_20260405.json",
+    "visibility_check": "/home/user/workspace/telegram_sohoarchtimes_visibility_2026-04-05.txt",
+    "registry": "/home/user/workspace/cron_tracking/3f016dc2/published_objects.json"
+  }
+}
