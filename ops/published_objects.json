@@ -2252,5 +2252,22 @@
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_248.jpg",
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_249.jpg"
     ]
+  },
+  {
+    "title": "King Abdullah Petroleum Studies and Research Centre / Zaha Hadid Architects",
+    "source_url": "https://www.archdaily.com/882341/king-abdullah-petroleum-studies-and-research-centre-zaha-hadid-architects",
+    "canonical_source_url": "https://www.archdaily.com/882341/king-abdullah-petroleum-studies-and-research-centre-zaha-hadid-architects",
+    "canonical_url": "https://t.me/SohoArchTimes/1186",
+    "date_published_to_telegram": "2026-08-25",
+    "datetime_published_to_telegram": "2026-08-25T00:35:18+03:00",
+    "telegram_message_id": 1186,
+    "media_group_id": "14300858548513730",
+    "telegram_full_image_urls": [
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_250.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_251.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_252.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_253.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_254.jpg"
+    ]
   }
 ]
