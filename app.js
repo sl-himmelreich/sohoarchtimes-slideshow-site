@@ -607,7 +607,21 @@
     throw new Error('slides.json: unexpected shape');
   }
 
+  // One-click token install: opening the site with #token=... in the URL
+  // stores the rebuild token in this browser and cleans the address bar.
+  // The token never reaches any server (URL fragments are client-side only).
+  function installTokenFromHash() {
+    const m = /[#&]token=([^&]+)/.exec(location.hash || '');
+    if (!m) return;
+    try {
+      localStorage.setItem(REBUILD_TOKEN_KEY, decodeURIComponent(m[1]).trim());
+      history.replaceState(null, '', location.pathname + location.search);
+      alert('Готово: ключ сохранён в этом браузере. Кнопка ⟳ внизу справа теперь обновляет сайт по Telegram.');
+    } catch (_) {}
+  }
+
   async function main() {
+    installTokenFromHash();
     try {
       const { slides: flatSlides, buildVersion } = await loadSlidesJson();
       allSlides = applyBuildVersion(flatSlides, buildVersion).filter((s) => s && s.url);
