@@ -79,8 +79,8 @@ body.hide-cursor, body.hide-cursor * { cursor: none !important; }
   will-change: opacity;
 }
 .slide-img[data-state="visible"] { opacity: 1; }
-/* The incoming layer crossfades ON TOP of the current one — the current
-   slide never disappears until the next has fully faded in. */
+/* The incoming layer sits ON TOP: it fades in while the layer beneath
+   fades out at the same speed — a symmetric crossfade, never black. */
 .slide-img[data-top] { z-index: 2; }
 
 /* Bottom-left metadata caption */

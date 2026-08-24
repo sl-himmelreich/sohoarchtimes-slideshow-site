@@ -2,9 +2,9 @@
    - Loops slides forever
    - ALL slides are shuffled into a fresh random order on every page load
      and reshuffled again after each full pass
-   - 30s hold per slide, then a 3s CROSSFADE: the next image fades in ON TOP
-     of the current one — the current slide never disappears (and the screen
-     never goes black) until the next has fully faded in
+   - 30s hold per slide, then a 3s symmetric CROSSFADE: the current image
+     fades out while the next fades in simultaneously at the same speed —
+     the screen never passes through black
    - Preloads next image; skips broken images automatically while keeping
      the current image on screen
    - Resilient to slow loads; never leaves a blank white screen
@@ -353,9 +353,9 @@
     return null;
   }
 
-  // Crossfade to the next loadable slide. The incoming image fades in ON TOP
-  // of the current one: the current slide never disappears (and the screen
-  // never goes black) until the next has fully faded in.
+  // Crossfade to the next loadable slide: the current image fades out while
+  // the incoming one (stacked on top) fades in simultaneously at the same
+  // speed. The screen never passes through black.
   async function doTransition(forward = true, fadeMs = FADE_MS) {
     clearTimers();
     const generation = ++transitionGeneration;
@@ -388,12 +388,12 @@
 
     setTop(backEl);
     setImgFadeDuration(backEl, fadeMs);
+    setImgFadeDuration(frontEl, fadeMs);
     showCaption(false);
-    showImage(backEl, true); // crossfade begins over the still-visible front
+    showImage(backEl, true);   // next fades in…
+    showImage(frontEl, false); // …while the current fades out at the same speed
 
     startPhase('transition', fadeMs, () => {
-      // Old front is now fully covered — hide it without animation and swap.
-      showImageInstant(frontEl, false);
       swapLayers();
       formatCaption(target);
       updateHud();
