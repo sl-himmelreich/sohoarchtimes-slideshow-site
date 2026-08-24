@@ -1,7 +1,7 @@
 /* SohoArchTimes — Slideshow engine
    - Loops slides forever
-   - Objects are shuffled in random order on each full pass
-   - Images inside each object keep their original sequence
+   - ALL slides are shuffled into a fresh random order on every page load
+     and reshuffled again after each full pass
    - 30s hold per slide, with 3s fade-in and 3s fade-out through black
    - Transitions through black (no crossfade)
    - Preloads next image; skips broken images automatically
@@ -42,7 +42,7 @@
 
   // ---- State ---------------------------------------------------------------
   let slides = [];
-  let objectGroups = [];
+  let allSlides = [];      // canonical slide list; `slides` is its shuffled view
   let idx = 0;             // current index into slides[]
   // Defensive: ensure neither image layer is hidden via the HTML `hidden`
   // attribute. If it is, the element becomes display:none and the swap
@@ -118,27 +118,8 @@
     return copy;
   }
 
-  function groupSlidesByObject(flatSlides) {
-    const groups = [];
-    const byMid = new Map();
-    for (const slide of flatSlides) {
-      const mid = slide.mid;
-      if (!byMid.has(mid)) {
-        const group = [];
-        byMid.set(mid, group);
-        groups.push(group);
-      }
-      byMid.get(mid).push(slide);
-    }
-    for (const group of groups) {
-      group.sort((a, b) => (a.idx || 0) - (b.idx || 0));
-    }
-    return groups;
-  }
-
   function buildRandomizedSlides() {
-    if (!objectGroups.length) return [];
-    return shuffleArray(objectGroups).flat();
+    return shuffleArray(allSlides);
   }
 
   function setFadeBlack(black, instant = false) {
@@ -576,8 +557,7 @@
   async function main() {
     try {
       const { slides: flatSlides, buildVersion } = await loadSlidesJson();
-      const versioned = applyBuildVersion(flatSlides, buildVersion);
-      objectGroups = groupSlidesByObject(versioned);
+      allSlides = applyBuildVersion(flatSlides, buildVersion).filter((s) => s && s.url);
       slides = buildRandomizedSlides();
     } catch (err) {
       console.error('Failed to load slides.json', err);

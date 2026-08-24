@@ -14,10 +14,10 @@ NOW = datetime.now(MSK)
 
 OPS = Path(__file__).resolve().parent            # ops/
 ROOT = OPS.parent                                 # корень репо = папка сайта
-CRON = OPS                                        # реестр и операционка лежат рядом
 OUT_DIR = OPS / 'site_data'
 SITE_DIR = ROOT
 RECOVERED_PAYLOADS = OUT_DIR / 'recovered_source_payloads.json'
+PUBLISHER_PROOF = OPS / 'publisher_proof.json'   # ведётся ops/publish_album.py
 OUT_DIR.mkdir(exist_ok=True)
 
 SESSION = requests.Session()
@@ -215,177 +215,45 @@ def _sanitize_telegram_image_urls(urls):
     return cleaned
 
 
-def _extract_message_id_from_publish_item(item):
-    """Tolerant extraction of telegram message_id from publish_results items.
-
-    Different generations of publish helpers used different schemas:
-      - {'file', 'result': {'message_id': N}}
-      - {'file', 'stdout': '{"message_id": N, ...}'}
-      - {'payload_path', 'message_id': N}
-      - {'file', 'post_url': 'https://t.me/SohoArchTimes/N'}
-    """
-    if not isinstance(item, dict):
-        return None
-    mid = item.get('message_id')
-    if isinstance(mid, int):
-        return mid
-    result = item.get('result')
-    if isinstance(result, dict):
-        rmid = result.get('message_id')
-        if isinstance(rmid, int):
-            return rmid
-    js = item.get('json')
-    if isinstance(js, dict):
-        jmid = js.get('message_id')
-        if isinstance(jmid, int):
-            return jmid
-    stdout = item.get('stdout', '')
-    if isinstance(stdout, str) and stdout.strip():
-        try:
-            parsed = json.loads(stdout)
-            smid = parsed.get('message_id')
-            if isinstance(smid, int):
-                return smid
-        except Exception:
-            pass
-    post_url = item.get('post_url')
-    if not post_url and isinstance(result, dict):
-        post_url = result.get('post_url')
-    if isinstance(post_url, str):
-        m = re.search(r'/SohoArchTimes/(\d+)', post_url)
-        if m:
-            return int(m.group(1))
-    return None
-
-
-def _extract_payload_file_from_publish_item(item, parent_dir):
-    """Resolve the publisher payload file referenced by a publish_results item.
-
-    Handles relative paths by resolving against the publish_results file's
-    directory and the CRON root.
-    """
-    if not isinstance(item, dict):
-        return None
-    for key in ('file', 'payload_path', 'payload_file'):
-        v = item.get(key)
-        if not (isinstance(v, str) and v):
-            continue
-        p = Path(v)
-        if not p.is_absolute():
-            cand = parent_dir / v
-            if cand.exists():
-                return str(cand.resolve())
-            cand = CRON / v
-            if cand.exists():
-                return str(cand.resolve())
-            return None
-        return str(p.resolve())
-    return None
-
-
 def build_publisher_proof_index():
-    """Return {message_id: {'file': payload_path, 'image_urls': [...], 'source_url': ..., 'title': ...}}.
+    """Return {message_id: {'image_urls': [...], 'source_url': ..., 'title': ...}}.
 
-    This is the ONLY source of truth for which exact image URLs were
-    actually uploaded to a given Telegram message. We only emit a mapping
-    when:
-      * a publish_results_*.json entry connects a payload file to a
-        Telegram message_id, AND
-      * the payload file still exists locally and contains image_urls.
-    If the same message_id is reported by multiple publish_results entries
-    (e.g. retry runs) we only trust it when all reported entries agree on
-    the same ordered image_urls. Conflicts are dropped to avoid guessing.
+    ops/publisher_proof.json is the ONLY source of truth for which exact
+    image URLs were actually uploaded to a given Telegram message:
+    publish_album.py appends an entry there on every successful publish
+    (историческая часть восстановлена единожды из ops/archive при миграции
+    2026-08-24). Rendering those URLs is faithful in content; only the
+    resolution differs upward versus the t.me/s preview.
     """
-    candidates = {}  # mid -> list[(payload_file_path, tuple(image_urls), source_url, title)]
-    for result_file in CRON.glob('publish_results_*.json'):
+    if not PUBLISHER_PROOF.exists():
+        return {}
+    try:
+        raw = json.loads(PUBLISHER_PROOF.read_text())
+    except Exception:
+        return {}
+    if not isinstance(raw, dict):
+        return {}
+    proof = {}
+    for key, data in raw.items():
+        if not isinstance(data, dict):
+            continue
         try:
-            data = json.loads(result_file.read_text())
+            mid = int(data.get('message_id') or key)
         except Exception:
             continue
-        items = data if isinstance(data, list) else (list(data.values()) if isinstance(data, dict) else [])
-        for item in items:
-            mid = _extract_message_id_from_publish_item(item)
-            if not mid:
-                continue
-            payload_file = _extract_payload_file_from_publish_item(item, result_file.parent)
-            if not payload_file:
-                continue
-            try:
-                payload = json.loads(Path(payload_file).read_text())
-            except Exception:
-                continue
-            if not isinstance(payload, dict):
-                continue
-            urls = payload.get('image_urls')
-            if not isinstance(urls, list) or not urls:
-                continue
-            candidates.setdefault(int(mid), []).append((
-                payload_file,
-                tuple(urls),
-                payload.get('source_url', ''),
-                payload.get('title', ''),
-            ))
-    proof = {}
-    for mid, entries in candidates.items():
-        url_sets = {e[1] for e in entries}
-        if len(url_sets) != 1:
-            # Conflicting payloads for the same mid: do not trust any.
+        urls = [u for u in (data.get('image_urls') or []) if isinstance(u, str) and u]
+        if not urls:
             continue
-        first = entries[0]
         proof[mid] = {
-            'payload_file': first[0],
-            'image_urls': list(first[1]),
-            'source_url': first[2],
-            'title': first[3],
+            'image_urls': urls,
+            'source_url': data.get('source_url', ''),
+            'title': data.get('title', ''),
         }
     return proof
 
 
 def load_local_payloads():
-    file_to_message_id = {}
-    for result_file in CRON.glob('publish_results_*.json'):
-        try:
-            arr = json.loads(result_file.read_text())
-        except Exception:
-            continue
-        if not isinstance(arr, list):
-            continue
-        for item in arr:
-            result = item.get('result') or {}
-            file_path = item.get('file')
-            message_id = result.get('message_id')
-            if file_path and message_id:
-                file_to_message_id[str(Path(file_path).resolve())] = int(message_id)
     local = {}
-    for payload_file in CRON.glob('**/*.json'):
-        if 'publish_results_' in payload_file.name or payload_file.name in {'published_objects.json'}:
-            continue
-        try:
-            data = json.loads(payload_file.read_text())
-        except Exception:
-            continue
-        if not isinstance(data, dict):
-            continue
-        image_urls = data.get('image_urls')
-        title = data.get('title')
-        if not title or not isinstance(image_urls, list):
-            continue
-        message_id = file_to_message_id.get(str(payload_file.resolve()))
-        if not message_id:
-            continue
-        caption = data.get('caption_ru', '')
-        parsed = parse_caption(caption)
-        local[message_id] = {
-            'message_id': message_id,
-            'title': title,
-            'slug': data.get('slug', ''),
-            'source_url': data.get('source_url', ''),
-            'canonical_source_url': data.get('canonical_source_url', ''),
-            'source_image_urls': _sanitize_image_urls(image_urls),
-            'caption_text_local': caption,
-            'parsed_local': parsed,
-        }
-
     if RECOVERED_PAYLOADS.exists():
         try:
             recovered = json.loads(RECOVERED_PAYLOADS.read_text())
@@ -417,7 +285,7 @@ def load_local_payloads():
 
 
 def load_registry():
-    p = CRON / 'published_objects.json'
+    p = OPS / 'published_objects.json'
     data = json.loads(p.read_text())
     reg = {}
     for item in data:
@@ -567,7 +435,9 @@ def merge_records(public_records, local_payloads, registry, publisher_proof):
             'published_at_msk': published_at.isoformat() if published_at else '',
         }
         posts.append(post)
-    posts.sort(key=lambda x: x['message_id'])
+    # CLAUDE.md: сортировка newest first по message_id; внутри поста порядок
+    # изображений сохраняет flatten_slides (idx по возрастанию).
+    posts.sort(key=lambda x: x['message_id'], reverse=True)
     return posts
 
 

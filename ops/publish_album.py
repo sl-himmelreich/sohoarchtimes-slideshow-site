@@ -19,8 +19,8 @@ if not TOKEN:
 CHAT_ID = '-1003823260493'
 SEND_URL = f'https://api.telegram.org/bot{TOKEN}/sendMediaGroup'
 GET_FILE_URL = f'https://api.telegram.org/bot{TOKEN}/getFile'
-FILE_BASE_URL = f'https://api.telegram.org/file/bot{TOKEN}'
 REGISTRY_PATH = Path(__file__).resolve().parent / 'published_objects.json'
+PROOF_PATH = Path(__file__).resolve().parent / 'publisher_proof.json'
 TMP_ROOT = Path('/tmp/sohoarchtimes_album_uploads')
 TMP_ROOT.mkdir(parents=True, exist_ok=True)
 
@@ -37,6 +37,23 @@ def load_registry():
 def save_registry(data):
     REGISTRY_PATH.parent.mkdir(parents=True, exist_ok=True)
     REGISTRY_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+
+
+def append_publisher_proof(msg_id, title, source_url, image_urls):
+    # ops/publisher_proof.json — точное соответствие «пост → исходные image_urls»,
+    # единственное основание для тира proven_high_res на сайте (см. сборщик каталога).
+    try:
+        proof = json.loads(PROOF_PATH.read_text(encoding='utf-8')) if PROOF_PATH.exists() else {}
+    except Exception:
+        proof = {}
+    if not isinstance(proof, dict):
+        proof = {}
+    proof[str(msg_id)] = {
+        'title': title,
+        'source_url': source_url,
+        'image_urls': list(image_urls),
+    }
+    PROOF_PATH.write_text(json.dumps(proof, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
 
 def _normalize_to_jpeg(content, out_path):
@@ -89,6 +106,9 @@ def download_images(source_url, image_urls, slug):
 
 
 def telegram_full_image_urls(messages):
+    # Реестр коммитится в публичный репозиторий: реальный токен в URL заменяется
+    # плейсхолдером <BOT_TOKEN> (эти bot-file URL всё равно короткоживущие и
+    # сайтом не используются — сборщик их отвергает).
     session = requests.Session()
     urls = []
     for msg in messages:
@@ -103,7 +123,7 @@ def telegram_full_image_urls(messages):
         data = resp.json()
         file_path = ((data or {}).get('result') or {}).get('file_path')
         if file_path:
-            urls.append(f'{FILE_BASE_URL}/{file_path}')
+            urls.append(f'https://api.telegram.org/file/bot<BOT_TOKEN>/{file_path}')
     return urls
 
 
@@ -193,6 +213,7 @@ def main():
             entry['duplicate_reason'] = duplicate_reason
     registry.append(entry)
     save_registry(registry)
+    append_publisher_proof(msg_id, obj['title'], source_url, obj['image_urls'])
     print(json.dumps({'ok': True, 'post_url': post_url, 'message_id': msg_id, 'media_group_id': first.get('media_group_id'), 'telegram_full_image_urls': full_image_urls}, ensure_ascii=False))
 
 
