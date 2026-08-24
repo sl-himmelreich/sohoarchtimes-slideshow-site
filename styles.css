@@ -70,6 +70,7 @@ body.hide-cursor, body.hide-cursor * { cursor: none !important; }
   object-position: center;
   background: #000;            /* unused field stays black */
   opacity: 0;                  /* JS controls opacity */
+  z-index: 1;
   transition: opacity 3000ms linear;
   user-select: none;
   pointer-events: none;
@@ -78,19 +79,9 @@ body.hide-cursor, body.hide-cursor * { cursor: none !important; }
   will-change: opacity;
 }
 .slide-img[data-state="visible"] { opacity: 1; }
-
-/* Black fade overlay — independent of image opacity for guaranteed black transitions */
-.fade {
-  position: absolute;
-  inset: 0;
-  background: #000;
-  opacity: 0;
-  transition: opacity 3000ms linear;
-  pointer-events: none;
-  z-index: 5;
-}
-.fade[data-state="black"] { opacity: 1; }
-.fade[data-instant="1"]   { transition: none !important; }
+/* The incoming layer crossfades ON TOP of the current one — the current
+   slide never disappears until the next has fully faded in. */
+.slide-img[data-top] { z-index: 2; }
 
 /* Bottom-left metadata caption */
 .caption {
@@ -158,7 +149,7 @@ body.hide-cursor, body.hide-cursor * { cursor: none !important; }
   transition: opacity 600ms ease;
 }
 .hud[data-state="in"] { opacity: 0.7; }
-.hud-brand { color: var(--fg); letter-spacing: 0.16em; }
+.hud-brand { color: var(--fg); letter-spacing: 0.16em; text-transform: none; }
 .hud-sep   { color: var(--fg-faint); }
 .hud-count { font-variant-numeric: tabular-nums; color: var(--fg-muted); }
 
@@ -303,5 +294,5 @@ body.hide-cursor, body.hide-cursor * { cursor: none !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .slide-img, .fade { transition-duration: 200ms !important; }
+  .slide-img { transition-duration: 200ms !important; }
 }
