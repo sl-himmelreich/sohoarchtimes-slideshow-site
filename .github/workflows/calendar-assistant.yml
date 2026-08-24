@@ -1,0 +1,55 @@
+# SOHO Calendar Assistant: Telegram -> Google Календарь.
+# Ежедневно 21:00 МСК (18:00 UTC; у Москвы нет перехода на зимнее время).
+# Работает полностью автономно, без Claude-сессий. Пока секреты не настроены
+# (ops/tg_gcal/SETUP.md), запуск тихо завершается без ошибки.
+name: Calendar Assistant
+
+on:
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: calendar-assistant
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      GOOGLE_SA_KEY: ${{ secrets.GOOGLE_SA_KEY }}
+      GCAL_CALENDAR_ID: ${{ secrets.GCAL_CALENDAR_ID }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - name: Check configuration
+        id: cfg
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$GOOGLE_SA_KEY" ] || [ -z "$GCAL_CALENDAR_ID" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Секреты не настроены (см. ops/tg_gcal/SETUP.md) — запуск пропущен."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.cfg.outputs.configured == 'true'
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        if: steps.cfg.outputs.configured == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        if: steps.cfg.outputs.configured == 'true'
+        run: pip install --quiet -r ops/tg_gcal/requirements.txt
+
+      - name: Run assistant
+        if: steps.cfg.outputs.configured == 'true'
+        run: python ops/tg_gcal/run_assistant.py
