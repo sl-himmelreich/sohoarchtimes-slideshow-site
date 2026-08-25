@@ -1,12 +1,14 @@
 import json
 import re
 from datetime import datetime, timedelta
+from io import BytesIO
 from pathlib import Path
 from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
+from PIL import Image
 
 MSK = ZoneInfo('Europe/Moscow')
 GRACE_HOURS = 12
@@ -18,7 +20,15 @@ OUT_DIR = OPS / 'site_data'
 SITE_DIR = ROOT
 RECOVERED_PAYLOADS = OUT_DIR / 'recovered_source_payloads.json'
 PUBLISHER_PROOF = OPS / 'publisher_proof.json'   # ведётся ops/publish_album.py
+SLIDE_BLOCKLIST = OUT_DIR / 'slide_blocklist.json'      # ручные исключения витрины
+IMAGE_DIMENSIONS = OUT_DIR / 'image_dimensions.json'    # кэш {url: [w, h]}
 OUT_DIR.mkdir(exist_ok=True)
+
+# Правило качества витрины (CLAUDE.md, 2026-08-25): на сайт попадают только
+# кадры, у которых длинная сторона ≥ MIN_LONG_SIDE и короткая ≥ MIN_SHORT_SIDE.
+# Всё, что мельче, на современном экране превращается в марку с чёрными полями.
+MIN_LONG_SIDE = 1280
+MIN_SHORT_SIDE = 700
 
 SESSION = requests.Session()
 SESSION.headers.update({'User-Agent': 'Mozilla/5.0'})
@@ -250,6 +260,80 @@ def build_publisher_proof_index():
             'title': data.get('title', ''),
         }
     return proof
+
+
+def load_slide_blocklist():
+    """{(mid, idx), ...} — кадры, вручную снятые с витрины.
+
+    ops/site_data/slide_blocklist.json ведётся руками: кадры, где нет
+    архитектуры (пейзажи-референсы, чертежи, фото стройки). Telegram не
+    трогается — исключение действует только на slides.json.
+    """
+    if not SLIDE_BLOCKLIST.exists():
+        return set()
+    try:
+        raw = json.loads(SLIDE_BLOCKLIST.read_text())
+    except Exception:
+        return set()
+    blocked = set()
+    for item in (raw.get('blocked') or []) if isinstance(raw, dict) else []:
+        try:
+            blocked.add((int(item['mid']), int(item['idx'])))
+        except Exception:
+            continue
+    return blocked
+
+
+def load_dimension_cache():
+    if not IMAGE_DIMENSIONS.exists():
+        return {}
+    try:
+        raw = json.loads(IMAGE_DIMENSIONS.read_text())
+    except Exception:
+        return {}
+    cache = {}
+    if isinstance(raw, dict):
+        for url, wh in raw.items():
+            if isinstance(wh, (list, tuple)) and len(wh) == 2:
+                try:
+                    cache[url] = (int(wh[0]), int(wh[1]))
+                except Exception:
+                    continue
+    return cache
+
+
+def measure_image(url, cache):
+    """(w, h) картинки по URL; сначала кэш, иначе частичная докачка.
+
+    Читаем поток кусками и пробуем распарсить заголовок — для JPEG размер
+    обычно известен по первым десяткам килобайт, качать файл целиком не надо.
+    Не смогли измерить — возвращаем None (кадр на витрину не пойдёт: качество
+    не доказано).
+    """
+    if url in cache:
+        return cache[url]
+    buf = b''
+    size = None
+    try:
+        with SESSION.get(url, timeout=30, stream=True) as resp:
+            resp.raise_for_status()
+            for chunk in resp.iter_content(65536):
+                buf += chunk
+                try:
+                    size = Image.open(BytesIO(buf)).size
+                    break
+                except Exception:
+                    if len(buf) > 8 * 1024 * 1024:
+                        break
+    except Exception:
+        size = None
+    if size and size[0] > 0 and size[1] > 0:
+        cache[url] = (int(size[0]), int(size[1]))
+    return cache.get(url)
+
+
+def meets_showcase_quality(width, height):
+    return max(width, height) >= MIN_LONG_SIDE and min(width, height) >= MIN_SHORT_SIDE
 
 
 def load_local_payloads():
@@ -537,9 +621,28 @@ def main():
         except Exception:
             translations = {}
 
+    # ---- Фильтр качества витрины (CLAUDE.md, 2026-08-25) --------------------
+    # Полные каталоги ops/site_data/* остаются верным зеркалом Telegram;
+    # фильтр действует только на slides.json — то, что реально крутится на сайте.
+    blocklist = load_slide_blocklist()
+    dim_cache = load_dimension_cache()
+    removed_blocked = []
+    removed_low_res = []
+    removed_unmeasured = []
+
     if SITE_DIR.exists():
         compact_slides = []
         for s in slides:
+            if (s['message_id'], s['index_in_post']) in blocklist:
+                removed_blocked.append(s['slide_id'])
+                continue
+            wh = measure_image(s['image_url'], dim_cache)
+            if wh is None:
+                removed_unmeasured.append(s['slide_id'])
+                continue
+            if not meets_showcase_quality(*wh):
+                removed_low_res.append(s['slide_id'])
+                continue
             mid = str(s['message_id'])
             tr = translations.get(mid, {})
             title = s.get('title', '')
@@ -568,13 +671,31 @@ def main():
             compact_slides.append(entry)
         envelope = {
             'build_version': build_version,
-            'image_policy': 'telegram_faithful_v3_proven_high_res',
+            'image_policy': 'telegram_faithful_v4_quality_gate',
             'total': len(compact_slides),
             'slides': compact_slides,
         }
         (SITE_DIR / 'slides.json').write_text(
             json.dumps(envelope, ensure_ascii=False, separators=(',', ':'))
         )
+        stats['showcase_slides'] = len(compact_slides)
+
+    # Кэш размеров переписываем только URL-ами текущей сборки: протухшие
+    # превью-ссылки не копятся, файл остаётся компактным.
+    current_urls = {s['image_url'] for s in slides}
+    IMAGE_DIMENSIONS.write_text(json.dumps(
+        {u: list(dim_cache[u]) for u in sorted(current_urls & set(dim_cache))},
+        ensure_ascii=False, indent=0,
+    ))
+
+    stats['quality_gate'] = {
+        'min_long_side': MIN_LONG_SIDE,
+        'min_short_side': MIN_SHORT_SIDE,
+        'removed_low_resolution': len(removed_low_res),
+        'removed_low_resolution_ids': removed_low_res,
+        'removed_blocklist_ids': removed_blocked,
+        'removed_unmeasured_ids': removed_unmeasured,
+    }
     (OUT_DIR / 'stats.json').write_text(json.dumps(stats, ensure_ascii=False, indent=2))
     print(json.dumps(stats, ensure_ascii=False, indent=2))
 

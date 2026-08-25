@@ -19,6 +19,7 @@ Telegram-канал: @SohoArchTimes · публичная лента: https://t.
 - Тематика: parametric architecture, computational design, digital/robotic fabrication, advanced material systems, responsive facades, computational envelopes, data-driven structures. Если связь с парадигмой слабая или натянутая — пропуск.
 - Не ограничиваться павильонами: активно брать headquarters, музеи, культурные здания, кампусы, research centers, transport hubs, towers, high-rise/mid-rise, крупные общественные и mixed-use объекты.
 - Ровно 5 надёжно скачиваемых качественных изображений, иначе пропуск. ArchDaily → прямые images.adsttc.com …/large_jpg/…; Parametric Architecture → прямые …/wp-content/uploads/….
+- В альбом — только фотографии готовой архитектуры разрешением не ниже 1280 px по длинной и 700 px по короткой стороне. Чертежи, схемы, референс-пейзажи «источников вдохновения», фото стройки и кадры, где здание не читается, в альбом не брать.
 - Дубли запрещены абсолютно: проверять source_url, canonical_source_url, title и очевидные варианты названия, включая кросс-источниковые, по ops/published_objects.json.
 
 ## Подпись
@@ -33,6 +34,7 @@ Telegram-канал: @SohoArchTimes · публичная лента: https://t.
 
 ## Сайт
 - Источник истины — публичная видимость в Telegram. Пост младше 12 часов на сайт не попадает. Удалённый из канала пост убирается с сайта. Если у публичного поста стало меньше изображений — сайт это повторяет. Картинок, которых нет в Telegram, на сайте быть не должно.
+- Правило качества витрины (указание владельца 2026-08-25, сознательное исключение из «сайт повторяет телеграм» — в сторону строгости): в slides.json попадают только кадры с разрешением ≥ 1280 px по длинной И ≥ 700 px по короткой стороне — лучше убрать кадр с витрины, чем показывать мыло. Практически это пропускает только тир proven_high_res (превью t.me/s ≤ 800 px не проходят). Размеры сборщик берёт из кэша ops/site_data/image_dimensions.json (ведёт сам, руками не править), новые URL измеряет по сети. Кадры без архитектуры (референс-пейзажи, чертежи, фото стройки) снимаются с витрины вручную через ops/site_data/slide_blocklist.json (mid + idx + причина). Полные каталоги ops/site_data/* фильтр не трогает — он действует только на slides.json.
 - Пересборка: `python ops/build_sohoarchtimes_catalog.py` — пишет ops/site_data/* и slides.json в корне репо. Формат slides.json: id, mid, idx, title, arch, year, loc, url, post, src; сортировка newest first по message_id, внутри поста — по порядку изображений; записи с src="proven_high_res" не понижать до превью.
 - Кнопка ⟳ на сайте запускает .github/workflows/rebuild.yml (workflow_dispatch, GitHub-токен пользователя хранится только в его браузере): Action пересобирает slides.json по текущему публичному Telegram и коммитит в main только при изменениях. Это ручной запуск по нажатию — расписаний не добавлять.
 - ops/publisher_proof.json — точное соответствие «пост → исходные image_urls»: пополняется ops/publish_album.py при каждой успешной публикации, читается сборщиком (единственное основание тира proven_high_res). Вручную не редактировать и не удалять.
