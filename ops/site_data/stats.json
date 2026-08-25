@@ -1,5 +1,5 @@
 {
-  "build_version": "20260825T171947",
+  "build_version": "20260825T175353",
   "image_policy": "telegram_faithful_v3_proven_high_res",
   "public_pages_scanned": 23,
   "public_posts_found": 99,
@@ -175,6 +175,7 @@
   "showcase_slides": 203,
   "quality_gate": {
     "min_short_side": 1800,
+    "archived_fallbacks": 203,
     "upgraded_to_original": 138,
     "upgraded_to_original_ids": [
       "1186-1",
