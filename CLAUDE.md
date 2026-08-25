@@ -37,6 +37,7 @@ Telegram-канал: @SohoArchTimes · публичная лента: https://t.
 - ops/publisher_proof.json — точное соответствие «пост → исходные image_urls»: пополняется ops/publish_album.py при каждой успешной публикации, читается сборщиком (единственное основание тира proven_high_res). Вручную не редактировать и не удалять.
 - Превью t.me/s (cdn*.telesco.pe) протухают за 1–2 недели — если на сайте массово битые картинки, первым делом пересборка и деплой slides.json.
 - Не полагаться на кэш как на источник истины. Задача обновления завершена, только когда живой сайт https://sl-himmelreich.github.io/sohoarchtimes-slideshow-site/ и публичный slides.json реально отдают свежие данные; при задержке GitHub Pages — подождать и перепроверить.
+- Сайт живёт на ДВУХ площадках, правки всегда деплоить на обе: (1) GitHub Pages (этот репозиторий, main) и (2) клон https://archtimes.sohoai.ru — Yandex Object Storage, бакет soho-archtimes-site (folder b1gb3dbv6atsou7hqe62), раздаётся через Yandex CDN (ресурс bc8qd5…/bc8ru4nyb63phwwwkcbx, сертификат в Certificate Manager). Заливать index.html, app.js, styles.css, slides.json в бакет по S3 API (ключи — у владельца/в env, в репо им нельзя). Кастомный домен на GitHub Pages НЕ настраивать никогда (файл CNAME ломает github.io редиректом).
 
 ## Календарный ассистент (ops/tg_gcal/)
 - Личная система владельца «Telegram → Google Календарь»; к каналу, публикациям и сайту отношения не имеет. Детали: ops/tg_gcal/README.md; правила разбора: ops/tg_gcal/PARSING_RULES.md (не менять без прямого указания владельца).
