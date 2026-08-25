@@ -25,9 +25,11 @@
   (или удалить проект скрипта).
 - Лог: script.google.com → проект → «Выполнения» (Executions).
 - Токен хранится только внутри вашего частного скрипта (никому не виден).
-- Необязательно: в строку `ANTHROPIC_API_KEY` можно вставить ключ с
-  https://console.anthropic.com — тогда разбор текста делает Claude API;
-  без ключа работает встроенный парсер.
+- Рекомендуется: в строку `DEEPSEEK_API_KEY` вставить ключ с
+  https://platform.deepseek.com — тогда вольный текст разбирает DeepSeek
+  (в десятки раз дешевле Claude, копейки в месяц). В строку `ANTHROPIC_API_KEY`
+  можно вставить ключ Claude как запасной. Без обоих ключей работает
+  встроенный парсер (понимает обычные формулировки, спорное помечает ⚠️).
 
 ## Вариант Б (альтернатива): GitHub Actions + сервисный аккаунт Google
 
@@ -45,7 +47,7 @@
 2. Секреты: https://github.com/sl-himmelreich/sohoarchtimes-slideshow-site/settings/secrets/actions →
    `TELEGRAM_BOT_TOKEN` (токен бота), `GOOGLE_SA_KEY` (всё содержимое
    скачанного JSON), `GCAL_CALENDAR_ID` (gmail-адрес аккаунта календаря),
-   опционально `ANTHROPIC_API_KEY`.
+   опционально `DEEPSEEK_API_KEY` (рекомендуется, дёшево) или `ANTHROPIC_API_KEY`.
 3. Проверка: Actions → Calendar Assistant → Run workflow.
 
 Пока не включён ни один из вариантов, ежедневные запуски Actions тихо

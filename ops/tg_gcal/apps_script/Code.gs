@@ -7,6 +7,9 @@
  *   1. Открыть https://script.google.com/create
  *   2. Стереть заглушку, вставить этот файл целиком.
  *   3. Ниже в TELEGRAM_BOT_TOKEN вставить токен бота (между кавычек).
+ *      Рекомендуется: в DEEPSEEK_API_KEY вставить ключ DeepSeek — тогда
+ *      разбор вольного текста делает DeepSeek (дёшево); без ключа работает
+ *      встроенный парсер.
  *   4. Сохранить (Ctrl+S), в списке функций выбрать `setup`, нажать «Run»
  *      и разрешить доступ (Allow). Скрипт сразу разберёт накопившееся,
  *      пришлёт ✅ в Telegram и поставит себе ежедневный триггер ~21:00 МСК.
@@ -20,7 +23,9 @@
 
 // ==================== НАСТРОЙКА ====================
 var TELEGRAM_BOT_TOKEN = 'ВСТАВЬТЕ_ТОКЕН_БОТА_СЮДА';
-var ANTHROPIC_API_KEY = ''; // необязательно: разбор через Claude API (иначе встроенный парсер)
+var DEEPSEEK_API_KEY = ''; // рекомендуется: разбор через DeepSeek (дёшево); иначе встроенный парсер
+var DEEPSEEK_MODEL = 'deepseek-chat';
+var ANTHROPIC_API_KEY = ''; // запасной вариант: разбор через Claude API
 var PERSONAL_CHAT_ID = 1294602429; // единственный обрабатываемый чат
 var GAS_MARKER = '[планировщик GAS]'; // метка в description для авто-отключения моста
 var RUN_HOUR_MSK = 21;
@@ -58,7 +63,7 @@ function runDaily() {
       if (data.updates_total > 0) confirmOffset_(data.max_update_id + 1);
       return; // пустой запуск — полная тишина
     }
-    var parsed = parseWithClaude_(data.messages) || parseMessages(data.messages);
+    var parsed = parseWithLlm_(data.messages) || parseMessages(data.messages);
     var cal = CalendarApp.getDefaultCalendar();
     var created = [];
     parsed.events.forEach(function (ev) {
@@ -185,7 +190,51 @@ function rruleToRecurrence_(rrule) {
   return rec;
 }
 
-// ==================== РАЗБОР ЧЕРЕЗ CLAUDE API (необязательный) ====================
+// ==================== РАЗБОР ЧЕРЕЗ LLM (DeepSeek — основной, Claude — запасной) ====================
+function parseWithLlm_(messages) {
+  return parseWithDeepSeek_(messages) || parseWithClaude_(messages);
+}
+
+function validateLlm_(out) {
+  if (!(out.events instanceof Array) || !(out.unrecognized_message_ids instanceof Array)) return null;
+  for (var i = 0; i < out.events.length; i++) {
+    var ev = out.events[i];
+    if (!ev.summary || !/^\d{4}-\d{2}-\d{2}$/.test(ev.date) || !/^\d{2}:\d{2}$/.test(ev.time)) return null;
+    if (!ev.description || ev.description.indexOf('Из Telegram') !== 0) {
+      ev.description = ('Из Telegram\n' + (ev.description || '')).replace(/\n$/, '');
+    }
+  }
+  return out;
+}
+
+// DeepSeek (api.deepseek.com, OpenAI-совместимый) — дёшево, приоритетный разбор
+function parseWithDeepSeek_(messages) {
+  if (!DEEPSEEK_API_KEY) return null;
+  try {
+    var resp = UrlFetchApp.fetch('https://api.deepseek.com/chat/completions', {
+      method: 'post',
+      contentType: 'application/json',
+      headers: { Authorization: 'Bearer ' + DEEPSEEK_API_KEY },
+      payload: JSON.stringify({
+        model: DEEPSEEK_MODEL || 'deepseek-chat',
+        temperature: 0,
+        response_format: { type: 'json_object' },
+        messages: [{ role: 'system', content: LLM_RULES_ + LLM_CONTRACT_ },
+          { role: 'user', content: JSON.stringify(messages) }]
+      }),
+      muteHttpExceptions: true
+    });
+    if (resp.getResponseCode() !== 200) return null;
+    var data = JSON.parse(resp.getContentText());
+    var text = data.choices[0].message.content;
+    return validateLlm_(JSON.parse(text.match(/\{[\s\S]*\}/)[0]));
+  } catch (e) {
+    console.error('deepseek parse: fallback: ' + e);
+    return null;
+  }
+}
+
+// Claude API — запасной разбор
 function parseWithClaude_(messages) {
   if (!ANTHROPIC_API_KEY) return null;
   try {
@@ -196,7 +245,7 @@ function parseWithClaude_(messages) {
       payload: JSON.stringify({
         model: 'claude-opus-5',
         max_tokens: 16000,
-        system: CLAUDE_RULES_ + CLAUDE_CONTRACT_,
+        system: LLM_RULES_ + LLM_CONTRACT_,
         messages: [{ role: 'user', content: JSON.stringify(messages) }]
       }),
       muteHttpExceptions: true
@@ -205,24 +254,14 @@ function parseWithClaude_(messages) {
     if (resp.getResponseCode() !== 200 || data.stop_reason === 'refusal') return null;
     var text = data.content.filter(function (b) { return b.type === 'text'; })
       .map(function (b) { return b.text; }).join('');
-    var m = text.match(/\{[\s\S]*\}/);
-    var out = JSON.parse(m[0]);
-    if (!(out.events instanceof Array) || !(out.unrecognized_message_ids instanceof Array)) return null;
-    for (var i = 0; i < out.events.length; i++) {
-      var ev = out.events[i];
-      if (!ev.summary || !/^\d{4}-\d{2}-\d{2}$/.test(ev.date) || !/^\d{2}:\d{2}$/.test(ev.time)) return null;
-      if (!ev.description || ev.description.indexOf('Из Telegram') !== 0) {
-        ev.description = ('Из Telegram\n' + (ev.description || '')).replace(/\n$/, '');
-      }
-    }
-    return out;
+    return validateLlm_(JSON.parse(text.match(/\{[\s\S]*\}/)[0]));
   } catch (e) {
-    console.error('claude parse: fallback на встроенный парсер: ' + e);
+    console.error('claude parse: fallback: ' + e);
     return null;
   }
 }
 
-var CLAUDE_CONTRACT_ = '\n---\nЗадача: разобрать входные сообщения Telegram в события календаря СТРОГО по правилам выше. Вход — JSON-список сообщений с полями message_id, date_msk («YYYY-MM-DD HH:MM:SS», МСК — база всех относительных дат этого сообщения), weekday_msk и text.\nОтвет — ТОЛЬКО валидный JSON без пояснений и без markdown-ограждений:\n{"events":[{"summary":"название по правилам","date":"YYYY-MM-DD","time":"HH:MM","duration_min":60,"end_date":"YYYY-MM-DD (опционально)","end_time":"HH:MM (опционально, вместо duration_min)","rrule":"RRULE:FREQ=... (опционально)","description":"Из Telegram... (всегда начинается с «Из Telegram»; сюда же строки про неуказанное время и «Контекст: «...»»)","source_message_id":123}],"unrecognized_message_ids":[124]}\nСообщение с несколькими делами даёт несколько объектов events. Никакого текста вне JSON.';
+var LLM_CONTRACT_ = '\n---\nЗадача: разобрать входные сообщения Telegram в события календаря СТРОГО по правилам выше. Вход — JSON-список сообщений с полями message_id, date_msk («YYYY-MM-DD HH:MM:SS», МСК — база всех относительных дат этого сообщения), weekday_msk и text.\nОтвет — ТОЛЬКО валидный JSON без пояснений и без markdown-ограждений:\n{"events":[{"summary":"название по правилам","date":"YYYY-MM-DD","time":"HH:MM","duration_min":60,"end_date":"YYYY-MM-DD (опционально)","end_time":"HH:MM (опционально, вместо duration_min)","rrule":"RRULE:FREQ=... (опционально)","description":"Из Telegram... (всегда начинается с «Из Telegram»; сюда же строки про неуказанное время и «Контекст: «...»»)","source_message_id":123}],"unrecognized_message_ids":[124]}\nСообщение с несколькими делами даёт несколько объектов events. Никакого текста вне JSON.';
 
 // ==================== ФОРМАТЫ ПОДТВЕРЖДЕНИЙ ====================
 var WEEKDAYS_RU = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
@@ -690,8 +729,8 @@ function parseMessages(messages) {
   return { events: events, unrecognized_message_ids: unrecognized };
 }
 
-// ==================== ПРАВИЛА ДЛЯ CLAUDE API (дословно) ====================
-var CLAUDE_RULES_ = [
+// ==================== ПРАВИЛА ДЛЯ LLM-РАЗБОРА (дословно) ====================
+var LLM_RULES_ = [
   '# Правила разбора сообщений в события (НЕ МЕНЯТЬ)',
   '',
   'Константы: обрабатывается только чат 1294602429; TZ Europe/Moscow (+03:00); длительность по умолчанию 60 мин; дата без времени -> 09:00; description всегда начинается с «Из Telegram».',

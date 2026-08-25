@@ -30,10 +30,11 @@ description меткой `[планировщик GAS]` — по ней мост
 1. `tg_pipeline.fetch_data()` — getWebhookInfo/deleteWebhook, getUpdates БЕЗ
    offset (timeout=0, limit=100), фильтр: только личный чат владельца,
    только текст, без команд «/», последняя редакция каждого message_id.
-2. Разбор текста в события — `claude_parser.py` (Claude API, модель
-   claude-opus-5, системный промпт — дословно PARSING_RULES.md; вызывается
-   только при наличии новых сообщений). Нет ключа или сбой — аварийный
-   fallback `ru_parser.py` (детерминированные правила, всё сомнительное → ⚠️).
+2. Разбор текста в события — `llm_parser.py`: DeepSeek (api.deepseek.com,
+   OpenAI-совместимый, дёшево — основной) или Claude (запасной); системный
+   промпт — дословно PARSING_RULES.md; вызывается только при наличии новых
+   сообщений. Нет ключей или сбой — аварийный fallback `ru_parser.py`
+   (детерминированные правила, всё сомнительное → ⚠️).
 3. Дубликаты — `gcal.py.has_duplicate`: события той же даты с тем же/почти
    тем же названием пропускаются.
 4. Создание — Google Calendar API от сервисного аккаунта (scope
@@ -48,8 +49,9 @@ description меткой `[планировщик GAS]` — по ней мост
 
 **Секреты** — только в GitHub Actions secrets (репозиторий публичный, в коде
 секретов нет): `TELEGRAM_BOT_TOKEN`, `GOOGLE_SA_KEY`, `GCAL_CALENDAR_ID`,
-опционально `ANTHROPIC_API_KEY`. Настройка — ops/tg_gcal/SETUP.md. Пока
-секреты не добавлены, запуски Actions тихо пропускаются.
+опционально `DEEPSEEK_API_KEY` (рекомендуется) или `ANTHROPIC_API_KEY`.
+Настройка — ops/tg_gcal/SETUP.md. Пока секреты не добавлены, запуски Actions
+тихо пропускаются.
 
 **Временный мост** — Routine «SOHO Calendar Assistant — мост 21:10 МСК» в
 постоянной Claude-сессии: обрабатывает очередь, пока Actions не настроен
@@ -65,8 +67,8 @@ CLAUDE.md (сам Actions-workflow автоматикой Claude не являе
 - `tests_gs_parser.js` — тесты его встроенного парсера (node).
 - `tg_pipeline.py` — механика Bot API: fetch / send / confirm (библиотека + CLI).
 - `run_assistant.py` — автономный конвейер для GitHub Actions.
-- `claude_parser.py` — основной разбор (Claude API), `ru_parser.py` —
-  аварийный fallback, `tests_ru_parser.py` — его тесты.
+- `llm_parser.py` — разбор через DeepSeek/Claude; `ru_parser.py` —
+  встроенный fallback, `tests_ru_parser.py` — его тесты.
 - `gcal.py` — Google Calendar через сервисный аккаунт.
 - `PARSING_RULES.md` — правила «текст → события» и форматы подтверждений
   (не менять без прямого указания владельца).

@@ -57,14 +57,12 @@ def main():
         print("ASSISTANT_RUN_COMPLETE")
         return
 
-    from claude_parser import parse_with_claude
-    parsed = parse_with_claude(data["messages"])
+    from llm_parser import parse_with_llm
+    parsed = parse_with_llm(data["messages"])  # печатает выбранного провайдера
     if parsed is None:
         from ru_parser import parse_messages
         parsed = parse_messages(data["messages"])
         print("разбор: встроенный ru_parser")
-    else:
-        print("разбор: Claude API")
 
     from gcal import GCal
     cal = GCal()
