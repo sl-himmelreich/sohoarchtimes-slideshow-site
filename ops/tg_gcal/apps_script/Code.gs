@@ -7,9 +7,9 @@
  *   1. Открыть https://script.google.com/create
  *   2. Стереть заглушку, вставить этот файл целиком.
  *   3. Ниже в TELEGRAM_BOT_TOKEN вставить токен бота (между кавычек).
- *      Рекомендуется: в DEEPSEEK_API_KEY вставить ключ DeepSeek — тогда
- *      разбор вольного текста делает DeepSeek (дёшево); без ключа работает
- *      встроенный парсер.
+ *      Рекомендуется: в DEEPSEEK_API_KEY вставить ключ DeepSeek (основной
+ *      разбор, дёшево), в GLM_API_KEY — ключ GLM с z.ai (запасной). Без
+ *      ключей работает встроенный парсер.
  *   4. Сохранить (Ctrl+S), в списке функций выбрать `setup`, нажать «Run»
  *      и разрешить доступ (Allow). Скрипт сразу разберёт накопившееся,
  *      пришлёт ✅ в Telegram и поставит себе ежедневный триггер ~21:00 МСК.
@@ -23,9 +23,10 @@
 
 // ==================== НАСТРОЙКА ====================
 var TELEGRAM_BOT_TOKEN = 'ВСТАВЬТЕ_ТОКЕН_БОТА_СЮДА';
-var DEEPSEEK_API_KEY = ''; // рекомендуется: разбор через DeepSeek (дёшево); иначе встроенный парсер
+var DEEPSEEK_API_KEY = ''; // основной разбор: DeepSeek (дёшево); без ключей — встроенный парсер
 var DEEPSEEK_MODEL = 'deepseek-chat';
-var ANTHROPIC_API_KEY = ''; // запасной вариант: разбор через Claude API
+var GLM_API_KEY = ''; // запасной разбор: GLM (z.ai)
+var GLM_MODEL = 'glm-4.5-flash';
 var PERSONAL_CHAT_ID = 1294602429; // единственный обрабатываемый чат
 var GAS_MARKER = '[планировщик GAS]'; // метка в description для авто-отключения моста
 var RUN_HOUR_MSK = 21;
@@ -193,9 +194,9 @@ function rruleToRecurrence_(rrule) {
   return rec;
 }
 
-// ==================== РАЗБОР ЧЕРЕЗ LLM (DeepSeek — основной, Claude — запасной) ====================
+// ==================== РАЗБОР ЧЕРЕЗ LLM (DeepSeek — основной, GLM — запасной) ====================
 function parseWithLlm_(messages) {
-  return parseWithDeepSeek_(messages) || parseWithClaude_(messages);
+  return parseWithDeepSeek_(messages) || parseWithGlm_(messages);
 }
 
 function validateLlm_(out) {
@@ -237,29 +238,29 @@ function parseWithDeepSeek_(messages) {
   }
 }
 
-// Claude API — запасной разбор
-function parseWithClaude_(messages) {
-  if (!ANTHROPIC_API_KEY) return null;
+// GLM (z.ai, OpenAI-совместимый) — запасной разбор
+function parseWithGlm_(messages) {
+  if (!GLM_API_KEY) return null;
   try {
-    var resp = UrlFetchApp.fetch('https://api.anthropic.com/v1/messages', {
+    var resp = UrlFetchApp.fetch('https://api.z.ai/api/paas/v4/chat/completions', {
       method: 'post',
       contentType: 'application/json',
-      headers: { 'x-api-key': ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01' },
+      headers: { Authorization: 'Bearer ' + GLM_API_KEY },
       payload: JSON.stringify({
-        model: 'claude-opus-5',
-        max_tokens: 16000,
-        system: LLM_RULES_ + LLM_CONTRACT_,
-        messages: [{ role: 'user', content: JSON.stringify(messages) }]
+        model: GLM_MODEL || 'glm-4.5-flash',
+        temperature: 0,
+        response_format: { type: 'json_object' },
+        messages: [{ role: 'system', content: LLM_RULES_ + LLM_CONTRACT_ },
+          { role: 'user', content: JSON.stringify(messages) }]
       }),
       muteHttpExceptions: true
     });
+    if (resp.getResponseCode() !== 200) return null;
     var data = JSON.parse(resp.getContentText());
-    if (resp.getResponseCode() !== 200 || data.stop_reason === 'refusal') return null;
-    var text = data.content.filter(function (b) { return b.type === 'text'; })
-      .map(function (b) { return b.text; }).join('');
+    var text = data.choices[0].message.content;
     return validateLlm_(JSON.parse(text.match(/\{[\s\S]*\}/)[0]));
   } catch (e) {
-    console.error('claude parse: fallback: ' + e);
+    console.error('glm parse: fallback: ' + e);
     return null;
   }
 }

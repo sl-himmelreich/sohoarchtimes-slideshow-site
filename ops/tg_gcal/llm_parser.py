@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Разбор сообщений в события через LLM (DeepSeek — основной, Claude — запасной).
+"""Разбор сообщений в события через LLM (DeepSeek — основной, GLM — запасной).
 
 Системный промпт — дословно ops/tg_gcal/PARSING_RULES.md + строгий JSON-контракт.
 Чистый вызов «текст -> JSON», без инструментов. Вызывается не чаще раза в сутки и
 только при наличии новых сообщений (экономия — требование владельца).
 
 Ключи только из окружения (в файлы/логи/репозиторий не попадают):
-  DEEPSEEK_API_KEY   — приоритетный разбор через DeepSeek (api.deepseek.com,
-                       OpenAI-совместимый; модель DEEPSEEK_MODEL, по умолч.
-                       deepseek-chat) — десятки раз дешевле Claude.
-  ANTHROPIC_API_KEY  — запасной разбор через Claude (SDK anthropic, опционально).
+  DEEPSEEK_API_KEY — приоритетный разбор через DeepSeek (api.deepseek.com,
+                     OpenAI-совместимый; модель DEEPSEEK_MODEL, по умолч.
+                     deepseek-chat) — дёшево.
+  GLM_API_KEY      — запасной разбор через GLM (api.z.ai, OpenAI-совместимый;
+                     модель GLM_MODEL, по умолч. glm-4.5-flash).
 
 Возвращает dict контракта или None — тогда вызывающий код обязан перейти на
 встроенный парсер ru_parser (регулярки), как требуют правила.
@@ -98,26 +99,33 @@ def _deepseek(messages):
     return _validate(_extract_json(text))
 
 
-def _claude(messages):
-    if not os.environ.get("ANTHROPIC_API_KEY"):
+def _glm(messages):
+    key = os.environ.get("GLM_API_KEY")
+    if not key:
         return None
-    import anthropic  # опциональная зависимость; ставится только если нужен Claude
-    client = anthropic.Anthropic()
-    resp = client.messages.create(
-        model=os.environ.get("ANTHROPIC_MODEL", "claude-opus-5"),
-        max_tokens=16000,
-        system=SYSTEM,
-        messages=[{"role": "user", "content": json.dumps(messages, ensure_ascii=False, indent=1)}],
+    import requests
+    resp = requests.post(
+        "https://api.z.ai/api/paas/v4/chat/completions",
+        headers={"Authorization": f"Bearer {key}"},
+        json={
+            "model": os.environ.get("GLM_MODEL", "glm-4.5-flash"),
+            "temperature": 0,
+            "response_format": {"type": "json_object"},
+            "messages": [
+                {"role": "system", "content": SYSTEM},
+                {"role": "user", "content": json.dumps(messages, ensure_ascii=False, indent=1)},
+            ],
+        },
+        timeout=120,
     )
-    if resp.stop_reason == "refusal":
-        return None
-    text = "".join(b.text for b in resp.content if b.type == "text")
+    resp.raise_for_status()
+    text = resp.json()["choices"][0]["message"]["content"]
     return _validate(_extract_json(text))
 
 
 def parse_with_llm(messages):
-    """DeepSeek -> Claude; None, если ни один провайдер не сработал."""
-    for name, fn in (("DeepSeek", _deepseek), ("Claude", _claude)):
+    """DeepSeek -> GLM; None, если ни один провайдер не сработал."""
+    for name, fn in (("DeepSeek", _deepseek), ("GLM", _glm)):
         try:
             out = fn(messages)
         except Exception as e:  # сбой провайдера -> следующий, затем встроенный парсер
