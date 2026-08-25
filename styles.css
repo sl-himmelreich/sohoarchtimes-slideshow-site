@@ -39,8 +39,10 @@ body.hide-cursor, body.hide-cursor * { cursor: none !important; }
   overflow: hidden;
 }
 
-/* Full-screen frame: images scale to the screen bounds while preserving aspect ratio.
-   Any unused area stays black. */
+/* Full-screen frame. Правило масштаба (владелец, 2026-08-25): картинка всегда
+   видна ЦЕЛИКОМ — уменьшаем до вписывания в экран, но никогда не увеличиваем
+   сверх натурального размера (img без width/height сам не апскейлится, max-*
+   только ужимают). Неиспользуемое поле остаётся чёрным. */
 .frame {
   position: relative;
   width: 100vw;
