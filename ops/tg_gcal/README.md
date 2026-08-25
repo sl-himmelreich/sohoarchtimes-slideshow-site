@@ -8,10 +8,23 @@ Google Календаря и присылает подтверждение в Te
 
 ## Архитектура
 
-**Постоянная система — GitHub Actions, полностью без Claude-сессий:**
+Постоянная система существует в двух равнозначных вариантах (включается
+любой, см. SETUP.md; оба — полностью без Claude):
+
+**Вариант А (рекомендуется) — Google Apps Script:** один файл
+`apps_script/Code.gs`, живёт в аккаунте владельца (script.google.com),
+ежедневный триггер ~21:00 МСК. Доступ к календарю родной (без ключей и
+сервисных аккаунтов), токен бота хранится внутри частного скрипта, Google
+Cloud Console и MFA не нужны. Каждое созданное событие помечается в
+description меткой `[планировщик GAS]` — по ней мост понимает, что
+планировщик жив. Логика — порт этого же конвейера на JS; парсер зеркалит
+`ru_parser.py` и покрыт `tests_gs_parser.js` (node).
+
+**Вариант Б — GitHub Actions:**
 `.github/workflows/calendar-assistant.yml`, cron ежедневно 18:00 UTC
 (= 21:00 Europe/Moscow; у Москвы нет сезонного перевода часов) + ручной
-запуск кнопкой Run workflow.
+запуск кнопкой Run workflow. Требует секретов и сервисного аккаунта Google
+(а значит — MFA для входа в Cloud Console).
 
 Конвейер (`run_assistant.py`):
 1. `tg_pipeline.fetch_data()` — getWebhookInfo/deleteWebhook, getUpdates БЕЗ
@@ -48,6 +61,8 @@ CLAUDE.md (сам Actions-workflow автоматикой Claude не являе
 запускает Claude-сессий; расписаний в других workflow это не разрешает).
 
 ## Файлы
+- `apps_script/Code.gs` — автономный планировщик целиком (вариант А).
+- `tests_gs_parser.js` — тесты его встроенного парсера (node).
 - `tg_pipeline.py` — механика Bot API: fetch / send / confirm (библиотека + CLI).
 - `run_assistant.py` — автономный конвейер для GitHub Actions.
 - `claude_parser.py` — основной разбор (Claude API), `ru_parser.py` —
@@ -59,10 +74,12 @@ CLAUDE.md (сам Actions-workflow автоматикой Claude не являе
 - `ROUTINE.md` — протокол временного моста.
 
 ## Управление
-- Выключить всё: удалить/выключить workflow **Calendar Assistant** (GitHub →
-  Actions → Calendar Assistant → ⋯ → Disable workflow) — и, если мост ещё
-  жив, сказать Claude «выключи календарный ассистент» (удалит Routine).
-- Ручной запуск: GitHub → Actions → Calendar Assistant → Run workflow.
-- Лог постоянной системы: история запусков в GitHub Actions (что пришло,
-  что создано, что отправлено — без секретов). Лог моста — сессия
-  «SOHO Calendar Assistant — операционная сессия» в claude.ai/code.
+- Выключить вариант А: в редакторе скрипта запустить функцию `disable`
+  (или удалить проект на script.google.com).
+- Выключить вариант Б: GitHub → Actions → Calendar Assistant → ⋯ →
+  Disable workflow.
+- Мост, если ещё жив: сказать Claude «выключи календарный ассистент»
+  (удалит Routine).
+- Лог: вариант А — script.google.com → проект → Executions; вариант Б —
+  история запусков в GitHub Actions; мост — сессия «SOHO Calendar
+  Assistant — операционная сессия» в claude.ai/code.
