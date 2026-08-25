@@ -1,4 +1,3 @@
 requests>=2.31
 google-auth>=2.23
-# Разбор через LLM — только requests (DeepSeek, OpenAI-совместимый).
-# Для запасного разбора через Claude доп. поставить: anthropic>=1.0,<2
+# Разбор через LLM (DeepSeek/GLM, оба OpenAI-совместимые) — достаточно requests.
