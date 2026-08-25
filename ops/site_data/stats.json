@@ -1,5 +1,5 @@
 {
-  "build_version": "20260825T151858",
+  "build_version": "20260825T153336",
   "image_policy": "telegram_faithful_v3_proven_high_res",
   "public_pages_scanned": 23,
   "public_posts_found": 99,
@@ -172,7 +172,7 @@
     "https://t.me/s/SohoArchTimes?before=66",
     "https://t.me/s/SohoArchTimes?after=60"
   ],
-  "showcase_slides": 337,
+  "showcase_slides": 322,
   "quality_gate": {
     "min_long_side": 1280,
     "min_short_side": 700,
@@ -284,10 +284,25 @@
       "51-5"
     ],
     "removed_blocklist_ids": [
+      "1166-5",
+      "1026-5",
+      "1021-3",
+      "1021-4",
+      "1021-5",
+      "996-4",
+      "996-5",
+      "971-5",
       "951-3",
+      "816-4",
+      "726-5",
+      "711-4",
+      "711-5",
+      "656-2",
       "541-3",
+      "536-4",
       "531-2",
       "526-2",
+      "516-2",
       "66-3",
       "66-4"
     ],
