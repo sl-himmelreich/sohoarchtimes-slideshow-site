@@ -525,17 +525,38 @@ def main():
     # Fields are deliberately short to keep the payload small; the frontend reads
     # {id, mid, idx, title, arch, year, loc, url, post, src} per slide and uses
     # build_version for cache-busting image URLs.
+    # English translations per message_id (title/arch/loc). Kept in a separate
+    # file so they survive rebuilds; the frontend swaps them when EN is selected.
+    translations = {}
+    tpath = OUT_DIR / 'translations_en.json'
+    if tpath.exists():
+        try:
+            raw = json.loads(tpath.read_text())
+            if isinstance(raw, dict):
+                translations = {str(k): v for k, v in raw.items() if isinstance(v, dict)}
+        except Exception:
+            translations = {}
+
     if SITE_DIR.exists():
         compact_slides = []
         for s in slides:
+            mid = str(s['message_id'])
+            tr = translations.get(mid, {})
+            title = s.get('title', '')
+            arch = s.get('architects', '')
+            loc = s.get('location', '')
             entry = {
                 'id': s['slide_id'],
                 'mid': s['message_id'],
                 'idx': s['index_in_post'],
-                'title': s.get('title', ''),
-                'arch': s.get('architects', ''),
+                'title': title,
+                'arch': arch,
                 'year': s.get('year', ''),
-                'loc': s.get('location', ''),
+                'loc': loc,
+                # English fields fall back to the Russian value when no translation.
+                'title_en': tr.get('title_en') or title,
+                'arch_en': tr.get('arch_en', arch) if tr.get('arch_en') is not None else arch,
+                'loc_en': tr.get('loc_en') or loc,
                 'url': s['image_url'],
                 'post': s.get('telegram_post_url', ''),
                 'src': s.get('image_source_type', ''),
