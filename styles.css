@@ -318,6 +318,7 @@ body.hide-cursor, body.hide-cursor * { cursor: none !important; }
   .hud { display: none !important; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .slide-img { transition-duration: 200ms !important; }
-}
+/* Кроссфейд витрины — часть продукта и обязан идти с одной скоростью на любой
+   машине. Системный prefers-reduced-motion его НЕ ускоряет (правка 2026-08-25:
+   на компьютерах с включённым «уменьшить анимацию» переход сжимался до 200ms).
+   Чистое растворение по opacity без движения безопасно и для reduced-motion. */
