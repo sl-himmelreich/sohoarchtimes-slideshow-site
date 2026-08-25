@@ -24,11 +24,14 @@ SLIDE_BLOCKLIST = OUT_DIR / 'slide_blocklist.json'      # ручные искл�
 IMAGE_DIMENSIONS = OUT_DIR / 'image_dimensions.json'    # кэш {url: [w, h]}
 OUT_DIR.mkdir(exist_ok=True)
 
-# Правило качества витрины (CLAUDE.md, 2026-08-25): на сайт попадают только
-# кадры, у которых длинная сторона ≥ MIN_LONG_SIDE и короткая ≥ MIN_SHORT_SIDE.
-# Всё, что мельче, на современном экране превращается в марку с чёрными полями.
-MIN_LONG_SIDE = 1280
-MIN_SHORT_SIDE = 700
+# Правило качества витрины (CLAUDE.md, указание владельца 2026-08-25):
+# никаких картинок меньше 1800 px по короткой стороне. Если основной URL мельче,
+# сборщик пробует тот же кадр в большем размере (adsttc /original/); не дотянул —
+# кадр с витрины снимается.
+MIN_SHORT_SIDE = 1800
+
+# Размерные варианты adsttc одного и того же кадра (один asset id и имя файла).
+ADSTTC_SIZE_RE = re.compile(r'/(?:thumb_jpg|small_jpg|newsletter|medium_jpg|large_jpg|slideshow)/')
 
 SESSION = requests.Session()
 SESSION.headers.update({'User-Agent': 'Mozilla/5.0'})
@@ -333,7 +336,18 @@ def measure_image(url, cache):
 
 
 def meets_showcase_quality(width, height):
-    return max(width, height) >= MIN_LONG_SIDE and min(width, height) >= MIN_SHORT_SIDE
+    return min(width, height) >= MIN_SHORT_SIDE
+
+
+def highres_candidates(url):
+    """URL-ы того же кадра в большем разрешении (тот же asset, другой размер).
+
+    Для adsttc замена размерного сегмента на /original/ отдаёт исходник
+    фотографии без уменьшения — содержание идентично, выше только разрешение.
+    """
+    if 'images.adsttc.com' in url and ADSTTC_SIZE_RE.search(url):
+        return [ADSTTC_SIZE_RE.sub('/original/', url)]
+    return []
 
 
 def load_local_payloads():
@@ -629,6 +643,8 @@ def main():
     removed_blocked = []
     removed_low_res = []
     removed_unmeasured = []
+    upgraded_to_original = []
+    probed_urls = set()
 
     if SITE_DIR.exists():
         compact_slides = []
@@ -636,7 +652,18 @@ def main():
             if (s['message_id'], s['index_in_post']) in blocklist:
                 removed_blocked.append(s['slide_id'])
                 continue
-            wh = measure_image(s['image_url'], dim_cache)
+            render_url = s['image_url']
+            probed_urls.add(render_url)
+            wh = measure_image(render_url, dim_cache)
+            if wh is not None and not meets_showcase_quality(*wh):
+                # Основной URL мал — пробуем тот же кадр в полном разрешении.
+                for cand in highres_candidates(render_url):
+                    probed_urls.add(cand)
+                    cwh = measure_image(cand, dim_cache)
+                    if cwh and meets_showcase_quality(*cwh):
+                        render_url, wh = cand, cwh
+                        upgraded_to_original.append(s['slide_id'])
+                        break
             if wh is None:
                 removed_unmeasured.append(s['slide_id'])
                 continue
@@ -660,12 +687,15 @@ def main():
                 'title_en': tr.get('title_en') or title,
                 'arch_en': tr.get('arch_en', arch) if tr.get('arch_en') is not None else arch,
                 'loc_en': tr.get('loc_en') or loc,
-                'url': s['image_url'],
+                'url': render_url,
                 'post': s.get('telegram_post_url', ''),
                 'src': s.get('image_source_type', ''),
             }
             fb = s.get('image_url_fallback') or ''
-            if fb and fb != s['image_url']:
+            if not fb and render_url != s['image_url']:
+                # Апгрейд до /original/: страховка — прежний проверенный URL.
+                fb = s['image_url']
+            if fb and fb != render_url:
                 # Frontend retries with this URL if the primary fails.
                 entry['url_fallback'] = fb
             compact_slides.append(entry)
@@ -680,17 +710,18 @@ def main():
         )
         stats['showcase_slides'] = len(compact_slides)
 
-    # Кэш размеров переписываем только URL-ами текущей сборки: протухшие
-    # превью-ссылки не копятся, файл остаётся компактным.
-    current_urls = {s['image_url'] for s in slides}
+    # Кэш размеров переписываем только URL-ами текущей сборки (основные +
+    # проверенные original-кандидаты): протухшие превью-ссылки не копятся.
+    current_urls = {s['image_url'] for s in slides} | probed_urls
     IMAGE_DIMENSIONS.write_text(json.dumps(
         {u: list(dim_cache[u]) for u in sorted(current_urls & set(dim_cache))},
         ensure_ascii=False, indent=0,
     ))
 
     stats['quality_gate'] = {
-        'min_long_side': MIN_LONG_SIDE,
         'min_short_side': MIN_SHORT_SIDE,
+        'upgraded_to_original': len(upgraded_to_original),
+        'upgraded_to_original_ids': upgraded_to_original,
         'removed_low_resolution': len(removed_low_res),
         'removed_low_resolution_ids': removed_low_res,
         'removed_blocklist_ids': removed_blocked,
