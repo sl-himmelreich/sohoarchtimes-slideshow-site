@@ -10,14 +10,22 @@ Claude-сессий). Мост выполняется в постоянной о
 Этот файл — операционная инструкция каждого запуска моста. При изменении —
 синхронизировать с промптом Routine (update_trigger), и наоборот.
 
-## Шаг 0 — передача дел GitHub Actions
-Через GitHub MCP: `actions_list` → `list_workflow_runs` для
-`calendar-assistant.yml` (последние ~5 завершённых). Если в каком-то запуске
-шаг **«Run assistant»** завершился `success` (`list_workflow_jobs` → steps) —
-Actions настроен и работает: удалить Routine моста (`list_triggers` →
+## Шаг 0 — передача дел постоянной системе
+Мост самоликвидируется, если работает ЛЮБОЙ из двух автономных вариантов
+(SETUP.md):
+- **Apps Script (вариант А):** Google Calendar MCP `list_events` по primary
+  с `fullText: "планировщик GAS"` за диапазон «сейчас − 7 дней … + 60 дней».
+  Найдено хотя бы одно событие с меткой `[планировщик GAS]` в description —
+  планировщик жив.
+- **GitHub Actions (вариант Б):** GitHub MCP `actions_list` →
+  `list_workflow_runs` для `calendar-assistant.yml` (последние ~5
+  завершённых); если в каком-то запуске шаг **«Run assistant»** завершился
+  `success` (`list_workflow_jobs` → steps) — Actions работает. Запуски с этим
+  шагом `skipped` означают «секреты не настроены».
+
+Если любой вариант жив: удалить Routine моста (`list_triggers` →
 `delete_trigger` по имени «SOHO Calendar Assistant — мост 21:10 МСК») и
-закончить, не трогая Telegram. Запуски, где этот шаг `skipped`, означают
-«секреты ещё не настроены» — мост продолжает работать.
+закончить, не трогая Telegram. Иначе — шаги 1–7.
 
 ## Шаги 1–7 — обработка (строго, из корня репозитория)
 1. `python3 ops/tg_gcal/tg_pipeline.py fetch`

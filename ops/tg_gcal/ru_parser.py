@@ -41,7 +41,7 @@ WORD_UNITS = {"ноль": 0, "один": 1, "одну": 1, "одна": 1, "дв�
 WORD_TENS = {"двадцать": 20, "тридцать": 30, "сорок": 40, "пятьдесят": 50}
 
 COMMAND_PREFIX = re.compile(
-    r"^\s*(?:внеси(?:те)?|неси|занеси|запиши(?:те)?|поставь(?:те)?|"
+    r"^\s*(?:внеси(?:те)?|вынеси(?:те)?|неси|занеси|запиши(?:те)?|поставь(?:те)?|"
     r"добавь(?:те)?|создай(?:те)?|внести|добавить|записать|поставить|создать)"
     r"\b(?:\s+(?:в|на)\s+календарь)?(?:\s+(?:мне|пожалуйста))*"
     r"(?:\s+(?:в|на|к)\b)?\s*[:,-]?\s*",
@@ -207,21 +207,21 @@ def _extract_date(t, base):
                     rel = base.date() + timedelta(days=n)
 
     wd_date = None
-    m = t.take(r"(?:\b(?:в|во)\s+)?\b(?:" + WD_RE + r")\s+на\s+следующей\s+неделе\b")
+    m = t.take(r"(?:\b(?:в|во|на)\s+)?\b(?:" + WD_RE + r")\s+на\s+следующей\s+неделе\b")
     if not m:
         m = t.take(r"\bследующ(?:ий|ую|ее|ей)\s+(?:в\s+|во\s+)?(?:" + WD_RE + r")\b")
     if m:
         i = _wd_index(m)
         wd_date = base.date() + timedelta(days=(7 - base.weekday()) + i)
     else:
-        m = t.take(r"(?:\b(?:в|во)\s+)?\b(?:" + WD_RE + r")\s+на\s+этой\s+неделе\b")
+        m = t.take(r"(?:\b(?:в|во|на)\s+)?\b(?:" + WD_RE + r")\s+на\s+этой\s+неделе\b")
         if m:
             i = _wd_index(m)
             wd_date = base.date() + timedelta(days=i - base.weekday())
             if wd_date < base.date():
                 wd_date += timedelta(days=7)
         else:
-            m = t.take(r"(?:\b(?:в|во)\s+)\b(?:" + WD_RE + r")\b")
+            m = t.take(r"(?:\b(?:в|во|на)\s+)\b(?:" + WD_RE + r")\b")
             if m:
                 i = _wd_index(m)
                 delta = (i - base.weekday()) % 7
