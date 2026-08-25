@@ -38,11 +38,50 @@
   const hudCount = $('hudCount');
   const controls = $('controls');
   const hint     = $('hint');
+  const langBtn  = $('btnLang');
+  const loaderLabel = document.querySelector('#loader .loader-label');
+
+  // ---- i18n ----------------------------------------------------------------
+  const LANG_KEY = 'soho_lang';
+  const UI = {
+    ru: {
+      loader: 'Загрузка…',
+      hint: 'Нажмите в любом месте — для полноэкранного режима',
+      refresh: 'Обновить',
+      loadError: 'Не удалось загрузить список слайдов',
+      empty: 'Список слайдов пуст',
+      tokenPrompt: 'GitHub-токен для пересборки сайта по Telegram (хранится только в этом браузере).\nПустое значение — кнопка просто перезагружает страницу.',
+      tokenSaved: 'Готово: ключ сохранён в этом браузере. Кнопка ⟳ внизу справа теперь обновляет сайт по Telegram.',
+      rebuildFail: (code) => `Пересборка не запустилась (HTTP ${code}). Проверьте токен: двойной клик по кнопке ⟳.`,
+    },
+    en: {
+      loader: 'Loading…',
+      hint: 'Click anywhere for fullscreen',
+      refresh: 'Refresh',
+      loadError: 'Failed to load the slide list',
+      empty: 'The slide list is empty',
+      tokenPrompt: 'GitHub token to rebuild the site from Telegram (stored only in this browser).\nLeave empty to make the button just reload the page.',
+      tokenSaved: 'Done: the key is saved in this browser. The ⟳ button at the bottom right now refreshes the site from Telegram.',
+      rebuildFail: (code) => `Rebuild did not start (HTTP ${code}). Check the token: double-click the ⟳ button.`,
+    },
+  };
+  function getLang() {
+    try { const v = localStorage.getItem(LANG_KEY); if (v === 'en' || v === 'ru') return v; } catch (_) {}
+    return 'ru';
+  }
+  function setLang(v) {
+    lang = (v === 'en') ? 'en' : 'ru';
+    try { localStorage.setItem(LANG_KEY, lang); } catch (_) {}
+    applyLang();
+  }
+  const t = () => UI[lang] || UI.ru;
 
   // ---- State ---------------------------------------------------------------
   let slides = [];
   let allSlides = [];      // canonical slide list; `slides` is its shuffled view
   let idx = 0;             // current index into slides[]
+  let lang = getLang();    // 'ru' | 'en'
+  let currentSlide = null; // slide currently shown (for re-rendering on lang switch)
   // Defensive: ensure neither image layer is hidden via the HTML `hidden`
   // attribute. If it is, the element becomes display:none and the swap
   // mechanism would show a blank black stage after the first preload swap.
@@ -58,6 +97,7 @@
   let phaseRemainAtPause = 0;
   let consecutiveSkips = 0;
   let transitionGeneration = 0;  // cancels stale async transitions/preloads
+  let shuffleSig = '';           // signature of the current slide set
   const warmCache = new Map();
   const MAX_SKIPS = 12;    // safety: avoid infinite skip loops
 
@@ -65,10 +105,30 @@
   const setText = (el, v) => { el.textContent = (v == null ? '' : String(v).trim()); };
 
   function formatCaption(s) {
-    setText(capTitle, s.title);
-    setText(capArch,  s.arch);
+    currentSlide = s;
+    if (!s) { setText(capTitle, ''); setText(capArch, ''); setText(capYear, ''); setText(capLoc, ''); return; }
+    const en = (lang === 'en');
+    setText(capTitle, en ? (s.title_en || s.title) : s.title);
+    setText(capArch,  en ? (s.arch_en  != null ? s.arch_en : s.arch) : s.arch);
     setText(capYear,  s.year);
-    setText(capLoc,   s.loc);
+    setText(capLoc,   en ? (s.loc_en   || s.loc)   : s.loc);
+  }
+
+  // Apply the current language to all static UI and re-render the caption.
+  function applyLang() {
+    try { document.documentElement.lang = lang; } catch (_) {}
+    if (loaderLabel) setText(loaderLabel, t().loader);
+    if (hint) setText(hint, t().hint);
+    const rb = $('btnReload'); if (rb) rb.title = t().refresh;
+    if (langBtn) {
+      const ru = langBtn.querySelector('[data-l="ru"]');
+      const en = langBtn.querySelector('[data-l="en"]');
+      if (ru) ru.toggleAttribute('data-active', lang === 'ru');
+      if (en) en.toggleAttribute('data-active', lang === 'en');
+      langBtn.setAttribute('aria-label', lang === 'ru' ? 'Язык: русский' : 'Language: English');
+    }
+    if (currentSlide) formatCaption(currentSlide);
+    if (typeof updateLetterboxLayout === 'function') updateLetterboxLayout();
   }
 
   function updateHud() {
@@ -116,8 +176,51 @@
     return copy;
   }
 
+  // ---- Persistent shuffle "bag" --------------------------------------------
+  // A single random permutation of ALL slides is played to the end before any
+  // image repeats. The order + current position persist in localStorage, so a
+  // page reload (or the ⟳ button) CONTINUES the same cycle instead of starting
+  // a new random order — that is what prevents early repeats across reloads.
+  // The bag resets automatically when the slide set changes (new build).
+  const SHUFFLE_KEY = 'soho_shuffle';
+
+  function slidesSignature(list) {
+    let h = 5381;
+    for (const s of list) {
+      const id = String(s.id || '');
+      for (let i = 0; i < id.length; i++) h = ((h << 5) + h + id.charCodeAt(i)) & 0xffffffff;
+    }
+    return list.length + ':' + (h >>> 0).toString(36);
+  }
+
   function buildRandomizedSlides() {
     return shuffleArray(allSlides);
+  }
+
+  function saveShuffleState() {
+    try {
+      localStorage.setItem(SHUFFLE_KEY, JSON.stringify({
+        sig: shuffleSig,
+        ids: slides.map((s) => s.id),
+        pos: idx,
+      }));
+    } catch (_) {}
+  }
+
+  // Returns {order, pos} to resume, or null to start a fresh permutation.
+  function loadShuffleState() {
+    try {
+      const raw = localStorage.getItem(SHUFFLE_KEY);
+      if (!raw) return null;
+      const st = JSON.parse(raw);
+      if (!st || st.sig !== shuffleSig || !Array.isArray(st.ids)) return null;
+      const byId = new Map(allSlides.map((s) => [s.id, s]));
+      const order = st.ids.map((id) => byId.get(id)).filter(Boolean);
+      if (order.length !== allSlides.length) return null; // set changed — reshuffle
+      let pos = Number.isInteger(st.pos) ? st.pos : -1;
+      if (pos < -1 || pos >= order.length) pos = -1;
+      return { order, pos };
+    } catch (_) { return null; }
   }
 
   /** Raise `el` above its sibling layer: incoming slides fade in on top. */
@@ -325,6 +428,7 @@
     if (!slides.length) return;
     if (forward) {
       if (idx >= slides.length - 1) {
+        // Full pass complete — every image has been shown once. Reshuffle.
         slides = buildRandomizedSlides();
         idx = 0;
       } else {
@@ -399,6 +503,7 @@
       updateHud();
       updateLetterboxLayout();
       showCaption(true);
+      saveShuffleState(); // persist order+position so a reload continues the cycle
       beginPreloading();
       if (isPaused) {
         // Park: resume from togglePause restarts the hold countdown.
@@ -478,7 +583,7 @@
       clearTimeout(dispatchTimeout);
       if (res.status !== 204) {
         btn.removeAttribute('data-busy');
-        alert(`Пересборка не запустилась (HTTP ${res.status}). Проверьте токен: двойной клик по кнопке ⟳.`);
+        alert(t().rebuildFail(res.status));
         return;
       }
       // The Action rebuilds and commits only if Telegram changed; GitHub Pages
@@ -499,10 +604,7 @@
 
   function promptRebuildToken() {
     let existing = getRebuildToken();
-    const v = window.prompt(
-      'GitHub-токен для пересборки сайта по Telegram (хранится только в этом браузере).\nПустое значение — кнопка просто перезагружает страницу.',
-      existing
-    );
+    const v = window.prompt(t().tokenPrompt, existing);
     if (v === null) return;
     try {
       if (v.trim()) localStorage.setItem(REBUILD_TOKEN_KEY, v.trim());
@@ -616,7 +718,7 @@
     try {
       localStorage.setItem(REBUILD_TOKEN_KEY, decodeURIComponent(m[1]).trim());
       history.replaceState(null, '', location.pathname + location.search);
-      alert('Готово: ключ сохранён в этом браузере. Кнопка ⟳ внизу справа теперь обновляет сайт по Telegram.');
+      alert(t().tokenSaved);
     } catch (_) {}
   }
 
@@ -625,17 +727,25 @@
     try {
       const { slides: flatSlides, buildVersion } = await loadSlidesJson();
       allSlides = applyBuildVersion(flatSlides, buildVersion).filter((s) => s && s.url);
-      slides = buildRandomizedSlides();
+      shuffleSig = slidesSignature(allSlides);
+      const saved = loadShuffleState();
+      if (saved) {
+        // Continue the same permutation from where we left off (next = pos+1).
+        slides = saved.order;
+        idx = saved.pos;
+      } else {
+        slides = buildRandomizedSlides();
+        idx = -1;
+      }
     } catch (err) {
       console.error('Failed to load slides.json', err);
-      // Show a minimal error caption (Russian)
-      capTitle.textContent = 'Не удалось загрузить список слайдов';
+      capTitle.textContent = t().loadError;
       caption.setAttribute('data-state', 'in');
       return;
     }
 
     if (!Array.isArray(slides) || slides.length === 0) {
-      capTitle.textContent = 'Список слайдов пуст';
+      capTitle.textContent = t().empty;
       caption.setAttribute('data-state', 'in');
       return;
     }
@@ -646,6 +756,14 @@
     $('btnPause').addEventListener('click', () => { nudgeControls(); togglePause(); });
     $('btnFull').addEventListener('click',  () => { nudgeControls(); enterFullscreen(); });
     wireReloadButton();
+    if (langBtn) {
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nudgeControls();
+        setLang(lang === 'ru' ? 'en' : 'ru');
+      });
+    }
+    applyLang();
 
     document.addEventListener('keydown', onKey);
     ['mousemove', 'touchstart', 'pointermove'].forEach((ev) =>
@@ -677,9 +795,9 @@
     // Recompute equal top/bottom black bands on viewport changes.
     window.addEventListener('resize', updateLetterboxLayout, { passive: true });
 
-    // Begin: idx=-1 so the first transition lands on slides[0], fading in
-    // over the black stage (the only time the stage is ever black).
-    idx = -1;
+    // Begin. On a fresh start idx=-1 so the first transition lands on
+    // slides[0] (fading in over the black stage — the only time it is black);
+    // on a resumed cycle idx=saved.pos so the next unseen slide comes up.
     doTransition();
   }
 

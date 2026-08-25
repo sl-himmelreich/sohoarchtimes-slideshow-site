@@ -174,6 +174,28 @@ body.hide-cursor, body.hide-cursor * { cursor: none !important; }
 .hud-refresh[data-busy] svg { animation: hud-refresh-spin 1.1s linear infinite; }
 @keyframes hud-refresh-spin { to { transform: rotate(360deg); } }
 
+/* Language toggle (RU / EN) — same discreet weight as the counter */
+.hud-lang {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  gap: 0.28em;
+  margin-left: 0.15em;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  cursor: pointer;
+  text-shadow: var(--hud-shadow);
+}
+.hud-lang-opt { color: var(--fg-faint); transition: color var(--transition); }
+.hud-lang-opt[data-active] { color: var(--fg); }
+.hud-lang:hover .hud-lang-opt { color: var(--fg-muted); }
+.hud-lang:hover .hud-lang-opt[data-active] { color: var(--fg); }
+.hud-lang-sep { color: var(--fg-faint); }
+
 /* Loader (visible only when waiting for an image) */
 .loader {
   position: absolute;
