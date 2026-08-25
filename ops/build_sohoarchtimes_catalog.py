@@ -22,7 +22,14 @@ RECOVERED_PAYLOADS = OUT_DIR / 'recovered_source_payloads.json'
 PUBLISHER_PROOF = OPS / 'publisher_proof.json'   # ведётся ops/publish_album.py
 SLIDE_BLOCKLIST = OUT_DIR / 'slide_blocklist.json'      # ручные исключения витрины
 IMAGE_DIMENSIONS = OUT_DIR / 'image_dimensions.json'    # кэш {url: [w, h]}
+IMAGE_ARCHIVE = OUT_DIR / 'image_archive.json'          # манифест архива кадров
 OUT_DIR.mkdir(exist_ok=True)
+
+# Собственный архив кадров витрины (ops/mirror_showcase_images.py): копии в
+# бакете soho-archtimes-site под img/, раздаются через archtimes.sohoai.ru.
+# Архивная копия ставится в url_fallback — если первоисточник умрёт или закроет
+# хотлинк, сайт сам переключится на неё без потери качества.
+ARCHIVE_BASE_URL = 'https://archtimes.sohoai.ru/'
 
 # Правило качества витрины (CLAUDE.md, указание владельца 2026-08-25):
 # никаких картинок меньше 1800 px по короткой стороне. Если основной URL мельче,
@@ -285,6 +292,17 @@ def load_slide_blocklist():
         except Exception:
             continue
     return blocked
+
+
+def load_image_archive():
+    """{source_url: {'key': 'img/<sha>.jpg', ...}} — см. ops/mirror_showcase_images.py."""
+    if not IMAGE_ARCHIVE.exists():
+        return {}
+    try:
+        raw = json.loads(IMAGE_ARCHIVE.read_text())
+    except Exception:
+        return {}
+    return raw if isinstance(raw, dict) else {}
 
 
 def load_dimension_cache():
@@ -640,6 +658,8 @@ def main():
     # фильтр действует только на slides.json — то, что реально крутится на сайте.
     blocklist = load_slide_blocklist()
     dim_cache = load_dimension_cache()
+    image_archive = load_image_archive()
+    archived_fallbacks = 0
     removed_blocked = []
     removed_low_res = []
     removed_unmeasured = []
@@ -695,6 +715,12 @@ def main():
             if not fb and render_url != s['image_url']:
                 # Апгрейд до /original/: страховка — прежний проверенный URL.
                 fb = s['image_url']
+            arch = image_archive.get(render_url)
+            if isinstance(arch, dict) and arch.get('key'):
+                # Приоритетный запасной — копия из нашего архива: то же
+                # содержимое и разрешение, переживёт смерть первоисточника.
+                fb = ARCHIVE_BASE_URL + arch['key']
+                archived_fallbacks += 1
             if fb and fb != render_url:
                 # Frontend retries with this URL if the primary fails.
                 entry['url_fallback'] = fb
@@ -720,6 +746,7 @@ def main():
 
     stats['quality_gate'] = {
         'min_short_side': MIN_SHORT_SIDE,
+        'archived_fallbacks': archived_fallbacks,
         'upgraded_to_original': len(upgraded_to_original),
         'upgraded_to_original_ids': upgraded_to_original,
         'removed_low_resolution': len(removed_low_res),
