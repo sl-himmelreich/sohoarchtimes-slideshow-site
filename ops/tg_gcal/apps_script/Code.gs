@@ -89,9 +89,12 @@ function runDaily() {
 
 // ==================== TELEGRAM ====================
 function tg_(method, params) {
+  // Тело строго в JSON: UrlFetchApp form-кодировкой ломает кириллицу/эмодзи,
+  // и Telegram отвечает «chat not found». JSON-тело этого лишено.
   var resp = UrlFetchApp.fetch(
     'https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/' + method,
-    { method: 'post', payload: params || {}, muteHttpExceptions: true });
+    { method: 'post', contentType: 'application/json',
+      payload: JSON.stringify(params || {}), muteHttpExceptions: true });
   var data = JSON.parse(resp.getContentText());
   if (!data.ok) throw new Error(method + ' failed: ' + data.error_code + ' ' + data.description);
   return data.result;
