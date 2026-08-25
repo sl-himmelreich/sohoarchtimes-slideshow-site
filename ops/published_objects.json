@@ -2269,5 +2269,22 @@
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_253.jpg",
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_254.jpg"
     ]
+  },
+  {
+    "title": "Shenzhen Bay Culture Square / MAD Architects",
+    "source_url": "https://www.archdaily.com/1182220/shenzhen-bay-culture-square-mad-architects",
+    "canonical_source_url": "https://www.archdaily.com/1182220/shenzhen-bay-culture-square-mad-architects",
+    "canonical_url": "https://t.me/SohoArchTimes/1191",
+    "date_published_to_telegram": "2026-08-25",
+    "datetime_published_to_telegram": "2026-08-25T11:47:23+03:00",
+    "telegram_message_id": 1191,
+    "media_group_id": "14301181142760154",
+    "telegram_full_image_urls": [
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_255.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_256.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_257.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_258.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_259.jpg"
+    ]
   }
 ]
