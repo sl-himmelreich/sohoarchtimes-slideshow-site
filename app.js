@@ -244,14 +244,6 @@
     el.style.transitionDuration = prev || '';
   }
 
-  /** Prevent upscaling: clamp element to its natural pixel dimensions */
-  function clampToNatural(el) {
-    if (el.naturalWidth) {
-      el.style.maxWidth  = el.naturalWidth  + 'px';
-      el.style.maxHeight = el.naturalHeight + 'px';
-    }
-  }
-
   function showImage(el, visible) {
     if (visible) el.setAttribute('data-state', 'visible');
     else         el.removeAttribute('data-state');
@@ -485,10 +477,12 @@
       return;
     }
 
-    // Clear stale clamp, then clamp to the incoming image's native size
+    // Правило масштаба (CLAUDE.md, 2026-08-25): кадр показывается целиком.
+    // Размер задаёт только CSS: max-width/max-height вписывают картинку в
+    // экран (уменьшение), а выше натурального размера <img> сам не растёт
+    // (увеличение запрещено). Инлайновых размеров здесь быть не должно.
     backEl.style.maxWidth  = '';
     backEl.style.maxHeight = '';
-    clampToNatural(backEl);
 
     setTop(backEl);
     setImgFadeDuration(backEl, fadeMs);
