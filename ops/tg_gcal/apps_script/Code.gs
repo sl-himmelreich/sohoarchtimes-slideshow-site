@@ -28,6 +28,8 @@ var DEEPSEEK_MODEL = 'deepseek-chat';
 var GLM_API_KEY = ''; // запасной разбор: GLM (z.ai)
 var GLM_MODEL = 'glm-4.5-flash';
 var PERSONAL_CHAT_ID = 1294602429; // единственный обрабатываемый чат
+var OWNER_USER_ID = 1294602429; // @Sl_Himmelreich (+7 909 907-33-00) — единственный автор команд
+var ACCEPT_FORWARDS = false; // true — исполнять и пересланный владельцем чужой текст
 var GAS_MARKER = '[планировщик GAS]'; // метка в description для авто-отключения моста
 var RUN_HOUR_MSK = 21;
 
@@ -112,6 +114,11 @@ function fetchData_() {
     var msg = u.message || u.edited_message;
     if (!msg) return; // channel_post и прочее — игнор
     if (!msg.chat || msg.chat.id !== PERSONAL_CHAT_ID) return;
+    // Команды исполняются ТОЛЬКО от владельца. Сообщение от имени канала/группы
+    // приходит без msg.from и отсекается здесь же.
+    if (!msg.from || msg.from.id !== OWNER_USER_ID) return;
+    if (!ACCEPT_FORWARDS && (msg.forward_origin || msg.forward_from
+        || msg.forward_sender_name || msg.forward_from_chat)) return;
     if (!msg.text || msg.text.charAt(0) === '/') return;
     var rev = msg.edit_date || 0;
     var cur = byMid[msg.message_id];

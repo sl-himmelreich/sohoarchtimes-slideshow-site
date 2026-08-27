@@ -10,6 +10,11 @@
   1. fetch   — getWebhookInfo (+ deleteWebhook при непустом url), затем
                getUpdates БЕЗ offset (timeout=0, limit=100) → все
                неподтверждённые сообщения личного чата (последние редакции).
+               Исполняются ТОЛЬКО сообщения владельца (OWNER_USER_ID,
+               @Sl_Himmelreich): чужой автор, отправка от имени канала и
+               пересланный чужой текст отбрасываются до разбора. Это важно
+               с 27.08.2026: у бота выключен режим приватности, и в очередь
+               попадают реплики рабочей группы «ГРАНАРД — Новоясеневский».
   2. send    — sendMessage подтверждения владельцу (текст через --text или stdin).
   3. confirm — getUpdates?offset=<max_update_id+1>&limit=1 — подтверждение приёма.
                СТРОГО в конце и ТОЛЬКО если весь запуск прошёл без единой
@@ -27,6 +32,8 @@ from datetime import datetime, timedelta, timezone
 import requests
 
 PERSONAL_CHAT_ID = 1294602429  # единственный обрабатываемый чат (личный чат владельца)
+OWNER_USER_ID = 1294602429  # @Sl_Himmelreich (+7 909 907-33-00) — единственный автор команд
+ACCEPT_FORWARDS = False  # True — исполнять и пересланный владельцем чужой текст
 MSK = timezone(timedelta(hours=3))
 WEEKDAYS_RU = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
 
@@ -65,6 +72,13 @@ def fetch_data():
             continue  # channel_post и прочие типы апдейтов — игнор
         if msg.get("chat", {}).get("id") != PERSONAL_CHAT_ID:
             continue  # любые другие чаты и каналы — игнор
+        if (msg.get("from") or {}).get("id") != OWNER_USER_ID:
+            continue  # команды исполняются ТОЛЬКО от владельца; сообщение от имени
+            # канала/группы приходит без from и отсекается здесь же
+        if not ACCEPT_FORWARDS and (msg.get("forward_origin") or msg.get("forward_from")
+                                    or msg.get("forward_sender_name")
+                                    or msg.get("forward_from_chat")):
+            continue  # пересланный чужой текст командой владельца не считается
         text = msg.get("text")
         if not text or text.startswith("/"):
             continue  # нетекстовое и команды — игнор
