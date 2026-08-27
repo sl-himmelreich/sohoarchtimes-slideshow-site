@@ -2286,5 +2286,22 @@
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_258.jpg",
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_259.jpg"
     ]
+  },
+  {
+    "title": "National Kaohsiung Center for the Arts (Weiwuying)",
+    "source_url": "https://www.archdaily.com/904019/national-kaohsiung-center-for-the-arts-mecanoo",
+    "canonical_source_url": "https://www.archdaily.com/904019/national-kaohsiung-center-for-the-arts-mecanoo",
+    "canonical_url": "https://t.me/SohoArchTimes/1196",
+    "date_published_to_telegram": "2026-08-28",
+    "datetime_published_to_telegram": "2026-08-28T02:49:47+03:00",
+    "telegram_message_id": 1196,
+    "media_group_id": "14302996698324530",
+    "telegram_full_image_urls": [
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_260.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_261.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_262.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_263.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_264.jpg"
+    ]
   }
 ]
