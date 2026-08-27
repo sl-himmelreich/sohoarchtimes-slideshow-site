@@ -1406,6 +1406,34 @@
   "sha256": "66f7ced3994e52de178bfa9b3a1554de74840a5a2a34a1d242decaa5cd05e2eb",
   "w": 4000
  },
+ "https://images.adsttc.com/media/images/6a72/c3f1/eb02/9f01/882a/2219/large_jpg/shenzhen-bay-culture-square-mad-architects_8.jpg": {
+  "bytes": 1187583,
+  "h": 2667,
+  "key": "img/48482b9fe93ea06e.jpg",
+  "sha256": "48482b9fe93ea06ebb4e7f7fc02ead4740a53fe8e42832770fd7726b7992ba58",
+  "w": 2000
+ },
+ "https://images.adsttc.com/media/images/6a72/c40b/4460/0501/896d/0386/large_jpg/shenzhen-bay-culture-square-mad-architects_5.jpg": {
+  "bytes": 2067686,
+  "h": 2981,
+  "key": "img/55bb338192cceb30.jpg",
+  "sha256": "55bb338192cceb303f6fba1c1ae5fc5059b05578a0f64acfd21204aab0b94bb9",
+  "w": 2000
+ },
+ "https://images.adsttc.com/media/images/6a72/c414/4460/0501/896d/038a/original/shenzhen-bay-culture-square-mad-architects_7.jpg": {
+  "bytes": 4237396,
+  "h": 3777,
+  "key": "img/63b8a5e94738f05e.jpg",
+  "sha256": "63b8a5e94738f05ec44c6bc86fc09163b4f3ea4ea7832eb120e960f2eaedaa45",
+  "w": 5579
+ },
+ "https://images.adsttc.com/media/images/6a72/c426/eb02/9f01/882a/221d/large_jpg/shenzhen-bay-culture-square-mad-architects_1.jpg": {
+  "bytes": 1683984,
+  "h": 2517,
+  "key": "img/c086d9ce6fdc7318.jpg",
+  "sha256": "c086d9ce6fdc7318cd27a54efe506d5f70c2e13abd4d1fa8ee252836d8350e58",
+  "w": 2000
+ },
  "https://parametric-architecture.com/wp-content/uploads/2019/04/natianal-museum-jean-novel-pa-9.jpg": {
   "bytes": 177845,
   "h": 1954,
