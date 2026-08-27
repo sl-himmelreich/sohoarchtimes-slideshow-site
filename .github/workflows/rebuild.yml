@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install dependencies
-        run: pip install requests pillow beautifulsoup4
+        run: pip install requests pillow beautifulsoup4 numpy
       - name: Rebuild catalog from public Telegram state
         run: python ops/build_sohoarchtimes_catalog.py
       - name: Commit and push if changed

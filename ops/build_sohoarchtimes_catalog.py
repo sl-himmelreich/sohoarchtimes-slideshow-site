@@ -6,6 +6,7 @@ from pathlib import Path
 from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 
+import numpy as np
 import requests
 from bs4 import BeautifulSoup
 from PIL import Image
@@ -23,6 +24,7 @@ PUBLISHER_PROOF = OPS / 'publisher_proof.json'   # ведётся ops/publish_al
 SLIDE_BLOCKLIST = OUT_DIR / 'slide_blocklist.json'      # ручные исключения витрины
 IMAGE_DIMENSIONS = OUT_DIR / 'image_dimensions.json'    # кэш {url: [w, h]}
 IMAGE_ARCHIVE = OUT_DIR / 'image_archive.json'          # манифест архива кадров
+IMAGE_SHARPNESS = OUT_DIR / 'image_sharpness.json'      # кэш {url: экранная резкость}
 OUT_DIR.mkdir(exist_ok=True)
 
 # Собственный архив кадров витрины (ops/mirror_showcase_images.py): копии в
@@ -36,6 +38,14 @@ ARCHIVE_BASE_URL = 'https://archtimes.sohoai.ru/'
 # сборщик пробует тот же кадр в большем размере (adsttc /original/); не дотянул —
 # кадр с витрины снимается.
 MIN_SHORT_SIDE = 1800
+
+# Правило против «растянутых» кадров (указание владельца 2026-08-26): картинка,
+# растянутая из мелкого оригинала, на экране выглядит мыльной даже при большом
+# заявленном разрешении. Меряем резкость кадра В ТОМ ВИДЕ, как он виден на
+# экране (вписанным в 1920×1080): средняя сила верхнего процента перепадов
+# яркости. У честной фотографии 80–190, у растянутой — ниже 65.
+MIN_DISPLAY_SHARPNESS = 65.0
+SHARPNESS_BOX = (1920, 1080)
 
 # Размерные варианты adsttc одного и того же кадра (один asset id и имя файла).
 ADSTTC_SIZE_RE = re.compile(r'/(?:thumb_jpg|small_jpg|newsletter|medium_jpg|large_jpg|slideshow)/')
@@ -353,6 +363,47 @@ def measure_image(url, cache):
     return cache.get(url)
 
 
+def load_sharpness_cache():
+    if not IMAGE_SHARPNESS.exists():
+        return {}
+    try:
+        raw = json.loads(IMAGE_SHARPNESS.read_text())
+    except Exception:
+        return {}
+    return {u: float(v) for u, v in raw.items()} if isinstance(raw, dict) else {}
+
+
+def measure_display_sharpness(url, cache):
+    """Резкость кадра в том виде, как он виден на экране (см. MIN_DISPLAY_SHARPNESS).
+
+    Кадр вписывается в SHARPNESS_BOX (как это делает сайт), затем берётся
+    средняя сила верхнего процента перепадов яркости между соседними
+    пикселями. Растянутая из мелкого оригинала картинка мягких краёв не
+    исправит никаким разрешением — значение остаётся низким.
+    """
+    if url in cache:
+        return cache[url]
+    try:
+        resp = SESSION.get(url, timeout=180)
+        resp.raise_for_status()
+        im = Image.open(BytesIO(resp.content)).convert('L')
+        w, h = im.size
+        scale = min(SHARPNESS_BOX[0] / w, SHARPNESS_BOX[1] / h, 1.0)
+        if scale < 1.0:
+            im = im.resize((max(1, int(w * scale)), max(1, int(h * scale))), Image.LANCZOS)
+        arr = np.asarray(im, dtype=np.float32)
+        if min(arr.shape) < 8:
+            return None
+        gx = np.abs(np.diff(arr, axis=1))[:-1, :]
+        gy = np.abs(np.diff(arr, axis=0))[:, :-1]
+        grad = np.sort(np.hypot(gx, gy).ravel())
+        value = round(float(grad[int(0.99 * len(grad)):].mean()), 2)
+    except Exception:
+        return None
+    cache[url] = value
+    return value
+
+
 def meets_showcase_quality(width, height):
     return min(width, height) >= MIN_SHORT_SIDE
 
@@ -659,10 +710,12 @@ def main():
     blocklist = load_slide_blocklist()
     dim_cache = load_dimension_cache()
     image_archive = load_image_archive()
+    sharp_cache = load_sharpness_cache()
     archived_fallbacks = 0
     removed_blocked = []
     removed_low_res = []
     removed_unmeasured = []
+    removed_soft = []
     upgraded_to_original = []
     probed_urls = set()
 
@@ -689,6 +742,12 @@ def main():
                 continue
             if not meets_showcase_quality(*wh):
                 removed_low_res.append(s['slide_id'])
+                continue
+            # Кадр может быть большим по цифрам, но растянутым из мелкого
+            # оригинала — на экране это мыло. Проверяем реальную резкость.
+            sharp = measure_display_sharpness(render_url, sharp_cache)
+            if sharp is None or sharp < MIN_DISPLAY_SHARPNESS:
+                removed_soft.append(f"{s['slide_id']}({sharp})")
                 continue
             mid = str(s['message_id'])
             tr = translations.get(mid, {})
@@ -744,8 +803,14 @@ def main():
         ensure_ascii=False, indent=0,
     ))
 
+    IMAGE_SHARPNESS.write_text(json.dumps(
+        {u: sharp_cache[u] for u in sorted(sharp_cache)}, ensure_ascii=False, indent=0))
+
     stats['quality_gate'] = {
         'min_short_side': MIN_SHORT_SIDE,
+        'min_display_sharpness': MIN_DISPLAY_SHARPNESS,
+        'removed_soft_upscaled': len(removed_soft),
+        'removed_soft_upscaled_ids': removed_soft,
         'archived_fallbacks': archived_fallbacks,
         'upgraded_to_original': len(upgraded_to_original),
         'upgraded_to_original_ids': upgraded_to_original,
