@@ -2371,5 +2371,22 @@
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_283.jpg",
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_284.jpg"
     ]
+  },
+  {
+    "title": "Xi'an International Football Centre",
+    "source_url": "https://www.archdaily.com/1036201/xian-international-football-centre-zaha-hadid-architects-plus-idea-plus-aisa",
+    "canonical_source_url": "https://www.archdaily.com/1036201/xian-international-football-centre-zaha-hadid-architects-plus-idea-plus-aisa",
+    "canonical_url": "https://t.me/SohoArchTimes/1221",
+    "date_published_to_telegram": "2026-08-28",
+    "datetime_published_to_telegram": "2026-08-28T11:03:59+03:00",
+    "telegram_message_id": 1221,
+    "media_group_id": "14303233917817122",
+    "telegram_full_image_urls": [
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_285.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_286.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_287.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_288.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_289.jpg"
+    ]
   }
 ]
