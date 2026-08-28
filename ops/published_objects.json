@@ -2354,5 +2354,22 @@
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_278.jpg",
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_279.jpg"
     ]
+  },
+  {
+    "title": "Songshan Lake Exhibition and Performance Centre",
+    "source_url": "https://www.archdaily.com/1042488/songshan-lake-exhibition-and-performance-centre-zaha-hadid-architects",
+    "canonical_source_url": "https://www.archdaily.com/1042488/songshan-lake-exhibition-and-performance-centre-zaha-hadid-architects",
+    "canonical_url": "https://t.me/SohoArchTimes/1216",
+    "date_published_to_telegram": "2026-08-28",
+    "datetime_published_to_telegram": "2026-08-28T10:58:45+03:00",
+    "telegram_message_id": 1216,
+    "media_group_id": "14303231405450450",
+    "telegram_full_image_urls": [
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_280.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_281.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_282.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_283.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_284.jpg"
+    ]
   }
 ]
