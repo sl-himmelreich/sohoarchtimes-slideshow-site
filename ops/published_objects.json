@@ -2320,5 +2320,39 @@
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_268.jpg",
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_269.jpg"
     ]
+  },
+  {
+    "title": "Amazon Spheres",
+    "source_url": "https://www.archdaily.com/920029/amazon-spheres-nbbj",
+    "canonical_source_url": "https://www.archdaily.com/920029/amazon-spheres-nbbj",
+    "canonical_url": "https://t.me/SohoArchTimes/1206",
+    "date_published_to_telegram": "2026-08-28",
+    "datetime_published_to_telegram": "2026-08-28T03:02:32+03:00",
+    "telegram_message_id": 1206,
+    "media_group_id": "14303002816134714",
+    "telegram_full_image_urls": [
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_270.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_271.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_272.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_273.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_274.jpg"
+    ]
+  },
+  {
+    "title": "King Abdulaziz Centre for World Culture (Ithra)",
+    "source_url": "https://www.archdaily.com/898775/king-abdulaziz-centre-for-world-culture-snohetta",
+    "canonical_source_url": "https://www.archdaily.com/898775/king-abdulaziz-centre-for-world-culture-snohetta",
+    "canonical_url": "https://t.me/SohoArchTimes/1211",
+    "date_published_to_telegram": "2026-08-28",
+    "datetime_published_to_telegram": "2026-08-28T03:05:51+03:00",
+    "telegram_message_id": 1211,
+    "media_group_id": "14303004411296074",
+    "telegram_full_image_urls": [
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_275.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_276.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_277.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_278.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_279.jpg"
+    ]
   }
 ]
