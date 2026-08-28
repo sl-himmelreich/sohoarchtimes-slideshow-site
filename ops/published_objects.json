@@ -2303,5 +2303,22 @@
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_263.jpg",
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_264.jpg"
     ]
+  },
+  {
+    "title": "The Fuzhou Strait Culture and Art Centre",
+    "source_url": "https://www.archdaily.com/904225/the-fuzhou-strait-culture-and-art-centre-pes-architects",
+    "canonical_source_url": "https://www.archdaily.com/904225/the-fuzhou-strait-culture-and-art-centre-pes-architects",
+    "canonical_url": "https://t.me/SohoArchTimes/1201",
+    "date_published_to_telegram": "2026-08-28",
+    "datetime_published_to_telegram": "2026-08-28T02:59:35+03:00",
+    "telegram_message_id": 1201,
+    "media_group_id": "14303001400556522",
+    "telegram_full_image_urls": [
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_265.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_266.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_267.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_268.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_269.jpg"
+    ]
   }
 ]
