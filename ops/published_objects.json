@@ -2388,5 +2388,22 @@
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_288.jpg",
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_289.jpg"
     ]
+  },
+  {
+    "title": "Taiyuan Botanical Garden",
+    "source_url": "https://www.archdaily.com/962872/taiyuan-botanical-garden-delugan-meissl-associated-architects",
+    "canonical_source_url": "https://www.archdaily.com/962872/taiyuan-botanical-garden-delugan-meissl-associated-architects",
+    "canonical_url": "https://t.me/SohoArchTimes/1226",
+    "date_published_to_telegram": "2026-08-31",
+    "datetime_published_to_telegram": "2026-08-31T11:33:27+03:00",
+    "telegram_message_id": 1226,
+    "media_group_id": "14305321661799746",
+    "telegram_full_image_urls": [
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_290.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_291.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_292.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_293.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_294.jpg"
+    ]
   }
 ]
