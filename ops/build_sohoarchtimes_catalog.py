@@ -547,12 +547,26 @@ def merge_records(public_records, local_payloads, registry, publisher_proof):
         proven_image_urls = []
         if proof:
             sanitized = _sanitize_image_urls(proof.get('image_urls') or [])
-            # We require the publisher upload count to match the public
-            # preview count. If counts disagree (e.g. retry partially failed),
-            # we refuse the high-res swap to avoid silently substituting an
-            # image set that does not match what is in the channel.
+            photo_ids = public.get('photo_message_ids') or []
             if sanitized and telegram_preview_images and len(sanitized) == len(telegram_preview_images):
+                # Полный альбом: количество совпадает — берём как есть.
                 proven_image_urls = sanitized
+            elif (sanitized and telegram_preview_images and photo_ids
+                    and len(photo_ids) == len(telegram_preview_images)):
+                # Владелец удалил часть кадров из альбома. message_id фотографий
+                # альбома идут подряд от id поста, поэтому выжившие кадры точно
+                # сопоставляются с исходными URL по смещению: proof[pmid - mid].
+                # Сайт повторяет телеграм: показываем ровно оставшиеся кадры.
+                mapped = []
+                for pmid in photo_ids:
+                    k = pmid - mid
+                    if 0 <= k < len(sanitized):
+                        mapped.append(sanitized[k])
+                    else:
+                        mapped = []
+                        break
+                if len(mapped) == len(telegram_preview_images):
+                    proven_image_urls = mapped
 
         image_urls_fallback = []
         if proven_image_urls:
