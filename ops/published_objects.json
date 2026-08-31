@@ -2405,5 +2405,22 @@
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_293.jpg",
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_294.jpg"
     ]
+  },
+  {
+    "title": "Shenzhen Natural History Museum",
+    "source_url": "https://www.archdaily.com/1181841/shenzhen-natural-history-museum-3xn-plus-b-plus-h-architects-plus-zhubo-design",
+    "canonical_source_url": "https://www.archdaily.com/1181841/shenzhen-natural-history-museum-3xn-plus-b-plus-h-architects-plus-zhubo-design",
+    "canonical_url": "https://t.me/SohoArchTimes/1231",
+    "date_published_to_telegram": "2026-08-31",
+    "datetime_published_to_telegram": "2026-08-31T11:36:48+03:00",
+    "telegram_message_id": 1231,
+    "media_group_id": "14305323261723906",
+    "telegram_full_image_urls": [
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_295.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_296.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_297.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_298.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_299.jpg"
+    ]
   }
 ]
