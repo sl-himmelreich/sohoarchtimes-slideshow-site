@@ -17,7 +17,8 @@
   const FADE_MS  = 3000;        // crossfade duration in normal auto-play
   const MANUAL_FADE_MS = 450;   // snappier crossfade for prev/next buttons
   const HOLD_MS  = 30_000;
-  const LOAD_TIMEOUT_MS = 25_000;               // give a slow image this long to load
+  const LOAD_TIMEOUT_MS = 90_000;               // оригиналы весят 8–20 МБ — даём им догрузиться
+  const MAX_RETRIES_PER_PASS = 3;               // медленный кадр откладываем в конец прохода, не выкидываем
   const CONTROLS_IDLE_MS = 2500;                // hide controls after idle
   const PRELOAD_LOOKAHEAD = 3;                  // warm the next few slide images immediately
   const IMAGE_CACHE_LIMIT = 24;                 // keep only a modest hot cache in memory
@@ -424,16 +425,36 @@
     timer = setTimeout(() => { fn(); }, dur);
   }
 
+  // Кадры, не загрузившиеся в этом проходе: id -> число неудачных попыток.
+  let passRetries = Object.create(null);
+  // Железный предохранитель правила «без повторов, пока не показаны все»:
+  // id кадров, уже показанных в текущем проходе. Что бы ни случилось с
+  // очередью (перестановки, ретраи, гонки таймеров) — кадр из этого
+  // множества второй раз в этом проходе не выйдет.
+  let shownThisPass = new Set();
+  let lastShownId = '';
+
+  function reshuffleBag() {
+    slides = buildRandomizedSlides();
+    passRetries = Object.create(null);
+    shownThisPass = new Set();
+    // На стыке проходов новый порядок не должен начинаться с только что
+    // показанного кадра — иначе один и тот же кадр идёт два раза подряд.
+    if (slides.length > 1 && lastShownId && slides[0].id === lastShownId) {
+      const j = 1 + randomInt(slides.length - 1);
+      [slides[0], slides[j]] = [slides[j], slides[0]];
+    }
+    idx = -1; // следующий stepIndex попадёт на позицию 0
+  }
+
   function stepIndex(forward) {
     if (!slides.length) return;
     if (forward) {
       if (idx >= slides.length - 1) {
-        // Full pass complete — every image has been shown once. Reshuffle.
-        slides = buildRandomizedSlides();
-        idx = 0;
-      } else {
-        idx += 1;
+        // Полный проход: каждый кадр показан (или трижды не загрузился).
+        reshuffleBag();
       }
+      idx += 1;
     } else {
       idx = (idx - 1 + slides.length) % slides.length;
     }
@@ -445,14 +466,36 @@
     for (let tries = 0; tries < MAX_SKIPS; tries++) {
       stepIndex(forward);
       const s = slides[idx];
+      if (forward && shownThisPass.has(s.id)) {
+        // Кадр уже был в этом проходе (страховка от любых перестановок
+        // очереди) — просто идём дальше, попытку не тратим на загрузку.
+        continue;
+      }
       const ok = await ensureSlideLoaded(backEl, s, generation);
       if (generation !== transitionGeneration) return null;
       if (ok) {
         consecutiveSkips = 0;
+        if (forward) { shownThisPass.add(s.id); lastShownId = s.id; }
         return s;
       }
       consecutiveSkips++;
-      console.warn('[slideshow] skipping broken slide', s.id, s.url);
+      if (forward) {
+        // Правило «без повторов, пока не показаны все ~200» держится только
+        // если проход реально ПОКАЗЫВАЕТ каждый кадр. Поэтому кадр, который
+        // не успел загрузиться, не выкидываем из прохода, а переставляем в
+        // конец очереди — попробуем снова, когда дойдёт черёд. Иначе цикл
+        // сжимается до уже закешированных картинок и они идут по кругу.
+        const fails = (passRetries[s.id] || 0) + 1;
+        passRetries[s.id] = fails;
+        if (fails <= MAX_RETRIES_PER_PASS && idx < slides.length - 1) {
+          slides.splice(idx, 1);
+          slides.push(s);
+          idx -= 1; // на этой позиции теперь стоит следующий кадр
+        }
+        console.warn('[slideshow] postponing slow/broken slide', s.id, 'attempt', fails);
+      } else {
+        console.warn('[slideshow] skipping broken slide', s.id, s.url);
+      }
     }
     return null;
   }
@@ -733,6 +776,8 @@
         // Continue the same permutation from where we left off (next = pos+1).
         slides = saved.order;
         idx = saved.pos;
+        shownThisPass = new Set(slides.slice(0, idx + 1).map((s) => s.id));
+        if (idx >= 0 && slides[idx]) lastShownId = slides[idx].id;
       } else {
         slides = buildRandomizedSlides();
         idx = -1;
