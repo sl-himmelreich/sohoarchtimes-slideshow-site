@@ -17,6 +17,25 @@ TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '').strip()
 if not TOKEN:
     raise SystemExit('TELEGRAM_BOT_TOKEN не задан: токен берётся только из переменной окружения, в этом публичном репо его хранить нельзя')
 CHAT_ID = '-1003823260493'
+
+
+def _scrub(text: str) -> str:
+    """Вырезает токен из любого текста перед выводом.
+
+    Библиотеки (requests/urllib3) вставляют полный URL в сообщения об ошибках,
+    а в URL Bot API входит токен. Без этой заглушки трассировка сетевой ошибки
+    печатает токен в лог — см. правило CLAUDE.md: токен не должен попадать
+    в файлы, коммиты, логи и вывод.
+    """
+    return text.replace(TOKEN, '<BOT_TOKEN>') if TOKEN else text
+
+
+def _excepthook(exc_type, exc, tb):
+    import traceback
+    sys.stderr.write(_scrub(''.join(traceback.format_exception(exc_type, exc, tb))))
+
+
+sys.excepthook = _excepthook
 SEND_URL = f'https://api.telegram.org/bot{TOKEN}/sendMediaGroup'
 GET_FILE_URL = f'https://api.telegram.org/bot{TOKEN}/getFile'
 REGISTRY_PATH = Path(__file__).resolve().parent / 'published_objects.json'
