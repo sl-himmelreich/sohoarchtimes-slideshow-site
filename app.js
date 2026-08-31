@@ -98,7 +98,6 @@
   let phaseRemainAtPause = 0;
   let consecutiveSkips = 0;
   let transitionGeneration = 0;  // cancels stale async transitions/preloads
-  let shuffleSig = '';           // signature of the current slide set
   const warmCache = new Map();
   const MAX_SKIPS = 12;    // safety: avoid infinite skip loops
 
@@ -177,51 +176,14 @@
     return copy;
   }
 
-  // ---- Persistent shuffle "bag" --------------------------------------------
-  // A single random permutation of ALL slides is played to the end before any
-  // image repeats. The order + current position persist in localStorage, so a
-  // page reload (or the ⟳ button) CONTINUES the same cycle instead of starting
-  // a new random order — that is what prevents early repeats across reloads.
-  // The bag resets automatically when the slide set changes (new build).
-  const SHUFFLE_KEY = 'soho_shuffle';
-
-  function slidesSignature(list) {
-    let h = 5381;
-    for (const s of list) {
-      const id = String(s.id || '');
-      for (let i = 0; i < id.length; i++) h = ((h << 5) + h + id.charCodeAt(i)) & 0xffffffff;
-    }
-    return list.length + ':' + (h >>> 0).toString(36);
-  }
-
+  // ---- Случайный порядок ---------------------------------------------------
+  // Каждая загрузка страницы = новая случайная перестановка ВСЕХ кадров
+  // (Fisher–Yates на window.crypto). Внутри сеанса кадр не повторяется,
+  // пока не показан весь комплект: за этим следят проход slides/idx и
+  // страховочное множество shownThisPass. Никакой персистентности между
+  // перезагрузками — так решил владелец 2026-08-31.
   function buildRandomizedSlides() {
     return shuffleArray(allSlides);
-  }
-
-  function saveShuffleState() {
-    try {
-      localStorage.setItem(SHUFFLE_KEY, JSON.stringify({
-        sig: shuffleSig,
-        ids: slides.map((s) => s.id),
-        pos: idx,
-      }));
-    } catch (_) {}
-  }
-
-  // Returns {order, pos} to resume, or null to start a fresh permutation.
-  function loadShuffleState() {
-    try {
-      const raw = localStorage.getItem(SHUFFLE_KEY);
-      if (!raw) return null;
-      const st = JSON.parse(raw);
-      if (!st || st.sig !== shuffleSig || !Array.isArray(st.ids)) return null;
-      const byId = new Map(allSlides.map((s) => [s.id, s]));
-      const order = st.ids.map((id) => byId.get(id)).filter(Boolean);
-      if (order.length !== allSlides.length) return null; // set changed — reshuffle
-      let pos = Number.isInteger(st.pos) ? st.pos : -1;
-      if (pos < -1 || pos >= order.length) pos = -1;
-      return { order, pos };
-    } catch (_) { return null; }
   }
 
   /** Raise `el` above its sibling layer: incoming slides fade in on top. */
@@ -546,7 +508,6 @@
       updateHud();
       updateLetterboxLayout();
       showCaption(true);
-      saveShuffleState(); // persist order+position so a reload continues the cycle
       beginPreloading();
       if (isPaused) {
         // Park: resume from togglePause restarts the hold countdown.
@@ -770,18 +731,12 @@
     try {
       const { slides: flatSlides, buildVersion } = await loadSlidesJson();
       allSlides = applyBuildVersion(flatSlides, buildVersion).filter((s) => s && s.url);
-      shuffleSig = slidesSignature(allSlides);
-      const saved = loadShuffleState();
-      if (saved) {
-        // Continue the same permutation from where we left off (next = pos+1).
-        slides = saved.order;
-        idx = saved.pos;
-        shownThisPass = new Set(slides.slice(0, idx + 1).map((s) => s.id));
-        if (idx >= 0 && slides[idx]) lastShownId = slides[idx].id;
-      } else {
-        slides = buildRandomizedSlides();
-        idx = -1;
-      }
+      // Решение владельца 2026-08-31: каждая загрузка страницы начинает
+      // АБСОЛЮТНО НОВЫЙ случайный порядок всего комплекта (crypto-рандом).
+      // Внутри сеанса повторов нет, пока не показаны все кадры (shownThisPass).
+      try { localStorage.removeItem('soho_shuffle'); } catch (_) {} // чистим старое состояние
+      slides = buildRandomizedSlides();
+      idx = -1;
     } catch (err) {
       console.error('Failed to load slides.json', err);
       capTitle.textContent = t().loadError;
