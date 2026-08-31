@@ -2422,5 +2422,22 @@
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_298.jpg",
       "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_299.jpg"
     ]
+  },
+  {
+    "title": "Museo Soumaya",
+    "source_url": "https://www.archdaily.com/452226/museo-soumaya-fr-ee-fernando-romero-enterprise",
+    "canonical_source_url": "https://www.archdaily.com/452226/museo-soumaya-fr-ee-fernando-romero-enterprise",
+    "canonical_url": "https://t.me/SohoArchTimes/1236",
+    "date_published_to_telegram": "2026-08-31",
+    "datetime_published_to_telegram": "2026-08-31T12:18:54+03:00",
+    "telegram_message_id": 1236,
+    "media_group_id": "14305343470888026",
+    "telegram_full_image_urls": [
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_300.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_301.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_302.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_303.jpg",
+      "https://api.telegram.org/file/bot<BOT_TOKEN>/photos/file_304.jpg"
+    ]
   }
 ]
